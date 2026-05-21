@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systematic Review Methodology: A Scientific Curator's Perspective | SciCurator</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0D2137;--teal:#1A7A6E;--gold:#C8963E;--cream:#FAFAF7;--text:#1A1A1A;--muted:#6B7280;--border:#E5E7EB;--white:#FFFFFF}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:"Playfair Display",serif;font-size:1.4rem;color:#fff;text-decoration:none}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem}
+.post-hero{background:var(--navy);padding:60px 5%;text-align:center;color:#fff}
+.post-cat{display:inline-block;background:var(--teal);color:#fff;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:3px;margin-bottom:1.2rem}
+.post-hero h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;max-width:700px;margin:0 auto 1.2rem}
+.post-meta{color:rgba(255,255,255,0.55);font-size:0.85rem;display:flex;align-items:center;justify-content:center;gap:0.6rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.4);display:inline-block}
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:3rem;max-width:1100px;margin:0 auto;padding:50px 5%}
+article{background:var(--white);border-radius:12px;padding:2.5rem;border:1px solid var(--border)}
+article h2{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--navy);margin:2rem 0 0.8rem}
+article p{color:#374151;margin-bottom:1.2rem;font-size:0.97rem;line-height:1.8}
+article ul{margin:0.8rem 0 1.2rem 1.5rem}
+article li{color:#374151;font-size:0.97rem;margin-bottom:0.5rem;line-height:1.7}
+.intro-text{font-size:1.08rem!important;color:var(--navy)!important;font-weight:500;border-left:3px solid var(--teal);padding-left:1.2rem;margin-bottom:1.8rem!important}
+.takeaway{background:var(--navy);color:#fff;border-radius:10px;padding:1.5rem;margin:2rem 0}
+.takeaway h3{color:var(--gold);font-family:"Playfair Display",serif;margin:0 0 0.8rem}
+.takeaway li{color:rgba(255,255,255,0.85);margin-bottom:0.4rem}
+.author-box{display:flex;align-items:center;gap:1.2rem;background:#F9FAFB;border-radius:10px;padding:1.2rem;margin-top:2rem;border:1px solid var(--border)}
+.author-avatar{width:56px;height:56px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:1.2rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:500;color:var(--navy);margin-bottom:0.2rem}
+.author-bio{font-size:0.82rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.5rem}
+.sidebar-card{background:var(--white);border-radius:10px;padding:1.2rem;border:1px solid var(--border)}
+.sidebar-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--navy);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--navy)}
+.toc-list{list-style:none}
+.toc-list li{padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.83rem}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--teal);text-decoration:none}
+.ad-box{background:#F3F4F6;border:1.5px dashed var(--border);border-radius:8px;height:250px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.75rem;text-align:center;padding:1rem}
+.related-post{display:flex;gap:0.8rem;padding:0.7rem 0;border-bottom:1px solid var(--border)}
+.related-post:last-child{border-bottom:none}
+.related-icon{font-size:1.6rem;flex-shrink:0}
+.related-title{font-size:0.83rem;font-weight:500;color:var(--navy);text-decoration:none;line-height:1.4}
+.related-title:hover{color:var(--teal)}
+.related-cat{font-size:0.7rem;color:var(--muted);margin-bottom:0.2rem}
+.newsletter-card{background:var(--navy);color:#fff;border-radius:10px;padding:1.2rem}
+.newsletter-card h4{font-family:"Playfair Display",serif;margin-bottom:0.5rem}
+.newsletter-card p{font-size:0.8rem;color:rgba(255,255,255,0.65);margin-bottom:0.8rem}
+.newsletter-input{width:100%;padding:0.6rem 0.8rem;border-radius:4px;border:none;font-family:"DM Sans",sans-serif;font-size:0.85rem;margin-bottom:0.5rem;outline:none}
+.newsletter-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:0.6rem;border-radius:4px;font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 5%;font-size:0.82rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.post-layout{grid-template-columns:1fr}.sidebar{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Sci<span>Curator</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#topics">Topics</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#newsletter">Subscribe</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <div class="post-cat">EMBASE and Data Curation</div>
+  <h1>Systematic Review Methodology: A Scientific Curator's Perspective</h1>
+  <div class="post-meta">
+    <span>By Murali Krishnan M</span><span class="meta-dot"></span>
+    <span>May 2025</span><span class="meta-dot"></span>
+    <span>9 min read</span><span class="meta-dot"></span>
+    <span>Methodology Guide</span>
+  </div>
+</div>
+<div class="post-layout">
+  <article>
+    <p class="intro-text">Systematic reviews represent the highest level of evidence synthesis in biomedical research, providing rigorously conducted summaries of the available evidence on specific clinical or scientific questions. As a scientific curator with extensive experience in literature database searching and data extraction, I offer a practitioner's perspective on the methodological foundations of systematic review and the critical role that structured literature management plays in review quality.</p>
+    <h2 id="rationale">The Scientific Rationale for Systematic Reviews</h2><p>Individual studies, regardless of their methodological quality, provide inherently limited evidence on any given research question. Sample sizes constrain statistical power, inclusion criteria limit population representativeness, follow-up periods may be insufficient to capture long-term outcomes, and single-centre designs may introduce setting-specific biases. Systematic reviews address these limitations by identifying, critically appraising, and synthesising all available evidence on a defined question using reproducible, transparent methodology.</p><p>The distinction between systematic and narrative reviews is methodologically fundamental. Narrative reviews reflect the selective, subjective reading of literature by individual authors and are vulnerable to systematic biases including confirmation bias and selective reporting. Systematic reviews employ pre-specified, transparent search strategies, explicit inclusion and exclusion criteria, and standardised data extraction and quality appraisal procedures that minimise the influence of reviewer bias on study selection and interpretation. When quantitative synthesis is possible, meta-analysis provides statistically precise pooled estimates of treatment effects or associations that individual studies cannot generate.</p><h2 id="question">Formulating the Research Question</h2><p>A clearly formulated research question is the prerequisite for a methodologically sound systematic review. The PICO framework — Population, Intervention, Comparator, and Outcome — provides a structured approach to question formulation for reviews of interventional research, ensuring that all elements of the research question are explicitly defined before the review process begins. Variations including PICOS (adding Study design) and PECO (Population, Exposure, Comparator, Outcome for observational research) adapt the framework to specific review types.</p><p>The specificity of the research question directly determines the scope and feasibility of the systematic review. Overly broad questions generate unmanageable volumes of literature requiring impractical screening efforts, while overly narrow questions may identify insufficient evidence to support meaningful conclusions. An iterative process of question refinement, informed by scoping searches of relevant databases, typically precedes protocol finalisation.</p><h2 id="searching">Database Searching Strategy Development</h2><p>Comprehensive database searching is the foundation of a systematic review's validity. Failure to identify relevant studies through inadequate search strategies introduces selection bias that undermines the review's representativeness and the reliability of its conclusions. Professional systematic reviewers and information specialists develop multi-database search strategies that combine controlled vocabulary terms — MeSH in MEDLINE, EMTREE in EMBASE — with free-text synonyms for all key concepts in the research question.</p><p>The complementary coverage of MEDLINE and EMBASE necessitates dual-database searching as a minimum standard for comprehensive biomedical systematic reviews. Studies have consistently demonstrated that searching only one of these databases results in failure to identify a substantial proportion of relevant literature. Additional sources including trial registries, grey literature repositories, and reference lists of included studies further enhance retrieval completeness. The search strategy should be documented sufficiently to enable independent replication — a requirement of major systematic review reporting standards including PRISMA.</p><h2 id="extraction">Study Selection and Data Extraction</h2><p>The study selection process applies pre-defined inclusion and exclusion criteria to the retrieved literature in two sequential stages: title and abstract screening, followed by full-text review of potentially eligible studies. Independent screening by at least two reviewers with agreement assessed using inter-rater reliability statistics and disagreements resolved through discussion or third-reviewer adjudication minimises selection bias.</p><p>Data extraction transfers relevant information from included studies into standardised extraction forms covering study characteristics, participant demographics, intervention and comparator details, outcome measures and results, and study quality indicators. As with screening, duplicate independent extraction by two reviewers with reconciliation of discrepancies represents best practice. Scientific curators experienced in structured literature analysis are well-positioned to contribute to data extraction activities, applying the attention to detail and terminological precision that characterises professional curation practice.</p><h2 id="synthesis">Quality Appraisal and Evidence Synthesis</h2><p>Critical appraisal of included studies evaluates the methodological quality of the evidence contributing to the review's conclusions. Validated appraisal tools appropriate to specific study designs — including the Cochrane Risk of Bias tool for randomised controlled trials and the Newcastle-Ottawa Scale for observational studies — provide structured frameworks for assessing domains of potential bias including selection, performance, detection, and attrition bias.</p><p>Evidence synthesis may be quantitative, through meta-analysis when included studies are sufficiently homogeneous in terms of population, intervention, and outcome measurement, or qualitative, through structured narrative synthesis when statistical pooling is inappropriate due to clinical or methodological heterogeneity. The GRADE approach to evidence certainty assessment provides a transparent framework for rating the strength of conclusions drawn from systematic review evidence, distinguishing high, moderate, low, and very low certainty ratings based on risk of bias, inconsistency, indirectness, imprecision, and publication bias considerations.</p>
+    <div class="takeaway">
+      <h3>Key Takeaways</h3>
+      <ul><li>Systematic reviews use pre-specified, transparent methodology to synthesise all available evidence on a defined research question</li><li>The PICO framework structures research questions by Population, Intervention, Comparator, and Outcome</li><li>Dual-database searching of MEDLINE and EMBASE with controlled vocabulary and free-text terms is the minimum standard for comprehensive searching</li><li>Independent duplicate screening and data extraction with reconciliation minimises selection and extraction bias</li><li>The GRADE approach provides a structured framework for rating the certainty of evidence derived from systematic reviews</li></ul>
+    </div>
+    <div class="author-box">
+      <div class="author-avatar">MK</div>
+      <div>
+        <div class="author-name">Murali Krishnan M</div>
+        <div class="author-bio">Scientific Curator with 5+ years of experience in biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education, Coimbatore.</div>
+      </div>
+    </div>
+  </article>
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">In This Article</div>
+      <ul class="toc-list"><li><a href="#rationale">The Scientific Rationale for Systematic Reviews</a></li><li><a href="#question">Formulating the Research Question</a></li><li><a href="#searching">Database Searching Strategy Development</a></li><li><a href="#extraction">Study Selection and Data Extraction</a></li><li><a href="#synthesis">Quality Appraisal and Evidence Synthesis</a></li></ul>
+    </div>
+    <div class="ad-box">Advertisement<br>Google AdSense<br>300x250</div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Related Posts</div>
+      <div class="related-post"><span class="related-icon">🦠</span><div><div class="related-cat">EMBASE</div><a href="first-post.html" class="related-title">What is EMBASE? A Scientist Inside View</a></div></div>
+      <div class="related-post"><span class="related-icon">🌿</span><div><div class="related-cat">Microbiology</div><a href="turmeric-antibacterial.html" class="related-title">Turmeric Antibacterial Power</a></div></div>
+      <div class="related-post"><span class="related-icon">🧪</span><div><div class="related-cat">Lab Science</div><a href="gmp-vs-glp.html" class="related-title">GMP vs GLP Guide</a></div></div>
+    </div>
+    <div class="newsletter-card">
+      <h4>Weekly Science Updates</h4>
+      <p>Get new articles delivered to your inbox every week.</p>
+      <input class="newsletter-input" type="email" placeholder="your@email.com"/>
+      <button class="newsletter-btn">Subscribe Free</button>
+    </div>
+    <div class="ad-box">Advertisement<br>Google AdSense<br>300x250</div>
+  </aside>
+</div>
+<footer><p>2025 SciCurator By <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> Coimbatore, India</p></footer>
+</body>
+</html>
