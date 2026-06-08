@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SciCurator — Science Explained Clearly | Murali Krishnan</title>
+<meta name="description" content="In-depth science articles on microbiology, health, genetics, environment, astrophysics, lab science and more — written by a working scientist with 5+ years experience.">
+<meta name="google-site-verification" content="LB2D9Xoqf643sQVaWodyNz2Hxls7ImeY_82QUG5TCqg" />
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0A;
+  --navy:#0D2137;
+  --teal:#1A7A6E;
+  --gold:#B8860B;
+  --gold-lt:#FDF6E3;
+  --paper:#FAFAF5;
+  --paper2:#F4F4EE;
+  --white:#FFFFFF;
+  --muted:#555;
+  --border:#C8C8BC;
+  --border-lt:#E2E2D8;
+
+  --c-news:#7B1C1C;
+  --c-health:#B03A2E;
+  --c-micro:#1A7A6E;
+  --c-lab:#1A4A6E;
+  --c-env:#2E7D32;
+  --c-gen:#0D6B5E;
+  --c-herb:#4A7340;
+  --c-drug:#8B5A00;
+  --c-db:#7B1C1C;
+  --c-career:#4A2080;
+  --c-tech:#1A2E5A;
+  --c-astro:#3D1A6E;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6}
+
+/* ── TOP DATE BAR ── */
+.datebar{background:var(--navy);padding:0.3rem 4%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+.datebar-left{color:rgba(255,255,255,0.45);font-family:'DM Sans',sans-serif;font-size:0.72rem}
+.datebar-right{display:flex;gap:1.2rem}
+.datebar-right a{color:rgba(255,255,255,0.45);font-family:'DM Sans',sans-serif;font-size:0.72rem;text-decoration:none;transition:color .2s}
+.datebar-right a:hover{color:#fff}
+
+/* ── MASTHEAD ── */
+.masthead{background:var(--paper);padding:1.4rem 4% 0.6rem;text-align:center;border-bottom:3px double var(--ink)}
+.masthead-name{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1;margin-bottom:0.3rem}
+.masthead-name span{color:var(--teal)}
+.masthead-tagline{font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem}
+.masthead-meta{display:flex;align-items:center;justify-content:center;gap:1.5rem;font-family:'DM Sans',sans-serif;font-size:0.73rem;color:var(--muted);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0.4rem 0}
+.masthead-meta a{color:var(--teal);text-decoration:none;font-weight:500}
+
+/* ── SECTION NAV ── */
+.section-nav{background:var(--navy);display:flex;overflow-x:auto;scrollbar-width:none}
+.section-nav::-webkit-scrollbar{display:none}
+.section-nav a{color:rgba(255,255,255,0.72);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;padding:0.6rem 1.1rem;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+.section-nav-wrap{border-bottom:1px solid var(--border)}
+
+/* ── TICKER ── */
+.ticker{background:var(--gold-lt);border-bottom:1px solid var(--border);padding:0.4rem 4%;display:flex;align-items:center;gap:1rem;overflow:hidden}
+.ticker-label{background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.18rem 0.6rem;flex-shrink:0}
+.ticker-track{overflow:hidden;flex:1}
+.ticker-inner{display:inline-flex;gap:2.5rem;white-space:nowrap;animation:tick 40s linear infinite}
+.ticker-inner a{color:var(--navy);font-family:'DM Sans',sans-serif;font-size:0.78rem;text-decoration:none}
+.ticker-inner a:hover{text-decoration:underline;color:var(--teal)}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── AD ── */
+.ad-wrap{padding:0.6rem 4%;background:var(--paper2)}
+.ad{background:var(--white);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:#bbb;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase}
+.ad-leader{height:80px}
+.ad-inline{height:72px;margin:1.4rem 0}
+.ad-sb{height:250px;width:100%;margin-bottom:1.2rem}
+
+/* ── HERO ── */
+.hero{padding:1.8rem 4% 0;border-bottom:2px solid var(--ink)}
+.hero-inner{display:grid;grid-template-columns:1.8fr 0.9fr 0.9fr;gap:0;border-top:3px solid var(--ink)}
+
+/* hero main story */
+.hero-lead{padding:1.2rem 1.5rem 1.2rem 0;border-right:1px solid var(--border)}
+.hero-lead-cat{font-family:'DM Sans',sans-serif;font-size:0.67rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--c-news);margin-bottom:0.5rem}
+.hero-lead-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;line-height:1.18;color:var(--ink);margin-bottom:0.7rem}
+.hero-lead-title em{font-style:italic;color:var(--teal)}
+.hero-lead-deck{font-size:0.98rem;color:var(--muted);line-height:1.7;margin-bottom:0.9rem;font-style:italic}
+.hero-lead-img{width:100%;height:180px;background:linear-gradient(135deg,#E6F4F2,#b8ddd9);border:1px solid var(--border-lt);display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:0.8rem}
+.hero-lead-byline{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:var(--muted);border-top:1px solid var(--border-lt);padding-top:0.5rem}
+.hero-lead-byline a{color:var(--teal);text-decoration:none}
+
+/* hero side columns */
+.hero-col{padding:1.2rem 1.2rem}
+.hero-col:first-of-type{border-right:1px solid var(--border)}
+.hero-story{padding-bottom:1rem;margin-bottom:1rem;border-bottom:1px solid var(--border-lt)}
+.hero-story:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hero-story-cat{font-family:'DM Sans',sans-serif;font-size:0.63rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem}
+.hero-story-img{width:100%;height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:0.5rem;border:1px solid var(--border-lt)}
+.hero-story-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:0.35rem}
+.hero-story-meta{font-family:'DM Sans',sans-serif;font-size:0.68rem;color:var(--muted)}
+
+/* links */
+a.story-link{text-decoration:none;color:inherit;display:block}
+a.story-link:hover .hero-lead-title,
+a.story-link:hover .hero-story-title,
+a.story-link:hover .sec-story-title,
+a.story-link:hover .wide-title{color:var(--teal)}
+
+/* ── STATS BAND ── */
+.stats-band{background:var(--navy);padding:0.85rem 4%;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;border-bottom:3px solid var(--gold)}
+.stat{text-align:center;color:#fff}
+.stat-n{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;display:block}
+.stat-l{font-family:'DM Sans',sans-serif;font-size:0.68rem;opacity:0.65;text-transform:uppercase;letter-spacing:0.1em}
+
+/* ── BODY LAYOUT ── */
+.body-wrap{display:grid;grid-template-columns:1fr 268px;gap:0;padding:0 4%;max-width:1200px;margin:0 auto}
+.body-wrap-inner{padding:1.6rem 2rem 1.6rem 0;border-right:1px solid var(--border)}
+
+/* ── SECTION ── */
+.sec{margin-bottom:2.2rem;padding-bottom:2.2rem;border-bottom:1px solid var(--border)}
+.sec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;padding-bottom:0.4rem}
+.sec-head-left{display:flex;align-items:baseline;gap:0.7rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink);border-bottom:3px solid var(--ink);padding-bottom:0.25rem}
+.sec-more{font-family:'DM Sans',sans-serif;font-size:0.72rem;color:var(--teal);text-decoration:none;font-weight:500;border:1px solid var(--teal);padding:0.2rem 0.6rem;border-radius:2px;transition:all .2s;white-space:nowrap}
+.sec-more:hover{background:var(--teal);color:#fff}
+
+/* section colour rule */
+.s-news  .sec-title{border-bottom-color:var(--c-news)}
+.s-health .sec-title{border-bottom-color:var(--c-health)}
+.s-micro .sec-title{border-bottom-color:var(--c-micro)}
+.s-lab   .sec-title{border-bottom-color:var(--c-lab)}
+.s-env   .sec-title{border-bottom-color:var(--c-env)}
+.s-gen   .sec-title{border-bottom-color:var(--c-gen)}
+.s-herb  .sec-title{border-bottom-color:var(--c-herb)}
+.s-drug  .sec-title{border-bottom-color:var(--c-drug)}
+.s-db    .sec-title{border-bottom-color:var(--c-db)}
+.s-career .sec-title{border-bottom-color:var(--c-career)}
+.s-tech  .sec-title{border-bottom-color:var(--c-tech)}
+.s-astro .sec-title{border-bottom-color:var(--c-astro)}
+
+/* ── SECTION STORY LAYOUTS ── */
+
+/* 3-col newspaper columns */
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border)}
+.col-story{padding:1rem 1.2rem 1rem 0;border-right:1px solid var(--border)}
+.col-story:last-child{border-right:none;padding-right:0;padding-left:1.2rem}
+.col-story:nth-child(2){padding-left:1.2rem}
+
+/* 2-col + side */
+.cols-2side{display:grid;grid-template-columns:1.3fr 1fr;gap:0;border-top:1px solid var(--border)}
+.col-main{padding:1rem 1.4rem 1rem 0;border-right:1px solid var(--border)}
+.col-side{padding:1rem 0 1rem 1.4rem}
+
+/* wide single story */
+.wide-story{display:grid;grid-template-columns:180px 1fr;gap:0;border-top:1px solid var(--border)}
+.wide-img{display:flex;align-items:center;justify-content:center;font-size:3.5rem;border-right:1px solid var(--border);padding:1rem 1.4rem 1rem 0}
+.wide-body{padding:1rem 0 1rem 1.4rem}
+
+/* placeholder */
+.placeholder{border-top:1px solid var(--border);padding:1.2rem 0;display:flex;gap:1.2rem;align-items:flex-start}
+.ph-icon{font-size:2.4rem;flex-shrink:0}
+.ph-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.15rem 0.55rem;border-radius:2px;color:#fff;margin-bottom:0.4rem}
+.ph-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:0.4rem}
+.ph-desc{font-family:'DM Sans',sans-serif;font-size:0.83rem;color:var(--muted);line-height:1.65;margin-bottom:0.65rem}
+.ph-link{font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:600;color:var(--teal);text-decoration:none;border:1px solid var(--teal);padding:0.22rem 0.65rem;border-radius:2px;display:inline-block;transition:all .2s}
+.ph-link:hover{background:var(--teal);color:#fff}
+
+/* shared story parts */
+.sec-cat{font-family:'DM Sans',sans-serif;font-size:0.63rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem}
+.sec-story-img{width:100%;height:100px;display:flex;align-items:center;justify-content:center;font-size:2.3rem;border:1px solid var(--border-lt);margin-bottom:0.6rem}
+.sec-story-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;line-height:1.32;color:var(--ink);margin-bottom:0.35rem}
+.sec-story-deck{font-family:'Source Serif 4',serif;font-size:0.84rem;color:var(--muted);line-height:1.65;margin-bottom:0.4rem;font-style:italic}
+.sec-meta{font-family:'DM Sans',sans-serif;font-size:0.68rem;color:var(--muted)}
+.wide-title{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;line-height:1.3;color:var(--ink);margin-bottom:0.45rem}
+.wide-deck{font-size:0.88rem;color:var(--muted);line-height:1.65;font-style:italic;margin-bottom:0.45rem}
+
+/* divider rule between cols */
+.rule{width:1px;background:var(--border)}
+
+/* bg colours */
+.bg-news{background:#FEF5F5} .bg-health{background:#FEF0EE} .bg-micro{background:#E6F4F2}
+.bg-lab{background:#EAF0F6} .bg-env{background:#EAFAF1} .bg-gen{background:#E8F8F5}
+.bg-herb{background:#F0FAF0} .bg-drug{background:#FEF5E7} .bg-db{background:#FDEDEC}
+.bg-career{background:#F3EEF9} .bg-tech{background:#EAF2FB} .bg-astro{background:#F2EEF9}
+
+/* text colours */
+.c-news{color:var(--c-news)} .c-health{color:var(--c-health)} .c-micro{color:var(--c-micro)}
+.c-lab{color:var(--c-lab)} .c-env{color:var(--c-env)} .c-gen{color:var(--c-gen)}
+.c-herb{color:var(--c-herb)} .c-drug{color:var(--c-drug)} .c-db{color:var(--c-db)}
+.c-career{color:var(--c-career)} .c-tech{color:var(--c-tech)} .c-astro{color:var(--c-astro)}
+
+/* ── SIDEBAR ── */
+.sidebar{padding:1.6rem 0 1.6rem 1.6rem;display:flex;flex-direction:column;gap:1.4rem}
+.sb-box{border:1px solid var(--border);padding:1rem;background:var(--white)}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.4rem;border-bottom:2px solid var(--ink)}
+.sb-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.sb-list li{display:flex;gap:0.5rem;align-items:flex-start;padding-bottom:0.65rem;border-bottom:1px solid var(--border-lt)}
+.sb-list li:last-child{border-bottom:none;padding-bottom:0}
+.sb-num{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--border);flex-shrink:0;line-height:1.1}
+.sb-lcat{font-family:'DM Sans',sans-serif;font-size:0.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.1rem}
+.sb-list a{font-family:'Playfair Display',serif;font-size:0.83rem;color:var(--ink);text-decoration:none;line-height:1.4;font-weight:400}
+.sb-list a:hover{color:var(--teal)}
+
+.topic-list{display:flex;flex-direction:column;gap:0.3rem}
+.topic-row{display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0.6rem;border:1px solid var(--border-lt);text-decoration:none;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.8rem;transition:all .2s;background:var(--white)}
+.topic-row:hover{border-color:var(--teal);background:var(--gold-lt)}
+.t-count{font-size:0.68rem;color:var(--muted);background:var(--paper2);padding:0.08rem 0.45rem;border-radius:10px}
+
+.nl-sb{background:var(--navy);padding:1rem}
+.nl-sb h4{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;margin-bottom:0.4rem}
+.nl-sb p{font-family:'DM Sans',sans-serif;font-size:0.78rem;color:rgba(255,255,255,0.55);margin-bottom:0.75rem;line-height:1.6}
+.nl-input{width:100%;padding:0.5rem 0.7rem;border:none;font-family:'DM Sans',sans-serif;font-size:0.82rem;margin-bottom:0.4rem;outline:none}
+.nl-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:0.55rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;transition:background .2s}
+.nl-btn:hover{background:#14665B}
+
+.write-box{background:var(--gold-lt);border:1px solid #D4AC0D;padding:1rem}
+.write-box h4{font-family:'Playfair Display',serif;font-size:0.92rem;color:var(--navy);margin-bottom:0.4rem}
+.write-box p{font-family:'DM Sans',sans-serif;font-size:0.77rem;color:var(--muted);margin-bottom:0.6rem}
+.write-ideas{list-style:none;display:flex;flex-direction:column;gap:0.3rem}
+.write-ideas li{font-family:'DM Sans',sans-serif;font-size:0.75rem;color:var(--navy);padding-left:0.9rem;position:relative;line-height:1.4}
+.write-ideas li::before{content:"→";position:absolute;left:0;font-weight:700}
+
+/* ── ABOUT ── */
+.about{background:var(--navy);color:#fff;display:grid;grid-template-columns:130px 1fr;gap:2.5rem;align-items:center;padding:44px 4%;border-top:3px solid var(--gold)}
+.avatar{width:100px;height:100px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2rem;color:#fff;border:3px solid rgba(255,255,255,0.2);margin:0 auto}
+.about-name{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:0.2rem}
+.about-role{font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--gold);margin-bottom:0.7rem;letter-spacing:0.04em}
+.about-bio{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:0.85rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.75);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:20px;border:1px solid rgba(255,255,255,0.15)}
+
+/* ── NEWSLETTER ── */
+.nl-section{background:var(--gold-lt);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);text-align:center;padding:44px 4%}
+.nl-section h2{font-family:'Playfair Display',serif;font-size:1.65rem;color:var(--navy);margin-bottom:0.5rem}
+.nl-section p{font-family:'DM Sans',sans-serif;color:var(--muted);max-width:430px;margin:0 auto 1.3rem;font-size:0.88rem}
+.nl-form{display:flex;max-width:400px;margin:0 auto;border:1.5px solid var(--navy)}
+.nl-form input{flex:1;border:none;padding:0.7rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;background:#fff;outline:none}
+.nl-form button{background:var(--navy);color:#fff;border:none;padding:0.7rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;white-space:nowrap}
+.nl-form button:hover{background:var(--teal)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:40px 4% 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:0.5rem}
+.footer-desc{font-family:'DM Sans',sans-serif;font-size:0.78rem;line-height:1.7;max-width:210px}
+.footer-col h5{font-family:'DM Sans',sans-serif;color:#fff;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.7rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.footer-links a{font-family:'DM Sans',sans-serif;color:rgba(255,255,255,0.44);font-size:0.78rem;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-family:'DM Sans',sans-serif;font-size:0.72rem}
+
+/* ── DECORATIVE RULE ── */
+.ornament{text-align:center;color:var(--border);font-size:1.1rem;letter-spacing:0.5em;margin:0.3rem 0}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr 1fr}
+  .hero-col:last-child{display:none}
+}
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-col{display:none}
+  .body-wrap{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .cols-3{grid-template-columns:1fr}
+  .col-story{border-right:none;padding-right:0;padding-left:0!important;border-bottom:1px solid var(--border-lt);padding-bottom:1rem;margin-bottom:1rem}
+  .cols-2side{grid-template-columns:1fr}
+  .col-main{border-right:none;padding-right:0}
+  .col-side{padding-left:0;border-top:1px solid var(--border-lt);margin-top:1rem;padding-top:1rem}
+  .wide-story{grid-template-columns:1fr}
+  .wide-img{border-right:none;padding-right:0;height:130px;margin-bottom:1rem}
+  .about{grid-template-columns:1fr;text-align:center}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .masthead-name{font-size:2.4rem}
+}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr}.stats-band{gap:1.5rem}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- DATE BAR -->
+<div class="datebar">
+  <span class="datebar-left" id="datestamp"></span>
+  <div class="datebar-right">
+    <a href="#about">About</a>
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="mailto:Krishnanpollachi111@gmail.com">Contact</a>
+    <a href="https://linkedin.com/in/murali-krishnan-m7" target="_blank">LinkedIn</a>
+  </div>
+</div>
+<script>document.getElementById('datestamp').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+'  ·  Est. 2025';</script>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-name">Sci<span>Curator</span></div>
+  <div class="masthead-tagline">Science · Microbiology · Health · Research · Career</div>
+  <div class="masthead-meta">
+    <span>By <a href="#about">Murali Krishnan M</a></span>
+    <span>·</span>
+    <span>20 Articles Published</span>
+    <span>·</span>
+    <span>12 Sections</span>
+    <span>·</span>
+    <span>Free &amp; Open Access</span>
+    <span>·</span>
+    <a href="#newsletter">Subscribe →</a>
+  </div>
+</div>
+
+<!-- SECTION NAV -->
+<div class="section-nav-wrap">
+  <div class="section-nav">
+    <a href="#news">📰 Science News</a>
+    <a href="#health">🏥 Health</a>
+    <a href="#micro">🦠 Microbiology</a>
+    <a href="#lab">🔬 Lab Science</a>
+    <a href="#env">🌍 Environment</a>
+    <a href="#genetics">🧬 Genetics</a>
+    <a href="#herbal">🌿 Natural Medicine</a>
+    <a href="#drug">💊 Drug Safety</a>
+    <a href="#db">📚 Databases</a>
+    <a href="#career">🎓 Career</a>
+    <a href="#tech">🤖 Science & Tech</a>
+    <a href="#astro">🔭 Astrophysics</a>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <span class="ticker-label">Latest</span>
+  <div class="ticker-track"><div class="ticker-inner">
+    <a href="antimicrobial-resistance.html">Antimicrobial Resistance: The Silent Pandemic</a>
+    <a href="pcr-basics-microbiology.html">PCR in Microbiology: Principles & Applications</a>
+    <a href="pharmacovigilance-data-science.html">Pharmacovigilance & Data Science</a>
+    <a href="govt-jobs-microbiology.html">Government Jobs in Microbiology 2025</a>
+    <a href="systematic-review-methodology.html">Systematic Review: Step-by-Step Guide</a>
+    <a href="gmp-vs-glp.html">GMP vs GLP: Key Differences Explained</a>
+    <a href="turmeric-antibacterial.html">Turmeric's Antibacterial Power</a>
+    <a href="njavara-rice-research.html">NJAVARA Rice: Phytochemicals & Antibacterial Properties</a>
+    <!-- loop -->
+    <a href="antimicrobial-resistance.html">Antimicrobial Resistance: The Silent Pandemic</a>
+    <a href="pcr-basics-microbiology.html">PCR in Microbiology: Principles & Applications</a>
+    <a href="pharmacovigilance-data-science.html">Pharmacovigilance & Data Science</a>
+    <a href="govt-jobs-microbiology.html">Government Jobs in Microbiology 2025</a>
+    <a href="systematic-review-methodology.html">Systematic Review: Step-by-Step Guide</a>
+    <a href="gmp-vs-glp.html">GMP vs GLP: Key Differences Explained</a>
+    <a href="turmeric-antibacterial.html">Turmeric's Antibacterial Power</a>
+    <a href="njavara-rice-research.html">NJAVARA Rice: Phytochemicals & Antibacterial Properties</a>
+  </div></div>
+</div>
+
+<!-- AD LEADERBOARD -->
+<div class="ad-wrap"><div class="ad ad-leader">Advertisement · Google AdSense 728×90</div></div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ══════════════════════════════════════════ -->
+<div class="hero">
+  <div class="ornament">— ✦ —</div>
+  <div class="hero-inner">
+
+    <!-- Lead Story -->
+    <a href="antimicrobial-resistance.html" class="story-link hero-lead">
+      <div class="hero-lead-cat c-news">Science News · Top Story</div>
+      <div class="hero-lead-img bg-news">🦠</div>
+      <div class="hero-lead-title">Antimicrobial Resistance: The <em>Silent Pandemic</em> Threatening Global Health</div>
+      <div class="hero-lead-deck">Drug-resistant bacteria are outpacing the development of new antibiotics at an alarming rate. This in-depth explainer covers the science of AMR, how it spreads across borders, and what researchers worldwide are doing to fight back.</div>
+      <div class="hero-lead-byline">By <a href="#about">Murali Krishnan M</a> · May 2025 · 9 min read</div>
+    </a>
+
+    <!-- Side column 1 -->
+    <div class="hero-col">
+      <a href="turmeric-antibacterial.html" class="story-link hero-story">
+        <div class="hero-story-cat c-micro">Microbiology</div>
+        <div class="hero-story-img bg-micro">🌿</div>
+        <div class="hero-story-title">Turmeric's Antibacterial Power: What the Science Really Says</div>
+        <div class="hero-story-meta">May 2025 · 7 min read</div>
+      </a>
+      <a href="gmp-vs-glp.html" class="story-link hero-story">
+        <div class="hero-story-cat c-lab">Lab Science</div>
+        <div class="hero-story-img bg-lab">🧪</div>
+        <div class="hero-story-title">GMP vs GLP: What Every Lab Professional Must Know</div>
+        <div class="hero-story-meta">May 2025 · 9 min read</div>
+      </a>
+    </div>
+
+    <!-- Side column 2 -->
+    <div class="hero-col">
+      <a href="first-post.html" class="story-link hero-story">
+        <div class="hero-story-cat c-db">EMBASE & Indexing</div>
+        <div class="hero-story-img bg-db">📚</div>
+        <div class="hero-story-title">What is EMBASE? A Scientist's Inside View of the World's Largest Biomedical Database</div>
+        <div class="hero-story-meta">May 2025 · 8 min read</div>
+      </a>
+      <a href="scientific-curation-career.html" class="story-link hero-story">
+        <div class="hero-story-cat c-career">Career</div>
+        <div class="hero-story-img bg-career">🎓</div>
+        <div class="hero-story-title">Breaking Into Scientific Curation: A Realistic Career Guide</div>
+        <div class="hero-story-meta">May 2025 · 8 min read</div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat"><span class="stat-n">20</span><span class="stat-l">Articles</span></div>
+  <div class="stat"><span class="stat-n">12</span><span class="stat-l">Sections</span></div>
+  <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Yrs Experience</span></div>
+  <div class="stat"><span class="stat-n">Free</span><span class="stat-l">Open Access</span></div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- BODY -->
+<!-- ══════════════════════════════════════════ -->
+<div class="body-wrap">
+<div class="body-wrap-inner">
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 1. SCIENCE NEWS -->
+  <div class="sec s-news" id="news">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">📰 Science News & Discoveries</span></div>
+      <a href="antimicrobial-resistance.html" class="sec-more">More →</a>
+    </div>
+    <a href="antimicrobial-resistance.html" class="story-link wide-story">
+      <div class="wide-img bg-news">📰</div>
+      <div class="wide-body">
+        <div class="sec-cat c-news">Science News</div>
+        <div class="wide-title">Antimicrobial Resistance: The Silent Pandemic Threatening Global Health</div>
+        <div class="wide-deck">Drug-resistant bacteria are outpacing new antibiotics. This explainer covers how AMR spreads, what researchers are doing, and why every person on earth should care.</div>
+        <div class="sec-meta">May 2025 · 9 min read · By Murali Krishnan M</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- 2. HEALTH & MEDICINE -->
+  <div class="sec s-health" id="health">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🏥 Health & Medicine</span></div>
+      <a href="pharmacovigilance-data-science.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-3">
+      <a href="pharmacovigilance-data-science.html" class="story-link col-story">
+        <div class="sec-cat c-health">Drug Safety</div>
+        <div class="sec-story-img bg-health">💊</div>
+        <div class="sec-story-title">Pharmacovigilance & Data Science: How AI Is Changing Drug Safety</div>
+        <div class="sec-story-deck">Machine learning is transforming how adverse drug reactions are detected and reported worldwide.</div>
+        <div class="sec-meta">May 2025 · 10 min</div>
+      </a>
+      <a href="sterility-testing-guide.html" class="story-link col-story">
+        <div class="sec-cat c-health">Lab Medicine</div>
+        <div class="sec-story-img bg-health">🧫</div>
+        <div class="sec-story-title">Sterility Testing: A Complete Guide for Pharmaceutical Labs</div>
+        <div class="sec-story-deck">Everything you need to know about sterility testing methods, standards and regulations.</div>
+        <div class="sec-meta">May 2025 · 8 min</div>
+      </a>
+      <a href="systematic-review-methodology.html" class="story-link col-story">
+        <div class="sec-cat c-health">Research</div>
+        <div class="sec-story-img bg-health">📋</div>
+        <div class="sec-story-title">Systematic Review Methodology: A Step-by-Step Guide for Life Scientists</div>
+        <div class="sec-story-deck">From PICO question to PRISMA guidelines — how to conduct a proper systematic review.</div>
+        <div class="sec-meta">May 2025 · 11 min</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 3. MICROBIOLOGY -->
+  <div class="sec s-micro" id="micro">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🦠 Microbiology & Infectious Disease</span></div>
+      <a href="microbiology.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-2side">
+      <a href="turmeric-antibacterial.html" class="story-link col-main">
+        <div class="sec-cat c-micro">Microbiology</div>
+        <div class="sec-story-img bg-micro" style="height:140px;font-size:3.5rem">🌿</div>
+        <div class="sec-story-title" style="font-size:1.1rem">Turmeric's Antibacterial Power: What the Peer-Reviewed Research Really Says</div>
+        <div class="sec-story-deck">A microbiologist examines curcumin's mechanisms against bacteria — including the important limitations that most wellness blogs skip over entirely.</div>
+        <div class="sec-meta">May 2025 · 7 min read</div>
+      </a>
+      <div class="col-side" style="display:flex;flex-direction:column;gap:1rem">
+        <a href="njavara-rice-research.html" class="story-link" style="padding-bottom:1rem;border-bottom:1px solid var(--border-lt)">
+          <div class="sec-cat c-micro">Herbal Research</div>
+          <div class="sec-story-title">NJAVARA Rice: Phytochemicals & Antibacterial Properties</div>
+          <div class="sec-meta">May 2025 · 8 min</div>
+        </a>
+        <a href="biofilm-microbiology.html" class="story-link" style="padding-bottom:1rem;border-bottom:1px solid var(--border-lt)">
+          <div class="sec-cat c-micro">Microbiology</div>
+          <div class="sec-story-title">Biofilms: Formation, Resistance & Control Strategies</div>
+          <div class="sec-meta">May 2025 · 7 min</div>
+        </a>
+        <a href="microbial-culture-isolation.html" class="story-link">
+          <div class="sec-cat c-micro">Lab Technique</div>
+          <div class="sec-story-title">Microbial Culture and Isolation Techniques Explained</div>
+          <div class="sec-meta">May 2025 · 8 min</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. LAB SCIENCE -->
+  <div class="sec s-lab" id="lab">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🔬 Lab Science & Techniques</span></div>
+      <a href="lab-science.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-3">
+      <a href="gmp-vs-glp.html" class="story-link col-story">
+        <div class="sec-cat c-lab">Regulations</div>
+        <div class="sec-story-img bg-lab">🧪</div>
+        <div class="sec-story-title">GMP vs GLP: What Every Lab Professional Must Know</div>
+        <div class="sec-story-deck">A clear, practical breakdown of the critical differences every microbiologist needs.</div>
+        <div class="sec-meta">May 2025 · 9 min</div>
+      </a>
+      <a href="pcr-basics-microbiology.html" class="story-link col-story">
+        <div class="sec-cat c-lab">Molecular</div>
+        <div class="sec-story-img bg-lab">🔭</div>
+        <div class="sec-story-title">PCR in Microbiology: Principles, Types and Applications</div>
+        <div class="sec-story-deck">A comprehensive guide to polymerase chain reaction for life science students.</div>
+        <div class="sec-meta">May 2025 · 10 min</div>
+      </a>
+      <a href="sterility-testing-guide.html" class="story-link col-story">
+        <div class="sec-cat c-lab">Testing</div>
+        <div class="sec-story-img bg-lab">🧫</div>
+        <div class="sec-story-title">Sterility Testing: A Complete Laboratory Guide</div>
+        <div class="sec-story-deck">Methods, standards, and regulatory requirements for pharmaceutical sterility testing.</div>
+        <div class="sec-meta">May 2025 · 8 min</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 5. ENVIRONMENT & ECOLOGY -->
+  <div class="sec s-env" id="env">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🌍 Environment & Ecology</span></div>
+      <a href="#newsletter" class="sec-more">Notify me →</a>
+    </div>
+    <div class="placeholder">
+      <div class="ph-icon">🌿</div>
+      <div>
+        <span class="ph-badge" style="background:var(--c-env)">Coming Soon · Article Idea</span>
+        <div class="ph-title">How Microplastics Are Disrupting Soil Microbial Communities Worldwide</div>
+        <div class="ph-desc">Microplastics aren't just an ocean problem — they're now found in agricultural soils across every continent, silently altering the microbial ecosystems that underpin our food supply. This article will explore what the latest peer-reviewed research shows about soil microbiome disruption, how it affects crop yields, and what scientists propose to do about it.</div>
+        <a href="#newsletter" class="ph-link">Subscribe to be notified →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. GENETICS & MOLECULAR BIOLOGY -->
+  <div class="sec s-gen" id="genetics">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🧬 Genetics & Molecular Biology</span></div>
+      <a href="pcr-basics-microbiology.html" class="sec-more">More →</a>
+    </div>
+    <a href="pcr-basics-microbiology.html" class="story-link wide-story">
+      <div class="wide-img bg-gen">🧬</div>
+      <div class="wide-body">
+        <div class="sec-cat c-gen">Molecular Biology</div>
+        <div class="wide-title">PCR in Microbiology: Principles, Types and Real-World Applications</div>
+        <div class="wide-deck">From Kary Mullis's invention to modern real-time PCR — a comprehensive guide to the technique used in diagnosing disease, identifying pathogens, and advancing genetic research globally.</div>
+        <div class="sec-meta">May 2025 · 10 min read</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 7. NATURAL & ALTERNATIVE MEDICINE -->
+  <div class="sec s-herb" id="herbal">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🌿 Natural & Alternative Medicine</span></div>
+      <a href="njavara-rice-research.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-2side">
+      <a href="njavara-rice-research.html" class="story-link col-main">
+        <div class="sec-cat c-herb">Traditional Medicine</div>
+        <div class="sec-story-img bg-herb" style="height:130px;font-size:3rem">🌾</div>
+        <div class="sec-story-title" style="font-size:1.1rem">NJAVARA Rice: Kerala's Ancient Grain with Remarkable Bioactive Properties</div>
+        <div class="sec-story-deck">Used in Ayurvedic medicine for centuries, NJAVARA rice is now being examined by scientists for its phytochemical composition and antibacterial activity. Here's what the research actually shows.</div>
+        <div class="sec-meta">May 2025 · 8 min read</div>
+      </a>
+      <div class="col-side">
+        <a href="turmeric-antibacterial.html" class="story-link">
+          <div class="sec-cat c-herb">Herbal Science</div>
+          <div class="sec-story-title">Turmeric's Antibacterial Power: The Science Behind Curcumin</div>
+          <div class="sec-story-deck">What peer-reviewed research says — and what it doesn't — about turmeric as an antibacterial agent.</div>
+          <div class="sec-meta">May 2025 · 7 min</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. DRUG SAFETY -->
+  <div class="sec s-drug" id="drug">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">💊 Drug Safety & Pharma</span></div>
+      <a href="pharmacovigilance-data-science.html" class="sec-more">More →</a>
+    </div>
+    <a href="pharmacovigilance-data-science.html" class="story-link wide-story">
+      <div class="wide-img bg-drug">💊</div>
+      <div class="wide-body">
+        <div class="sec-cat c-drug">Pharmacovigilance</div>
+        <div class="wide-title">Pharmacovigilance and Data Science: How AI Is Transforming Drug Safety Monitoring</div>
+        <div class="wide-deck">Signal detection, adverse event reporting, WHO safety databases — and how machine learning is changing the way pharmaceutical companies and regulators monitor drug safety worldwide.</div>
+        <div class="sec-meta">May 2025 · 10 min read · By Murali Krishnan M</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 9. SCIENTIFIC DATABASES -->
+  <div class="sec s-db" id="db">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">📚 Scientific Databases & Indexing</span></div>
+      <a href="first-post.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-3">
+      <a href="first-post.html" class="story-link col-story">
+        <div class="sec-cat c-db">EMBASE</div>
+        <div class="sec-story-img bg-db">📚</div>
+        <div class="sec-story-title">What is EMBASE? A Scientist's Inside View</div>
+        <div class="sec-story-deck">How the world's largest biomedical database works — from someone who indexes it every day.</div>
+        <div class="sec-meta">May 2025 · 8 min</div>
+      </a>
+      <a href="mesh-mapping-guide.html" class="story-link col-story">
+        <div class="sec-cat c-db">Indexing</div>
+        <div class="sec-story-img bg-db">🗂️</div>
+        <div class="sec-story-title">MeSH Mapping in Biomedical Indexing: A Practical Guide</div>
+        <div class="sec-story-deck">How controlled vocabulary and MeSH headings make scientific literature searchable.</div>
+        <div class="sec-meta">May 2025 · 9 min</div>
+      </a>
+      <a href="antibacterial-activity.html" class="story-link col-story">
+        <div class="sec-cat c-db">Research</div>
+        <div class="sec-story-img bg-db">🧬</div>
+        <div class="sec-story-title">Antibacterial Activity: How Results Are Measured & Indexed</div>
+        <div class="sec-story-deck">A guide to how antibacterial activity is quantified and reported in biomedical literature.</div>
+        <div class="sec-meta">May 2025 · 7 min</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 10. CAREER & EDUCATION -->
+  <div class="sec s-career" id="career">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🎓 Career & Education</span></div>
+      <a href="career-education.html" class="sec-more">More →</a>
+    </div>
+    <div class="cols-3">
+      <a href="scientific-curation-career.html" class="story-link col-story">
+        <div class="sec-cat c-career">Career Guide</div>
+        <div class="sec-story-img bg-career">🎓</div>
+        <div class="sec-story-title">Breaking Into Scientific Curation: A Realistic Career Guide</div>
+        <div class="sec-story-deck">First-hand account of the skills, companies, and path for life science graduates.</div>
+        <div class="sec-meta">May 2025 · 8 min</div>
+      </a>
+      <a href="life-science-career-india.html" class="story-link col-story">
+        <div class="sec-cat c-career">India</div>
+        <div class="sec-story-img bg-career">🇮🇳</div>
+        <div class="sec-story-title">Life Science Career Opportunities in India: A Complete 2025 Guide</div>
+        <div class="sec-story-deck">Industries, roles, salaries and how to position yourself for success in the Indian life science sector.</div>
+        <div class="sec-meta">May 2025 · 9 min</div>
+      </a>
+      <a href="govt-jobs-microbiology.html" class="story-link col-story">
+        <div class="sec-cat c-career">Govt Jobs</div>
+        <div class="sec-story-img bg-career">🏛️</div>
+        <div class="sec-story-title">Government Jobs in Microbiology: How to Apply and Qualify</div>
+        <div class="sec-story-deck">A complete guide to central and state government positions open to microbiology graduates in India.</div>
+        <div class="sec-meta">May 2025 · 10 min</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AD -->
+  <div class="ad ad-inline">Advertisement · Google AdSense 728×90</div>
+
+  <!-- 11. SCIENCE & TECHNOLOGY -->
+  <div class="sec s-tech" id="tech">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🤖 Science & Technology</span></div>
+      <a href="#newsletter" class="sec-more">Notify me →</a>
+    </div>
+    <div class="placeholder">
+      <div class="ph-icon">🤖</div>
+      <div>
+        <span class="ph-badge" style="background:var(--c-tech)">Coming Soon · Article Idea</span>
+        <div class="ph-title">How AI Is Being Used to Discover New Antibiotics — And Why It's a Breakthrough</div>
+        <div class="ph-desc">In 2024, machine learning models helped identify a new antibiotic compound capable of killing drug-resistant bacteria — something that would have taken decades using traditional screening. This article will explain how AI-driven drug discovery works, what the limitations are, and what it means for the global antimicrobial resistance crisis.</div>
+        <a href="#newsletter" class="ph-link">Subscribe to be notified →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. ASTROPHYSICS -->
+  <div class="sec s-astro" id="astro">
+    <div class="sec-head">
+      <div class="sec-head-left"><span class="sec-title">🔭 Astrophysics</span></div>
+      <a href="#newsletter" class="sec-more">Notify me →</a>
+    </div>
+    <div class="placeholder">
+      <div class="ph-icon">🌌</div>
+      <div>
+        <span class="ph-badge" style="background:var(--c-astro)">Coming Soon · Article Idea</span>
+        <div class="ph-title">Could Life Exist on Enceladus? What Scientists Found in Saturn's Ocean Moon</div>
+        <div class="ph-desc">Saturn's moon Enceladus has a liquid ocean beneath its icy crust, with hydrogen gas and complex organic molecules venting into space — precisely the conditions where microbial life might survive. NASA's Cassini mission gathered remarkable data from these plumes before its mission ended. This article will examine the astrobiology behind the findings and what future missions could reveal.</div>
+        <a href="#newsletter" class="ph-link">Subscribe to be notified →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /body-wrap-inner -->
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <div class="sb-box">
+    <div class="sb-title">Most Read</div>
+    <ul class="sb-list">
+      <li><span class="sb-num">01</span><div><div class="sb-lcat c-db">EMBASE</div><a href="first-post.html">What is EMBASE? A Scientist's Inside View</a></div></li>
+      <li><span class="sb-num">02</span><div><div class="sb-lcat c-micro">Microbiology</div><a href="turmeric-antibacterial.html">Turmeric's Antibacterial Power Explained</a></div></li>
+      <li><span class="sb-num">03</span><div><div class="sb-lcat c-lab">Lab Science</div><a href="gmp-vs-glp.html">GMP vs GLP: Key Differences</a></div></li>
+      <li><span class="sb-num">04</span><div><div class="sb-lcat c-career">Career</div><a href="scientific-curation-career.html">Breaking Into Scientific Curation</a></div></li>
+      <li><span class="sb-num">05</span><div><div class="sb-lcat c-drug">Drug Safety</div><a href="pharmacovigilance-data-science.html">Pharmacovigilance & Data Science</a></div></li>
+    </ul>
+  </div>
+
+  <div class="ad ad-sb">Advertisement<br>Google AdSense<br>300×250</div>
+
+  <div class="nl-sb">
+    <h4>Weekly Science Updates</h4>
+    <p>New articles across all 12 sections — free every week. No spam.</p>
+    <input class="nl-input" type="email" placeholder="your@email.com" />
+    <button class="nl-btn">Subscribe Free</button>
+  </div>
+
+  <div class="sb-box">
+    <div class="sb-title">All Sections</div>
+    <div class="topic-list">
+      <a href="#news"     class="topic-row">📰 Science News <span class="t-count">1</span></a>
+      <a href="#health"   class="topic-row">🏥 Health & Medicine <span class="t-count">3</span></a>
+      <a href="microbiology.html" class="topic-row">🦠 Microbiology <span class="t-count">5</span></a>
+      <a href="lab-science.html"  class="topic-row">🔬 Lab Science <span class="t-count">4</span></a>
+      <a href="#env"      class="topic-row">🌍 Environment <span class="t-count">Soon</span></a>
+      <a href="#genetics" class="topic-row">🧬 Genetics <span class="t-count">2</span></a>
+      <a href="#herbal"   class="topic-row">🌿 Natural Medicine <span class="t-count">2</span></a>
+      <a href="#drug"     class="topic-row">💊 Drug Safety <span class="t-count">1</span></a>
+      <a href="first-post.html"   class="topic-row">📚 Databases <span class="t-count">3</span></a>
+      <a href="career-education.html" class="topic-row">🎓 Career <span class="t-count">3</span></a>
+      <a href="#tech"     class="topic-row">🤖 Science & Tech <span class="t-count">Soon</span></a>
+      <a href="#astro"    class="topic-row">🔭 Astrophysics <span class="t-count">Soon</span></a>
+    </div>
+  </div>
+
+  <div class="write-box">
+    <h4>📝 Write Next</h4>
+    <p>Ready ideas for empty sections:</p>
+    <ul class="write-ideas">
+      <li>Microplastics & Soil Microbiome</li>
+      <li>AI in Antibiotic Discovery</li>
+      <li>Life on Enceladus — Saturn's Moon</li>
+      <li>CRISPR in Disease Treatment</li>
+      <li>Climate Change & Infectious Disease</li>
+    </ul>
+  </div>
+
+  <div class="ad ad-sb">Advertisement<br>Google AdSense<br>300×250</div>
+
+</aside>
+</div><!-- /body-wrap -->
+
+<!-- ABOUT -->
+<div class="about" id="about">
+  <div><div class="avatar">MK</div></div>
+  <div>
+    <div class="about-name">Murali Krishnan M</div>
+    <div class="about-role">Scientific Curator · Microbiologist · Science Writer · Coimbatore, India</div>
+    <p class="about-bio">Life science professional with 5+ years in EMBASE indexing, biomedical data curation, and microbiology. Through SciCurator I translate complex science into clear, accurate articles — from lab techniques and career guides to health research, natural medicine, astrophysics and beyond. Everything is evidence-based and free to read.</p>
+    <div class="tags">
+      <span class="tag">EMBASE Indexing</span>
+      <span class="tag">MeSH Mapping</span>
+      <span class="tag">Microbiology</span>
+      <span class="tag">GMP / GLP</span>
+      <span class="tag">Pharmacovigilance</span>
+      <span class="tag">M.Sc Microbiology</span>
+      <span class="tag">Data Curation</span>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="nl-section" id="newsletter">
+  <h2>Stay Updated on Science</h2>
+  <p>New articles across all 12 sections — delivered to your inbox free every week.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="your@email.com" />
+    <button>Subscribe →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">SciCurator</div>
+      <p class="footer-desc">Evidence-based science articles across microbiology, health, genetics, environment, astrophysics and more — by Murali Krishnan M, Coimbatore, India.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Sections</h5>
+      <ul class="footer-links">
+        <li><a href="microbiology.html">Microbiology</a></li>
+        <li><a href="lab-science.html">Lab Science</a></li>
+        <li><a href="first-post.html">EMBASE & Indexing</a></li>
+        <li><a href="career-education.html">Career & Education</a></li>
+        <li><a href="pharmacovigilance-data-science.html">Drug Safety</a></li>
+        <li><a href="systematic-review-methodology.html">Health & Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul class="footer-links">
+        <li><a href="https://linkedin.com/in/murali-krishnan-m7" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:Krishnanpollachi111@gmail.com">Email</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="mailto:Krishnanpollachi111@gmail.com">Advertise</a></li>
+        <li><a href="mailto:Krishnanpollachi111@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 SciCurator · Murali Krishnan M · Coimbatore, India</span>
+    <span style="font-size:.68rem;color:rgba(255,255,255,.25)">Ad-supported · Google AdSense</span>
+  </div>
+</footer>
+
+</body>
+</html>
