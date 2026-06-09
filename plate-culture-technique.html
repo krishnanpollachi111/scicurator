@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plate Culture Technique: A Student's Complete Guide | SciCurator</title>
+<meta name="description" content="A step-by-step student guide to plate culture technique in microbiology — media preparation, streak plating, pour plate, spread plate, incubation and colony counting.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#F5F6F8;--white:#fff;--ink:#1E2028;--muted:#6B6E7A;--border:#D4D7E0;--teal:#357A6E;--teal-lt:#EAF4F2;--navy:#1E2C3A;--c-lab:#2A5080;--gold:#B8963A;--lab-lt:#EAF0F6}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none}
+.post-hero{background:linear-gradient(135deg,#1E2C3A,#1A3050);padding:50px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-lab);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.student-badge{display:inline-block;background:#D4A84A;color:#1E2028;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.7rem;border-radius:2px;margin-left:0.5rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:1.2;max-width:720px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.5);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.2rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin:2rem 0 0.75rem;border-left:3px solid var(--c-lab);padding-left:0.8rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--c-lab);margin:1.3rem 0 0.4rem}
+article p{color:#374151;margin-bottom:1rem;font-size:0.96rem;line-height:1.8}
+.intro-text{font-size:1.04rem!important;color:var(--navy)!important;border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1.5rem!important;font-style:italic}
+.article-img{width:100%;border-radius:6px;margin:1.2rem 0;border:1px solid var(--border);overflow:hidden}
+.article-img img{width:100%;height:220px;object-fit:cover;display:block}
+.img-caption{font-size:0.75rem;color:var(--muted);text-align:center;padding:0.5rem;background:var(--paper);font-style:italic}
+
+/* STUDENT STEP BOXES */
+.step-list{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.6rem}
+.step-list li{display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 1rem;background:var(--lab-lt);border-radius:4px;border:1px solid #C8D8EC;font-size:0.93rem;color:#1E2028;line-height:1.65}
+.step-num{background:var(--c-lab);color:#fff;font-weight:700;font-size:0.78rem;padding:0.15rem 0.55rem;border-radius:2px;flex-shrink:0;align-self:flex-start;margin-top:0.1rem}
+.step-list li strong{color:var(--c-lab)}
+
+/* POINT LISTS */
+.points{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.4rem}
+.points li{display:flex;gap:0.7rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.93rem;color:#374151;line-height:1.65}
+.points li:last-child{border-bottom:none}
+.points li::before{content:"▸";color:var(--c-lab);font-size:0.9rem;flex-shrink:0;margin-top:0.05rem}
+.points li strong{color:var(--navy)}
+
+/* KEY TERM */
+.keyterm{background:var(--lab-lt);border:1px solid #C8D8EC;border-radius:3px;padding:0.9rem 1.1rem;margin:1rem 0;display:flex;gap:0.8rem;align-items:flex-start}
+.kt-icon{font-size:1.4rem;flex-shrink:0}
+.kt-label{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-lab);margin-bottom:0.2rem}
+.kt-text{font-size:0.88rem;color:#374151;line-height:1.6}
+
+/* WARNING/TIP */
+.tip{background:#EFF8EE;border:1px solid #a8d4a0;border-radius:4px;padding:0.9rem 1.1rem;margin:1rem 0}
+.tip p{margin:0;font-size:0.88rem;color:#2A5A28}
+.tip strong{color:#1E4A1C}
+.warn{background:#FEF5E7;border:1px solid #f0c060;border-radius:4px;padding:0.9rem 1.1rem;margin:1rem 0}
+.warn p{margin:0;font-size:0.88rem;color:#8B5A00}
+.warn strong{color:#6A4400}
+
+.exam-box{background:var(--navy);color:#fff;border-radius:6px;padding:1.3rem;margin:1.5rem 0}
+.exam-box h3{color:#D4A84A;font-family:'Playfair Display',serif;margin:0 0 0.7rem;font-size:1rem}
+.exam-box ul{list-style:none;margin:0}
+.exam-box li{color:rgba(255,255,255,0.82);margin-bottom:0.4rem;font-size:0.88rem;padding-left:1rem;position:relative}
+.exam-box li::before{content:"Q:";position:absolute;left:0;color:#D4A84A;font-weight:700;font-size:0.78rem}
+
+.author-box{display:flex;align-items:center;gap:1rem;background:var(--paper);border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:50px;height:50px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:var(--navy);font-size:0.9rem}.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.38rem;border-bottom:2px solid var(--c-lab)}
+.toc-list{list-style:none}.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}.toc-list li:last-child{border-bottom:none}.toc-list a{color:var(--teal);text-decoration:none}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}.related-item:last-child{border-bottom:none}
+.rel-icon{font-size:1.5rem;flex-shrink:0}.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}.rel-title:hover{color:var(--teal)}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">Sci<span>Curator</span></a><ul class="nav-links"><li><a href="index.html#lab">Lab Science</a></li><li><a href="index.html#micro">Microbiology</a></li><li><a href="index.html#newsletter">Subscribe</a></li></ul></nav>
+<div class="post-hero">
+  <div class="post-cat">Lab Science & Techniques <span class="student-badge">Student Guide</span></div>
+  <h1>Plate Culture Technique: A Complete Step-by-Step Guide for Microbiology Students</h1>
+  <div class="post-meta"><span>By Murali Krishnan M</span><span class="meta-dot"></span><span>June 2025</span><span class="meta-dot"></span><span>Beginner Friendly</span><span class="meta-dot"></span><span>11 min read</span></div>
+</div>
+<div class="layout">
+<article>
+  <p class="intro-text">Plate culture is one of the most fundamental skills in microbiology. Whether you are isolating bacteria from a clinical sample, counting colonies from food, or maintaining pure cultures in the lab — this technique is your starting point. This guide covers everything you need to know, step by step.</p>
+
+  <h2 id="what">What is Plate Culture?</h2>
+  <ul class="points">
+    <li><strong>Definition:</strong> Plate culture is the technique of growing microorganisms on the surface of a solid nutrient medium contained in a Petri dish (plate)</li>
+    <li><strong>Purpose:</strong> To isolate, identify, count, or maintain bacterial or fungal colonies</li>
+    <li><strong>Invented by:</strong> Robert Koch and Julius Richard Petri in the 1880s — a breakthrough that transformed microbiology</li>
+    <li><strong>Key principle:</strong> A single cell, when placed on solid agar, multiplies to form a visible colony — and all cells in that colony are genetically identical (a pure culture)</li>
+    <li><strong>Applications:</strong> Clinical diagnostics, food microbiology, environmental monitoring, pharmaceutical quality control, research</li>
+  </ul>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Bacteria_colonies_on_plate.jpg/640px-Bacteria_colonies_on_plate.jpg" alt="Bacterial colonies growing on agar plate in laboratory" onerror="this.parentElement.style.background='#EAF0F6';this.parentElement.style.height='160px';this.style.display='none'">
+    <div class="img-caption">Bacterial colonies growing on a nutrient agar plate — each colony originates from a single cell. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="media">Types of Culture Media</h2>
+  <ul class="points">
+    <li><strong>Nutrient Agar (NA):</strong> General purpose medium — supports growth of most non-fastidious bacteria. Contains beef extract, peptone, agar</li>
+    <li><strong>Blood Agar (BA):</strong> Contains 5–10% sheep/horse blood. Used to culture fastidious organisms and detect haemolysis patterns (alpha, beta, gamma)</li>
+    <li><strong>MacConkey Agar:</strong> Selective and differential. Selects gram-negative bacteria; differentiates lactose fermenters (pink) from non-fermenters (colourless)</li>
+    <li><strong>Mannitol Salt Agar (MSA):</strong> Selective for Staphylococcus. High salt (7.5% NaCl) inhibits most organisms; mannitol fermentation differentiates S. aureus (yellow halo)</li>
+    <li><strong>Sabouraud Dextrose Agar (SDA):</strong> Low pH (5.6) selects for fungi and yeasts — inhibits most bacteria</li>
+    <li><strong>Chocolate Agar:</strong> Heated blood agar — releases NAD and haem for fastidious organisms like Haemophilus and Neisseria</li>
+  </ul>
+
+  <div class="keyterm">
+    <span class="kt-icon">📋</span>
+    <div>
+      <div class="kt-label">Key Concept</div>
+      <div class="kt-text"><strong>Agar</strong> is a polysaccharide extracted from red algae. It melts at ~85°C and solidifies at ~42°C — critical properties that make it ideal for culture media. Bacteria cannot digest agar, so it remains solid throughout incubation.</div>
+    </div>
+  </div>
+
+  <h2 id="methods">Three Main Plating Methods</h2>
+
+  <h3>Method 1: Streak Plate Method (Isolation)</h3>
+  <p><strong>Purpose:</strong> To obtain isolated, well-separated colonies from a mixed sample — the gold standard for obtaining pure cultures.</p>
+  <ul class="step-list">
+    <li><span class="step-num">1</span>Label the bottom of the agar plate with sample name, date, and your name</li>
+    <li><span class="step-num">2</span>Sterilise the inoculating loop by flaming it until it glows red hot. Allow it to cool for 10 seconds</li>
+    <li><span class="step-num">3</span>Pick up a loopful of sample (broth culture, colony, or specimen)</li>
+    <li><span class="step-num">4</span><strong>Zone 1:</strong> Streak back and forth 4–5 times across one quarter of the plate</li>
+    <li><span class="step-num">5</span>Reflame and cool the loop. Rotate the plate 90°</li>
+    <li><span class="step-num">6</span><strong>Zone 2:</strong> Pass through the end of Zone 1 two times, then streak into fresh agar 4–5 times</li>
+    <li><span class="step-num">7</span>Reflame, cool, rotate 90° again</li>
+    <li><span class="step-num">8</span><strong>Zone 3:</strong> Pass through end of Zone 2, streak into fresh agar. Continue similarly for Zone 4</li>
+    <li><span class="step-num">9</span>Invert the plate (agar side up) and incubate at 37°C for 18–24 hours</li>
+  </ul>
+
+  <div class="tip"><p><strong>💡 Student Tip:</strong> Inverting the plate prevents condensation water from dripping onto colonies, which would cause spreading and contamination. Always incubate inverted.</p></div>
+
+  <h3>Method 2: Spread Plate Method (Quantitative)</h3>
+  <p><strong>Purpose:</strong> To count the number of viable bacteria in a sample — used extensively in food microbiology and water testing.</p>
+  <ul class="step-list">
+    <li><span class="step-num">1</span>Prepare serial dilutions of your sample (10⁻¹, 10⁻², 10⁻³... up to 10⁻⁶ or further)</li>
+    <li><span class="step-num">2</span>Pipette exactly <strong>0.1 mL</strong> of the appropriate dilution onto the centre of a pre-dried agar plate</li>
+    <li><span class="step-num">3</span>Sterilise a glass spreader (Drigalski spatula) by dipping in alcohol and flaming — allow to cool</li>
+    <li><span class="step-num">4</span>Spread the inoculum evenly across the entire agar surface using gentle, circular/back-and-forth motions</li>
+    <li><span class="step-num">5</span>Allow to absorb for 5 minutes, then invert and incubate</li>
+    <li><span class="step-num">6</span>Count colonies after incubation. <strong>Countable range: 30–300 colonies per plate</strong></li>
+    <li><span class="step-num">7</span>Calculate: CFU/mL = colony count ÷ (volume plated × dilution factor)</li>
+  </ul>
+
+  <h3>Method 3: Pour Plate Method (Quantitative)</h3>
+  <p><strong>Purpose:</strong> Alternative quantitative method — can detect anaerobes and organisms that grow within the agar.</p>
+  <ul class="step-list">
+    <li><span class="step-num">1</span>Prepare serial dilutions of sample</li>
+    <li><span class="step-num">2</span>Pipette <strong>1 mL</strong> of sample into a sterile, empty Petri dish</li>
+    <li><span class="step-num">3</span>Pour approximately 15–20 mL of cooled (but still liquid) agar — held at <strong>45–50°C</strong> — into the dish</li>
+    <li><span class="step-num">4</span>Gently swirl the plate in a figure-8 motion to mix sample and agar evenly</li>
+    <li><span class="step-num">5</span>Allow to solidify completely on a flat surface (5–10 min)</li>
+    <li><span class="step-num">6</span>Invert and incubate. Colonies grow both on surface and within agar</li>
+  </ul>
+
+  <div class="warn"><p><strong>⚠️ Warning:</strong> If agar is too hot (&gt;55°C) when poured, it will kill the bacteria. If too cool (&lt;42°C), it solidifies before mixing. Temperature control is critical in the pour plate method.</p></div>
+
+  <h2 id="colonies">Reading and Describing Colonies</h2>
+  <p>After incubation, describe each colony type using these standard characteristics:</p>
+  <ul class="points">
+    <li><strong>Size:</strong> Measure in mm (pinpoint &lt;1mm, small 1–2mm, medium 2–5mm, large &gt;5mm)</li>
+    <li><strong>Shape:</strong> Circular, irregular, filamentous, rhizoid, spindle</li>
+    <li><strong>Margin/Edge:</strong> Entire (smooth), undulate (wavy), lobate, erose (irregular), filiform</li>
+    <li><strong>Elevation:</strong> Flat, raised, convex, umbonate (central raised knob), crateriform</li>
+    <li><strong>Surface:</strong> Smooth, rough, wrinkled, glistening, dull</li>
+    <li><strong>Colour/Pigmentation:</strong> White, cream, yellow, orange, pink — note any diffusible pigment into agar</li>
+    <li><strong>Transparency:</strong> Opaque, translucent, transparent</li>
+    <li><strong>Consistency:</strong> Butyrous (buttery), viscid, membranous, brittle — test with inoculating loop</li>
+    <li><strong>Odour:</strong> Some species have characteristic smells (Pseudomonas — grape-like; Proteus — fishy)</li>
+  </ul>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Streak_plate.jpg/640px-Streak_plate.jpg" alt="Streak plate showing isolated bacterial colonies" onerror="this.parentElement.style.background='#EAF0F6';this.parentElement.style.height='140px';this.style.display='none'">
+    <div class="img-caption">A correctly streaked plate showing isolated single colonies in zones 3 and 4. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="errors">Common Mistakes & How to Avoid Them</h2>
+  <ul class="points">
+    <li><strong>Too much inoculum:</strong> Colonies grow into each other (confluent growth) — no isolation possible. Always streak away from the previous zone.</li>
+    <li><strong>Not cooling the loop:</strong> Hot loop kills bacteria. Always wait 10 seconds after flaming before picking colonies.</li>
+    <li><strong>Plate too wet (condensation):</strong> Colonies spread and merge. Pre-dry plates by inverting with lid ajar in incubator for 30 min before use.</li>
+    <li><strong>Not streaking through the previous zone:</strong> Defeats the purpose of dilution by streaking. Always pass 2–3 times through end of the previous zone.</li>
+    <li><strong>Contamination:</strong> Never leave plates open unnecessarily. Work near a flame or in a laminar flow hood.</li>
+    <li><strong>Agar too hot in pour plate:</strong> Kills bacteria and gives falsely low counts.</li>
+    <li><strong>Incubating right-side up:</strong> Condensation drops ruin colonies. Always incubate inverted.</li>
+  </ul>
+
+  <div class="exam-box">
+    <h3>🎓 Exam Practice Questions</h3>
+    <ul>
+      <li>Why is the plate inverted during incubation?</li>
+      <li>What is the countable range of colonies for quantitative methods and why?</li>
+      <li>What is the difference between selective and differential media? Give an example of each.</li>
+      <li>Why is agar used instead of gelatin as the solidifying agent in culture media?</li>
+      <li>A spread plate of a 10⁻⁵ dilution gives 150 colonies. What is the original count in CFU/mL?</li>
+      <li>What is the principle behind the streak plate method? Why does the colony number decrease from zone 1 to zone 4?</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div><div class="author-name">Murali Krishnan M</div><div class="author-bio">Scientific Curator with 5+ years in EMBASE indexing and biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education.</div></div>
+  </div>
+</article>
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#what">What is Plate Culture?</a></li>
+      <li><a href="#media">Types of Culture Media</a></li>
+      <li><a href="#methods">3 Plating Methods</a></li>
+      <li><a href="#colonies">Reading Colonies</a></li>
+      <li><a href="#errors">Common Mistakes</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item"><span class="rel-icon">🧬</span><div><div class="rel-cat">Lab Science</div><a href="western-blotting-guide.html" class="rel-title">Western Blotting: Step-by-Step Student Guide</a></div></div>
+    <div class="related-item"><span class="rel-icon">🔬</span><div><div class="rel-cat">Lab Science</div><a href="gmp-vs-glp.html" class="rel-title">GMP vs GLP: What Every Lab Professional Must Know</a></div></div>
+    <div class="related-item"><span class="rel-icon">🦠</span><div><div class="rel-cat">Microbiology</div><a href="microbial-culture-isolation.html" class="rel-title">Microbial Culture and Isolation Techniques</a></div></div>
+  </div>
+</aside>
+</div>
+<footer><p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p></footer>
+</body></html>

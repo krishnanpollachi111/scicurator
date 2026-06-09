@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Western Blotting: A Complete Step-by-Step Student Guide | SciCurator</title>
+<meta name="description" content="A student-focused step-by-step guide to Western blotting — from sample preparation and SDS-PAGE to transfer, blocking, antibody incubation and detection.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#F5F6F8;--white:#fff;--ink:#1E2028;--muted:#6B6E7A;--border:#D4D7E0;--teal:#357A6E;--teal-lt:#EAF4F2;--navy:#1E2C3A;--c-lab:#2A5080;--gold:#B8963A;--lab-lt:#EAF0F6}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none}
+.post-hero{background:linear-gradient(135deg,#1E2C3A,#1A3050);padding:50px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-lab);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.student-badge{display:inline-block;background:#D4A84A;color:#1E2028;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.7rem;border-radius:2px;margin-left:0.5rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:1.2;max-width:720px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.5);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.2rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin:2rem 0 0.75rem;border-left:3px solid var(--c-lab);padding-left:0.8rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--c-lab);margin:1.3rem 0 0.4rem}
+article p{color:#374151;margin-bottom:1rem;font-size:0.96rem;line-height:1.8}
+.intro-text{font-size:1.04rem!important;color:var(--navy)!important;border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1.5rem!important;font-style:italic}
+.article-img{width:100%;border-radius:6px;margin:1.2rem 0;border:1px solid var(--border);overflow:hidden}
+.article-img img{width:100%;height:220px;object-fit:cover;display:block}
+.img-caption{font-size:0.75rem;color:var(--muted);text-align:center;padding:0.5rem;background:var(--paper);font-style:italic}
+.step-list{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.6rem}
+.step-list li{display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 1rem;background:var(--lab-lt);border-radius:4px;border:1px solid #C8D8EC;font-size:0.93rem;color:#1E2028;line-height:1.65}
+.step-num{background:var(--c-lab);color:#fff;font-weight:700;font-size:0.78rem;padding:0.15rem 0.55rem;border-radius:2px;flex-shrink:0;align-self:flex-start;margin-top:0.1rem}
+.step-list li strong{color:var(--c-lab)}
+.points{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.4rem}
+.points li{display:flex;gap:0.7rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.93rem;color:#374151;line-height:1.65}
+.points li:last-child{border-bottom:none}
+.points li::before{content:"▸";color:var(--c-lab);font-size:0.9rem;flex-shrink:0;margin-top:0.05rem}
+.points li strong{color:var(--navy)}
+.keyterm{background:var(--lab-lt);border:1px solid #C8D8EC;border-radius:3px;padding:0.9rem 1.1rem;margin:1rem 0;display:flex;gap:0.8rem;align-items:flex-start}
+.kt-icon{font-size:1.4rem;flex-shrink:0}.kt-label{font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-lab);margin-bottom:0.2rem}
+.kt-text{font-size:0.88rem;color:#374151;line-height:1.6}
+.tip{background:#EFF8EE;border:1px solid #a8d4a0;border-radius:4px;padding:0.9rem 1.1rem;margin:1rem 0}
+.tip p{margin:0;font-size:0.88rem;color:#2A5A28}.tip strong{color:#1E4A1C}
+.warn{background:#FEF5E7;border:1px solid #f0c060;border-radius:4px;padding:0.9rem 1.1rem;margin:1rem 0}
+.warn p{margin:0;font-size:0.88rem;color:#8B5A00}.warn strong{color:#6A4400}
+.stage-header{background:var(--c-lab);color:#fff;padding:0.6rem 1rem;border-radius:4px 4px 0 0;font-weight:600;font-size:0.88rem;display:flex;align-items:center;gap:0.5rem;margin-top:1.5rem}
+.stage-body{background:var(--lab-lt);border:1px solid #C8D8EC;border-top:none;border-radius:0 0 4px 4px;padding:1rem;margin-bottom:0.5rem}
+.exam-box{background:var(--navy);color:#fff;border-radius:6px;padding:1.3rem;margin:1.5rem 0}
+.exam-box h3{color:#D4A84A;font-family:'Playfair Display',serif;margin:0 0 0.7rem;font-size:1rem}
+.exam-box ul{list-style:none;margin:0}
+.exam-box li{color:rgba(255,255,255,0.82);margin-bottom:0.4rem;font-size:0.88rem;padding-left:1rem;position:relative}
+.exam-box li::before{content:"Q:";position:absolute;left:0;color:#D4A84A;font-weight:700;font-size:0.78rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:var(--paper);border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:50px;height:50px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:var(--navy);font-size:0.9rem}.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.38rem;border-bottom:2px solid var(--c-lab)}
+.toc-list{list-style:none}.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}.toc-list li:last-child{border-bottom:none}.toc-list a{color:var(--teal);text-decoration:none}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}.related-item:last-child{border-bottom:none}
+.rel-icon{font-size:1.5rem;flex-shrink:0}.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}.rel-title:hover{color:var(--teal)}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">Sci<span>Curator</span></a><ul class="nav-links"><li><a href="index.html#lab">Lab Science</a></li><li><a href="index.html#micro">Microbiology</a></li><li><a href="index.html#newsletter">Subscribe</a></li></ul></nav>
+<div class="post-hero">
+  <div class="post-cat">Lab Science & Techniques <span class="student-badge">Student Guide</span></div>
+  <h1>Western Blotting: A Complete Step-by-Step Procedure Guide for Students</h1>
+  <div class="post-meta"><span>By Murali Krishnan M</span><span class="meta-dot"></span><span>June 2025</span><span class="meta-dot"></span><span>Intermediate Level</span><span class="meta-dot"></span><span>12 min read</span></div>
+</div>
+<div class="layout">
+<article>
+  <p class="intro-text">Western blotting (immunoblotting) is one of the most widely used techniques in molecular biology and biochemistry. It detects specific proteins in a sample using antibodies. Understanding it step-by-step — not just memorising it — is what separates good students from great ones.</p>
+
+  <h2 id="overview">What is Western Blotting?</h2>
+  <ul class="points">
+    <li><strong>Definition:</strong> A technique used to detect specific proteins in a complex sample by separating them by size, transferring to a membrane, and probing with antibodies</li>
+    <li><strong>Named after:</strong> W. Neal Burnette (1981), who coined "Western blot" as a play on the "Southern blot" (DNA) and "Northern blot" (RNA) techniques</li>
+    <li><strong>Based on:</strong> SDS-PAGE (gel electrophoresis) for separation + antibody-antigen interaction for detection</li>
+    <li><strong>Used for:</strong> HIV diagnosis (confirmatory test), protein expression studies, COVID-19 serology, cancer biomarker research, food safety testing</li>
+    <li><strong>Key advantage:</strong> Can detect a single specific protein out of thousands in a complex mixture</li>
+    <li><strong>Time required:</strong> Typically 2–3 days for a complete run from sample to result</li>
+  </ul>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Western_blot_01.jpg/640px-Western_blot_01.jpg" alt="Western blot result showing protein bands on membrane" onerror="this.parentElement.style.background='#EAF0F6';this.parentElement.style.height='160px';this.style.display='none'">
+    <div class="img-caption">A western blot result showing protein bands detected by antibodies — darker bands indicate higher protein amounts. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="principle">The Underlying Principle</h2>
+  <ul class="points">
+    <li><strong>Step 1 — Separation:</strong> Proteins are separated by molecular weight using SDS-PAGE. SDS (sodium dodecyl sulphate) denatures proteins and gives them a uniform negative charge, so they migrate through the gel based on size alone — smaller proteins move faster</li>
+    <li><strong>Step 2 — Transfer:</strong> Separated proteins are transferred from the gel to a solid membrane (PVDF or nitrocellulose) using an electric current — this is the "blotting" step</li>
+    <li><strong>Step 3 — Blocking:</strong> Non-specific binding sites on the membrane are blocked (usually with milk or BSA) to prevent antibodies from sticking non-specifically</li>
+    <li><strong>Step 4 — Antibody probing:</strong> A primary antibody specific to the target protein is applied, binds to its antigen, then a secondary antibody (carrying a detection label) binds to the primary antibody</li>
+    <li><strong>Step 5 — Detection:</strong> The label on the secondary antibody (enzyme or fluorophore) produces a signal that is visualised as a band at the molecular weight of the target protein</li>
+  </ul>
+
+  <div class="keyterm">
+    <span class="kt-icon">🧪</span>
+    <div>
+      <div class="kt-label">Key Concept</div>
+      <div class="kt-text"><strong>SDS (Sodium Dodecyl Sulphate)</strong> is a detergent that binds to proteins at a constant ratio (~1.4g SDS per gram of protein). This coats all proteins with negative charge proportional to their mass, ensuring migration through the gel is based on size — not on the protein's natural charge or shape.</div>
+    </div>
+  </div>
+
+  <h2 id="procedure">Step-by-Step Procedure</h2>
+
+  <div class="stage-header">🔬 STAGE 1: Sample Preparation</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span>Lyse cells using appropriate lysis buffer (RIPA buffer for total protein extraction) on ice</li>
+      <li><span class="step-num">2</span>Centrifuge at 12,000–14,000 × g for 10–15 minutes at 4°C to remove cell debris</li>
+      <li><span class="step-num">3</span>Collect the supernatant (protein lysate)</li>
+      <li><span class="step-num">4</span><strong>Quantify protein concentration</strong> using Bradford assay, BCA assay, or Lowry method</li>
+      <li><span class="step-num">5</span>Mix equal amounts of protein (typically 20–50 µg per lane) with <strong>Laemmli sample buffer</strong> (contains SDS, β-mercaptoethanol, glycerol, bromophenol blue)</li>
+      <li><span class="step-num">6</span>Boil at 95–100°C for 5 minutes to fully denature proteins and reduce disulfide bonds</li>
+      <li><span class="step-num">7</span>Cool on ice and centrifuge briefly before loading</li>
+    </ul>
+    <div class="tip"><p><strong>💡 Tip:</strong> β-mercaptoethanol (BME) reduces disulfide bonds between cysteine residues, ensuring proteins are fully linear. This is essential for accurate size separation.</p></div>
+  </div>
+
+  <div class="stage-header">⚡ STAGE 2: SDS-PAGE (Gel Electrophoresis)</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span>Cast the gel: pour <strong>resolving gel</strong> first (8–15% acrylamide depending on target protein size — higher % for smaller proteins)</li>
+      <li><span class="step-num">2</span>Allow resolving gel to polymerise (~30 min), then pour <strong>stacking gel</strong> (4–5% acrylamide) on top with comb inserted</li>
+      <li><span class="step-num">3</span>Once stacking gel is set, remove comb. Place gel in electrophoresis tank with <strong>Tris-glycine running buffer</strong></li>
+      <li><span class="step-num">4</span>Load <strong>molecular weight marker (ladder)</strong> in first lane — this gives size reference for your bands</li>
+      <li><span class="step-num">5</span>Load samples carefully into wells using a gel loading tip</li>
+      <li><span class="step-num">6</span>Run at <strong>80V through stacking gel</strong>, then <strong>120V through resolving gel</strong> until dye front reaches the bottom</li>
+      <li><span class="step-num">7</span>Total run time: approximately 1–2 hours</li>
+    </ul>
+    <div class="warn"><p><strong>⚠️ Important:</strong> The stacking gel concentrates all proteins into a sharp starting band regardless of volume differences. The resolving gel is where actual size separation occurs. Never skip the two-gel system.</p></div>
+  </div>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SDS_polyacrylamide_gel_electrophoresis.jpg/640px-SDS_polyacrylamide_gel_electrophoresis.jpg" alt="SDS-PAGE gel electrophoresis in laboratory" onerror="this.parentElement.style.background='#EAF0F6';this.parentElement.style.height='150px';this.style.display='none'">
+    <div class="img-caption">SDS-PAGE gel showing protein bands separated by molecular weight. Image: Wikimedia Commons</div>
+  </div>
+
+  <div class="stage-header">📋 STAGE 3: Transfer (Blotting)</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span>Activate <strong>PVDF membrane</strong> by soaking in methanol for 15 seconds, then equilibrate in transfer buffer (nitrocellulose membrane does not need methanol activation)</li>
+      <li><span class="step-num">2</span>Build the transfer "sandwich" in this exact order (anode to cathode): <strong>+ Anode → Fibre pad → Filter paper → Membrane → Gel → Filter paper → Fibre pad → Cathode −</strong></li>
+      <li><span class="step-num">3</span>Remove all air bubbles by rolling a glass rod over each layer — bubbles prevent transfer</li>
+      <li><span class="step-num">4</span>Transfer at <strong>100V for 60–90 minutes</strong> (wet transfer) or 25V overnight (semi-dry transfer options vary by system)</li>
+      <li><span class="step-num">5</span>Confirm transfer success: reversibly stain membrane with Ponceau S (red staining of bands) or stain gel to check protein depletion</li>
+    </ul>
+    <div class="keyterm"><span class="kt-icon">📌</span><div><div class="kt-label">Why PVDF or Nitrocellulose?</div><div class="kt-text">These membranes bind proteins non-covalently through hydrophobic interactions. PVDF has higher protein binding capacity and mechanical strength. Nitrocellulose is more fragile but gives lower background. Choice depends on protein of interest and detection method.</div></div></div>
+  </div>
+
+  <div class="stage-header">🛡️ STAGE 4: Blocking</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span>Rinse membrane in <strong>TBST</strong> (Tris-buffered saline + 0.1% Tween-20) for 5 minutes</li>
+      <li><span class="step-num">2</span>Incubate in <strong>5% non-fat dry milk in TBST</strong> OR <strong>5% BSA in TBST</strong> for 1 hour at room temperature with gentle rocking</li>
+      <li><span class="step-num">3">Use milk for most antibodies; use BSA if probing for phosphorylated proteins (milk contains casein which is phosphorylated and interferes)</li>
+      <li><span class="step-num">4</span>Blocking saturates non-specific protein-binding sites on the membrane — preventing antibodies from sticking everywhere and creating high background</li>
+    </ul>
+  </div>
+
+  <div class="stage-header">🔎 STAGE 5: Antibody Incubation</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span>Dilute <strong>primary antibody</strong> in blocking buffer (e.g., 1:1000) — consult datasheet for optimal dilution</li>
+      <li><span class="step-num">2</span>Incubate membrane with primary antibody: 2 hours at room temperature OR <strong>overnight at 4°C</strong> (preferred — gives stronger, more specific signal)</li>
+      <li><span class="step-num">3</span>Wash membrane 3× with TBST, 10 minutes each — removes unbound primary antibody</li>
+      <li><span class="step-num">4</span>Dilute <strong>secondary antibody</strong> in blocking buffer (e.g., 1:5000–1:10000). Secondary must match the species of the primary antibody (e.g., if primary is rabbit anti-human, use anti-rabbit secondary)</li>
+      <li><span class="step-num">5</span>Incubate with secondary antibody for 1 hour at room temperature</li>
+      <li><span class="step-num">6</span>Wash membrane 3× with TBST, 10 minutes each</li>
+    </ul>
+    <div class="tip"><p><strong>💡 Key Concept:</strong> The primary antibody recognises your target protein (antigen-specific). The secondary antibody recognises the primary antibody and carries the detection label (usually HRP enzyme or fluorophore). This indirect detection amplifies the signal significantly.</p></div>
+  </div>
+
+  <div class="stage-header">✨ STAGE 6: Detection & Visualisation</div>
+  <div class="stage-body">
+    <ul class="step-list">
+      <li><span class="step-num">1</span><strong>ECL (Enhanced Chemiluminescence):</strong> Most common. HRP enzyme on secondary antibody reacts with ECL substrate to produce light. Expose membrane to X-ray film or use a digital imager</li>
+      <li><span class="step-num">2</span>Apply ECL reagent evenly to membrane surface, incubate 1–5 minutes</li>
+      <li><span class="step-num">3</span>In darkroom: place membrane on X-ray film, expose for 30 seconds to 5 minutes, develop film</li>
+      <li><span class="step-num">4">Bands appear at the molecular weight of your target protein — compare position to the ladder to confirm size</li>
+      <li><span class="step-num">5</span><strong>Densitometry:</strong> Use ImageJ or similar software to quantify band intensity for relative protein expression analysis</li>
+      <li><span class="step-num">6</span><strong>Loading control:</strong> Always probe for a housekeeping protein (β-actin, GAPDH, tubulin) to confirm equal loading across lanes</li>
+    </ul>
+  </div>
+
+  <h2 id="troubleshoot">Troubleshooting Common Problems</h2>
+  <ul class="points">
+    <li><strong>No bands visible:</strong> Primary or secondary antibody concentration too low; protein not transferred; wrong antibody species; protein degraded — check antibody datasheets and include positive control</li>
+    <li><strong>High background (bands everywhere):</strong> Blocking insufficient; antibody concentration too high; washing steps too short — increase blocking time, reduce antibody concentration, wash longer</li>
+    <li><strong>Band at wrong molecular weight:</strong> Post-translational modifications (glycosylation, phosphorylation) alter apparent MW; protein may run differently under denaturing conditions — always verify with positive control</li>
+    <li><strong>Smeared bands:</strong> Too much protein loaded; gel ran too fast; sample not fully denatured — reduce protein load, slow down run voltage</li>
+    <li><strong>Bands only in some lanes:</strong> Uneven loading; pipetting error; bubbles during transfer — recheck quantification and transfer sandwich</li>
+    <li><strong>White bands on dark background (overexposed):</strong> Too much antibody or too much ECL — reduce antibody concentration or exposure time</li>
+  </ul>
+
+  <div class="exam-box">
+    <h3>🎓 Exam Practice Questions</h3>
+    <ul>
+      <li>What is the role of SDS in Western blotting? Why is it added?</li>
+      <li>Why is β-mercaptoethanol added to the sample buffer?</li>
+      <li>What is the purpose of the stacking gel in SDS-PAGE?</li>
+      <li>Why must the transfer sandwich be assembled in a specific order?</li>
+      <li>Why should BSA be used instead of milk when probing for phosphoproteins?</li>
+      <li>What is the role of the secondary antibody? What is the advantage of using it over a directly labelled primary?</li>
+      <li>What is a loading control and why is it essential?</li>
+      <li>Differentiate between Western blot, Northern blot, and Southern blot.</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div><div class="author-name">Murali Krishnan M</div><div class="author-bio">Scientific Curator with 5+ years in EMBASE indexing and biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education.</div></div>
+  </div>
+</article>
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#overview">What is Western Blotting?</a></li>
+      <li><a href="#principle">The Principle</a></li>
+      <li><a href="#procedure">Step-by-Step Procedure</a></li>
+      <li><a href="#troubleshoot">Troubleshooting</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item"><span class="rel-icon">🧫</span><div><div class="rel-cat">Lab Science</div><a href="plate-culture-technique.html" class="rel-title">Plate Culture Technique: Student Guide</a></div></div>
+    <div class="related-item"><span class="rel-icon">🔬</span><div><div class="rel-cat">Lab Science</div><a href="gmp-vs-glp.html" class="rel-title">GMP vs GLP: What Every Lab Pro Must Know</a></div></div>
+    <div class="related-item"><span class="rel-icon">🧬</span><div><div class="rel-cat">Genetics</div><a href="pcr-basics-microbiology.html" class="rel-title">PCR in Microbiology: Principles & Applications</a></div></div>
+  </div>
+</aside>
+</div>
+<footer><p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p></footer>
+</body></html>

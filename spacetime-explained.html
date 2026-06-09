@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space-Time Explained: Einstein's Revolutionary Idea | SciCurator</title>
+<meta name="description" content="What is space-time? A clear explanation of Einstein's revolutionary concept — the four-dimensional fabric of the universe, gravity, and how time itself bends.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#0D0F1A;--card:#141828;--white:#fff;--ink:#E8EAF0;--muted:#8A8FA8;--border:#252840;--teal:#4AADA0;--navy:#070A14;--c-astro:#9B6FD4;--gold:#D4A84A}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);font-size:0.82rem;text-decoration:none}
+.nav-links a:hover{color:#fff}
+.post-hero{background:linear-gradient(160deg,#070A14 0%,#1A0A30 50%,#0A1A2A 100%);padding:60px 5%;color:#fff;text-align:center;position:relative;overflow:hidden}
+.post-hero::before{content:'✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦';position:absolute;top:1rem;left:0;right:0;font-size:0.6rem;color:rgba(255,255,255,0.15);letter-spacing:0.5em}
+.post-cat{display:inline-block;background:var(--c-astro);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);line-height:1.18;max-width:720px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.45);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.25);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2.2rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.42rem;color:#fff;margin:2rem 0 0.75rem;border-left:3px solid var(--c-astro);padding-left:0.8rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--teal);margin:1.3rem 0 0.4rem}
+article p{color:#C8CADC;margin-bottom:1.1rem;font-size:0.96rem;line-height:1.82}
+article ul{margin:0.6rem 0 1.1rem 1.4rem}
+article li{color:#C8CADC;font-size:0.96rem;margin-bottom:0.55rem;line-height:1.7}
+.intro-text{font-size:1.04rem!important;color:#E8EAF0!important;border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1.5rem!important;font-style:italic}
+.article-img{width:100%;border-radius:6px;margin:1.2rem 0;border:1px solid var(--border);overflow:hidden}
+.article-img img{width:100%;height:230px;object-fit:cover;display:block}
+.img-caption{font-size:0.75rem;color:var(--muted);text-align:center;padding:0.5rem;font-style:italic}
+.concept-box{background:#0A0E1E;border:1px solid var(--c-astro);border-radius:4px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.concept-box p{margin:0;color:#D8D0F0!important;font-size:0.9rem!important}
+.concept-box strong{color:var(--c-astro)}
+.analogy{background:#0F1220;border-left:3px solid var(--gold);padding:1rem 1.3rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.analogy p{margin:0;color:#E0D8B0!important;font-size:0.9rem!important;font-style:italic}
+.takeaway{background:linear-gradient(135deg,#1A0A30,#0A1A30);border:1px solid var(--c-astro);border-radius:6px;padding:1.4rem;margin:1.5rem 0}
+.takeaway h3{color:var(--gold);font-family:'Playfair Display',serif;margin:0 0 0.7rem;border:none!important;padding:0!important}
+.takeaway li{color:rgba(255,255,255,0.82);margin-bottom:0.35rem;font-size:0.9rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:#0A0E1E;border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:50px;height:50px;background:var(--c-astro);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:#fff;font-size:0.9rem}
+.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:#fff;margin-bottom:0.8rem;padding-bottom:0.38rem;border-bottom:2px solid var(--c-astro)}
+.toc-list{list-style:none}
+.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--teal);text-decoration:none}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}
+.related-item:last-child{border-bottom:none}
+.rel-icon{font-size:1.5rem;flex-shrink:0}
+.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}
+.rel-title:hover{color:var(--teal)}
+footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem;border-top:1px solid var(--border)}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Sci<span>Curator</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#astro">Astrophysics</a></li>
+    <li><a href="index.html#micro">Microbiology</a></li>
+    <li><a href="index.html#newsletter">Subscribe</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <div class="post-cat">Astrophysics</div>
+  <h1>Space-Time Explained: Einstein's Most Revolutionary Idea</h1>
+  <div class="post-meta">
+    <span>By Murali Krishnan M</span><span class="meta-dot"></span>
+    <span>June 2025</span><span class="meta-dot"></span>
+    <span>10 min read</span>
+  </div>
+</div>
+<div class="layout">
+<article>
+  <p class="intro-text">Time slows down near a black hole. GPS satellites must be corrected for relativistic effects or they'd be off by kilometres every day. These aren't science fiction — they are consequences of Einstein's concept of space-time. Here's how it works.</p>
+
+  <h2 id="before">Before Einstein: The Old Picture</h2>
+  <p>For 200 years after Newton, physicists thought of space and time as completely separate. Space was the fixed, three-dimensional stage on which events happened. Time was a universal clock ticking at the same rate everywhere in the universe. This seemed obvious — and it was spectacularly wrong.</p>
+  <p>In the late 1800s, experiments began revealing cracks. The speed of light appeared to be the same regardless of the motion of the observer — something impossible in Newton's framework. Something fundamental had to change.</p>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Resolution_of_the_Twin_Paradox.png/640px-Resolution_of_the_Twin_Paradox.png" alt="Space-time diagram showing relativistic effects" onerror="this.parentElement.style.background='#141828';this.parentElement.style.height='150px';this.style.display='none'">
+    <div class="img-caption">A space-time diagram showing how objects move through four dimensions. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="special">Special Relativity: Merging Space and Time</h2>
+  <p>In 1905, Einstein's Special Theory of Relativity made a stunning claim: space and time are not separate — they are two aspects of a single four-dimensional continuum called <strong>space-time</strong>.</p>
+  <ul>
+    <li>Every event in the universe has four coordinates: three spatial (x, y, z) and one temporal (t)</li>
+    <li>The speed of light (c = 299,792,458 m/s) is the universal speed limit — nothing with mass can reach it</li>
+    <li>Observers moving relative to each other experience time differently — <strong>time dilation</strong></li>
+    <li>Moving clocks run slower. A clock aboard a fast-moving spacecraft ticks more slowly than one on Earth</li>
+  </ul>
+
+  <div class="concept-box">
+    <p><strong>Time Dilation Formula:</strong> t' = t / √(1 - v²/c²) — where t is time measured at rest, v is the velocity of the moving object, and c is the speed of light. As v approaches c, t' approaches infinity. At the speed of light, time would stop entirely.</p>
+  </div>
+
+  <h2 id="general">General Relativity: Gravity Curves Space-Time</h2>
+  <p>In 1915, Einstein went further with General Relativity — perhaps the most beautiful theory in physics. His key insight: <strong>gravity is not a force</strong>. It is the curvature of space-time caused by mass and energy.</p>
+
+  <div class="analogy">
+    <p>🎱 <strong>The rubber sheet analogy:</strong> Imagine space-time as a stretched rubber sheet. Place a bowling ball (the Sun) on it — the sheet curves. Roll a marble (the Earth) near the bowling ball — it follows the curved surface, orbiting the bowling ball. This is gravity: not a pull, but curved geometry.</p>
+  </div>
+
+  <ul>
+    <li>Massive objects — stars, black holes — warp the fabric of space-time around them</li>
+    <li>Objects follow the straightest possible path (a <em>geodesic</em>) through curved space-time — this appears as gravitational attraction</li>
+    <li>Light itself follows these curved paths — <strong>gravitational lensing</strong> bends light around massive objects</li>
+    <li>Time passes more slowly in stronger gravitational fields — <strong>gravitational time dilation</strong></li>
+  </ul>
+
+  <h2 id="evidence">Real-World Evidence</h2>
+  <p>Einstein's theory wasn't just mathematically elegant — it made specific, testable predictions that have been confirmed repeatedly:</p>
+  <ul>
+    <li><strong>GPS satellites (1973–present):</strong> GPS clocks run fast by 38 microseconds per day due to relativistic effects. Without correction using Einstein's equations, GPS would be inaccurate by 11 km per day.</li>
+    <li><strong>Gravitational lensing (confirmed 1919):</strong> During a solar eclipse, Arthur Eddington measured starlight bending around the Sun exactly as Einstein predicted — making Einstein world-famous overnight.</li>
+    <li><strong>Gravitational waves (detected 2015):</strong> LIGO detected ripples in space-time itself — produced by two black holes merging 1.3 billion light-years away. Einstein predicted these in 1916.</li>
+    <li><strong>Black hole image (2019):</strong> The Event Horizon Telescope captured the first image of a black hole shadow — consistent with general relativity's predictions.</li>
+    <li><strong>Gravitational redshift:</strong> Light climbing out of a gravitational well loses energy and shifts toward longer wavelengths — confirmed with extraordinary precision.</li>
+  </ul>
+
+  <h2 id="blackholes">Black Holes: Space-Time at its Extreme</h2>
+  <p>When a star collapses with sufficient mass, it creates a singularity — a point of infinite density — surrounded by an <strong>event horizon</strong>. Beyond this boundary, space-time is so curved that even light cannot escape.</p>
+  <ul>
+    <li>At the event horizon, time dilation becomes infinite — a distant observer watching an object fall in would see it frozen at the horizon forever</li>
+    <li>The object itself would cross the event horizon in finite proper time — feeling nothing unusual at that moment</li>
+    <li>Tidal forces (spaghettification) would stretch any infalling object vertically and compress it horizontally</li>
+    <li>Hawking radiation: Stephen Hawking showed black holes slowly evaporate by emitting thermal radiation — a quantum mechanical effect at the boundary of space-time</li>
+  </ul>
+
+  <div class="takeaway">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Space and time are not separate — they form a single four-dimensional space-time</li>
+      <li>The speed of light is the universal speed limit — constant for all observers</li>
+      <li>Moving clocks run slower: time dilation is a real, measurable effect</li>
+      <li>Gravity is the curvature of space-time by mass — not a force</li>
+      <li>GPS must be corrected for relativistic effects daily — space-time isn't theoretical</li>
+      <li>Gravitational waves, confirmed in 2015, are literal ripples in the fabric of space-time</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div>
+      <div class="author-name">Murali Krishnan M</div>
+      <div class="author-bio">Scientific Curator, M.Sc Microbiology. Writing at the intersection of life sciences and the broader scientific universe.</div>
+    </div>
+  </div>
+</article>
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#before">Before Einstein</a></li>
+      <li><a href="#special">Special Relativity</a></li>
+      <li><a href="#general">General Relativity</a></li>
+      <li><a href="#evidence">Real-World Evidence</a></li>
+      <li><a href="#blackholes">Black Holes</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item"><span class="rel-icon">🌌</span><div><div class="rel-cat">Astrophysics</div><a href="gravity-explained.html" class="rel-title">Gravity: From Newton's Apple to Einstein's Curves</a></div></div>
+    <div class="related-item"><span class="rel-icon">🧬</span><div><div class="rel-cat">Genetics</div><a href="pcr-basics-microbiology.html" class="rel-title">PCR in Microbiology: Principles & Applications</a></div></div>
+    <div class="related-item"><span class="rel-icon">🤖</span><div><div class="rel-cat">Science & Tech</div><a href="pharmacovigilance-data-science.html" class="rel-title">Pharmacovigilance & Data Science</a></div></div>
+  </div>
+</aside>
+</div>
+<footer><p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p></footer>
+</body>
+</html>

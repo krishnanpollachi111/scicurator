@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravity Explained: From Newton's Apple to Einstein's Curved Space-Time | SciCurator</title>
+<meta name="description" content="A complete guide to gravity — from Newton's universal law to Einstein's general relativity, gravitational waves, and the mysteries that remain unsolved.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#0D0F1A;--card:#141828;--white:#fff;--ink:#E8EAF0;--muted:#8A8FA8;--border:#252840;--teal:#4AADA0;--navy:#070A14;--c-astro:#9B6FD4;--gold:#D4A84A}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.55);font-size:0.82rem;text-decoration:none}.nav-links a:hover{color:#fff}
+.post-hero{background:linear-gradient(160deg,#070A14,#0A1428 50%,#1A100A 100%);padding:60px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-astro);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.7rem);line-height:1.18;max-width:720px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.45);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.25);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:2.2rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.42rem;color:#fff;margin:2rem 0 0.75rem;border-left:3px solid var(--c-astro);padding-left:0.8rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--teal);margin:1.3rem 0 0.4rem}
+article p{color:#C8CADC;margin-bottom:1.1rem;font-size:0.96rem;line-height:1.82}
+article ul{margin:0.6rem 0 1.1rem 1.4rem}
+article li{color:#C8CADC;font-size:0.96rem;margin-bottom:0.55rem;line-height:1.7}
+.intro-text{font-size:1.04rem!important;color:#E8EAF0!important;border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1.5rem!important;font-style:italic}
+.article-img{width:100%;border-radius:6px;margin:1.2rem 0;border:1px solid var(--border);overflow:hidden}
+.article-img img{width:100%;height:220px;object-fit:cover;display:block}
+.img-caption{font-size:0.75rem;color:var(--muted);text-align:center;padding:0.5rem;font-style:italic}
+.formula{background:#0A0E1E;border:1px solid var(--c-astro);border-radius:4px;padding:1.2rem;margin:1.2rem 0;text-align:center}
+.formula p{font-size:1.2rem!important;color:var(--c-astro)!important;font-family:monospace;margin:0}
+.formula small{font-size:0.78rem;color:var(--muted);display:block;margin-top:0.4rem}
+.analogy{background:#0F1220;border-left:3px solid var(--gold);padding:1rem 1.3rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.analogy p{margin:0;color:#E0D8B0!important;font-size:0.9rem!important;font-style:italic}
+.fact-box{background:#0A0E1E;border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.3rem;margin:1.2rem 0}
+.fact-box p{margin:0;color:#C8CADC!important;font-size:0.9rem!important}
+.fact-box strong{color:var(--teal)}
+.takeaway{background:linear-gradient(135deg,#1A0A30,#0A1A30);border:1px solid var(--c-astro);border-radius:6px;padding:1.4rem;margin:1.5rem 0}
+.takeaway h3{color:var(--gold);font-family:'Playfair Display',serif;margin:0 0 0.7rem;border:none!important;padding:0!important}
+.takeaway li{color:rgba(255,255,255,0.82);margin-bottom:0.35rem;font-size:0.9rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:#0A0E1E;border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:50px;height:50px;background:var(--c-astro);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:#fff;font-size:0.9rem}.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:#fff;margin-bottom:0.8rem;padding-bottom:0.38rem;border-bottom:2px solid var(--c-astro)}
+.toc-list{list-style:none}.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}.toc-list li:last-child{border-bottom:none}.toc-list a{color:var(--teal);text-decoration:none}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}.related-item:last-child{border-bottom:none}
+.rel-icon{font-size:1.5rem;flex-shrink:0}.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}.rel-title:hover{color:var(--teal)}
+footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem;border-top:1px solid var(--border)}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">Sci<span>Curator</span></a><ul class="nav-links"><li><a href="index.html#astro">Astrophysics</a></li><li><a href="index.html#micro">Microbiology</a></li><li><a href="index.html#newsletter">Subscribe</a></li></ul></nav>
+<div class="post-hero">
+  <div class="post-cat">Astrophysics</div>
+  <h1>Gravity: From Newton's Apple to Einstein's Curved Space-Time</h1>
+  <div class="post-meta"><span>By Murali Krishnan M</span><span class="meta-dot"></span><span>June 2025</span><span class="meta-dot"></span><span>10 min read</span></div>
+</div>
+<div class="layout">
+<article>
+  <p class="intro-text">Gravity is the force that keeps your feet on the ground, holds the Moon in orbit, and causes stars to collapse into black holes. Yet despite being the most familiar force in nature, it remains the least understood at a fundamental level. Here is what we know — and what we don't.</p>
+
+  <h2 id="newton">Newton's Law of Universal Gravitation</h2>
+  <p>In 1687, Isaac Newton published his law of universal gravitation — arguably one of the greatest intellectual achievements in human history. The story of the falling apple, while probably apocryphal, captures the essence of his insight: the same force pulling the apple to Earth is holding the Moon in its orbit.</p>
+
+  <div class="formula">
+    <p>F = G × (m₁ × m₂) / r²</p>
+    <small>F = gravitational force · G = gravitational constant (6.674 × 10⁻¹¹ N·m²/kg²) · m₁, m₂ = masses · r = distance between them</small>
+  </div>
+
+  <p>This single equation explains an enormous range of phenomena:</p>
+  <ul>
+    <li>Why heavier objects and lighter objects fall at the same rate (Galileo's discovery — the mass cancels out)</li>
+    <li>The orbital periods of all planets in the solar system</li>
+    <li>The tides, caused by the Moon's differential gravitational pull on opposite sides of Earth</li>
+    <li>The trajectory of cannonballs, rockets, and spacecraft</li>
+  </ul>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GravityPotential.jpg/640px-GravityPotential.jpg" alt="Gravitational potential field visualisation" onerror="this.parentElement.style.background='#141828';this.parentElement.style.height='150px';this.style.display='none'">
+    <div class="img-caption">A visualisation of Earth's gravitational potential field. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="limits">The Limits of Newton's Theory</h2>
+  <p>Newton's gravity worked with extraordinary precision for over 200 years. But cracks began to appear:</p>
+  <ul>
+    <li><strong>Mercury's precession:</strong> Mercury's orbit slowly rotates (precesses) by 43 arcseconds per century more than Newton's theory predicted. Nobody could explain this — until Einstein.</li>
+    <li><strong>Action at a distance:</strong> Newton himself admitted he had no idea <em>how</em> gravity acted across empty space instantaneously. "I feign no hypotheses," he wrote.</li>
+    <li><strong>High velocities:</strong> At speeds approaching the speed of light, Newton's equations break down completely.</li>
+  </ul>
+
+  <h2 id="einstein">Einstein's Revolution: Gravity as Geometry</h2>
+  <p>In 1915, Einstein's General Theory of Relativity completely reimagined what gravity is. His core insight: <strong>gravity is not a force — it is the curvature of space-time caused by mass and energy.</strong></p>
+  <ul>
+    <li>Massive objects warp the four-dimensional fabric of space-time around them</li>
+    <li>Objects then follow the straightest possible path through this curved space-time — what appears to us as "falling"</li>
+    <li>Even massless photons (light) follow these curved paths — leading to gravitational lensing</li>
+    <li>Time itself runs slower in stronger gravitational fields — gravitational time dilation</li>
+  </ul>
+
+  <div class="analogy">
+    <p>🌀 <strong>Analogy:</strong> Imagine a stretched rubber sheet. Press a heavy ball into the centre — the sheet curves. Roll a smaller ball nearby — it spirals inward, following the curved surface. This is essentially what massive objects do to space-time. Objects don't get "pulled" — they follow curved geometry.</p>
+  </div>
+
+  <h2 id="predictions">Confirmed Predictions of General Relativity</h2>
+  <ul>
+    <li><strong>Mercury's precession (1915):</strong> Einstein's first calculation using GR exactly matched the mysterious 43 arcseconds. He reportedly felt his heart flutter when he saw the result.</li>
+    <li><strong>Light bending (1919):</strong> Eddington's solar eclipse observation confirmed starlight bends around the Sun exactly as predicted.</li>
+    <li><strong>Gravitational redshift (1959):</strong> The Pound-Rebka experiment at Harvard measured time running faster at the top of a building than at the bottom — confirming gravitational time dilation.</li>
+    <li><strong>Gravitational waves (2015):</strong> LIGO detected ripples in space-time from two merging black holes — confirming a prediction Einstein made in 1916 but doubted himself.</li>
+    <li><strong>Black hole shadow (2019):</strong> The Event Horizon Telescope imaged the shadow of the supermassive black hole M87* — exactly matching GR predictions.</li>
+  </ul>
+
+  <h2 id="mysteries">The Unsolved Mysteries</h2>
+  <p>Despite its extraordinary success, gravity remains deeply mysterious:</p>
+  <ul>
+    <li><strong>Quantum gravity:</strong> General Relativity and Quantum Mechanics are both spectacularly successful — but they are fundamentally incompatible. No one has successfully unified them. The quest for a "theory of everything" remains the greatest unsolved problem in physics.</li>
+    <li><strong>Dark matter:</strong> Galaxies rotate too fast to be held together by visible matter alone. Something — dark matter — provides extra gravitational pull, making up ~27% of the universe. Nobody knows what it is.</li>
+    <li><strong>Dark energy:</strong> The universe's expansion is accelerating, driven by something (dark energy) with a gravitational effect that is repulsive at cosmic scales. It makes up ~68% of the universe. Nobody knows what it is either.</li>
+    <li><strong>Singularities:</strong> GR predicts that at the centres of black holes, density becomes infinite — a mathematical breakdown (singularity) that almost certainly signals the theory's limits.</li>
+  </ul>
+
+  <div class="fact-box">
+    <p><strong>Perspective:</strong> Gravity is by far the weakest of the four fundamental forces. The electromagnetic force is 10³⁶ times stronger. Yet gravity dominates the universe at large scales because it is always attractive, has infinite range, and affects all mass-energy equally — it always wins over cosmic distances.</p>
+  </div>
+
+  <div class="takeaway">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Newton's law of gravity (F = Gm₁m₂/r²) explains most everyday gravitational phenomena with precision</li>
+      <li>Einstein reimagined gravity as the curvature of space-time — not a force</li>
+      <li>General Relativity explained Mercury's orbit, light bending, gravitational time dilation, and gravitational waves</li>
+      <li>GPS must be corrected for both special and general relativistic effects every day</li>
+      <li>Gravity is the weakest force but dominates the universe at large scales</li>
+      <li>Quantum gravity — unifying GR with quantum mechanics — remains unsolved</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div><div class="author-name">Murali Krishnan M</div><div class="author-bio">Scientific Curator, M.Sc Microbiology. Writing at the intersection of life sciences and the broader scientific universe.</div></div>
+  </div>
+</article>
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#newton">Newton's Law</a></li>
+      <li><a href="#limits">Limits of Newton</a></li>
+      <li><a href="#einstein">Einstein's Revolution</a></li>
+      <li><a href="#predictions">Confirmed Predictions</a></li>
+      <li><a href="#mysteries">Unsolved Mysteries</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item"><span class="rel-icon">🌌</span><div><div class="rel-cat">Astrophysics</div><a href="spacetime-explained.html" class="rel-title">Space-Time Explained: Einstein's Big Idea</a></div></div>
+    <div class="related-item"><span class="rel-icon">🧬</span><div><div class="rel-cat">Genetics</div><a href="pcr-basics-microbiology.html" class="rel-title">PCR in Microbiology</a></div></div>
+  </div>
+</aside>
+</div>
+<footer><p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p></footer>
+</body></html>
