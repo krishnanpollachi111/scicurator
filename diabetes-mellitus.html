@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding Diabetes: Types, Causes, Symptoms & Management | SciCurator</title>
+<meta name="description" content="A complete science-based guide to diabetes mellitus — Type 1, Type 2, and gestational diabetes. Causes, symptoms, complications, treatment and prevention explained clearly.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#F5F6F8;--white:#fff;--ink:#1E2028;--muted:#6B6E7A;--border:#D4D7E0;--teal:#357A6E;--teal-lt:#EAF4F2;--navy:#1E2C3A;--c-health:#9E3530;--gold:#B8963A}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none}
+.nav-links a:hover{color:#fff}
+.post-hero{background:linear-gradient(135deg,#1E2C3A,#3a1a1a);padding:55px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-health);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;max-width:720px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.5);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 288px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.2rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin:2rem 0 0.75rem;border-left:3px solid var(--c-health);padding-left:0.8rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin:1.4rem 0 0.5rem}
+article p{color:#374151;margin-bottom:1.1rem;font-size:0.96rem;line-height:1.8}
+article ul,article ol{margin:0.6rem 0 1.1rem 1.4rem}
+article li{color:#374151;font-size:0.96rem;margin-bottom:0.55rem;line-height:1.7}
+.intro-text{font-family:'Source Serif 4',serif;font-size:1.05rem!important;color:var(--navy)!important;border-left:3px solid var(--teal);padding-left:1rem;margin-bottom:1.5rem!important;font-style:italic}
+.article-img{width:100%;border-radius:6px;margin:1.2rem 0;border:1px solid var(--border);overflow:hidden}
+.article-img img{width:100%;height:230px;object-fit:cover;display:block}
+.img-caption{font-size:0.75rem;color:var(--muted);text-align:center;padding:0.5rem;background:var(--paper);font-style:italic}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1rem 0}
+.type-card{border-radius:6px;padding:1.1rem;border:1px solid var(--border)}
+.type-card h4{font-family:'Playfair Display',serif;font-size:0.98rem;margin-bottom:0.5rem}
+.type-card p{margin:0;font-size:0.84rem;color:var(--muted);line-height:1.6}
+.t1{background:#FEF0EE;border-color:#e8b0a8}.t1 h4{color:#9E3530}
+.t2{background:#FEF5E7;border-color:#e8d090}.t2 h4{color:#8B5A00}
+.tg{background:#EAF4F2;border-color:#b8ddd9}.tg h4{color:var(--teal)}
+.highlight{background:var(--teal-lt);border:1px solid #b8ddd9;border-radius:4px;padding:1.1rem 1.3rem;margin:1.3rem 0}
+.highlight p{margin:0;color:var(--navy)!important;font-size:0.9rem!important}
+.highlight strong{color:var(--teal)}
+.warning-box{background:#FEF0EE;border:1px solid #e8b0a8;border-radius:4px;padding:1.1rem 1.3rem;margin:1.3rem 0}
+.warning-box p{margin:0;color:#7a2020!important;font-size:0.9rem!important}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.2rem 0}
+.stat-box{background:var(--navy);color:#fff;border-radius:6px;padding:1rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;display:block;color:var(--gold)}
+.stat-label{font-size:0.75rem;opacity:0.7;line-height:1.4}
+.takeaway{background:var(--navy);color:#fff;border-radius:6px;padding:1.4rem;margin:1.5rem 0}
+.takeaway h3{color:var(--gold);font-family:'Playfair Display',serif;margin:0 0 0.7rem;font-size:1.05rem}
+.takeaway li{color:rgba(255,255,255,0.82);margin-bottom:0.38rem;font-size:0.9rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:var(--paper);border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:50px;height:50px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:var(--navy);margin-bottom:0.15rem;font-size:0.9rem}
+.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.38rem;border-bottom:2px solid var(--c-health)}
+.toc-list{list-style:none}
+.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--teal);text-decoration:none}
+.toc-list a:hover{text-decoration:underline}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}
+.related-item:last-child{border-bottom:none;padding-bottom:0}
+.rel-icon{font-size:1.5rem;flex-shrink:0}
+.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.1rem}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}
+.rel-title:hover{color:var(--teal)}
+.nl-sb{background:var(--navy);padding:1rem;border-radius:4px}
+.nl-sb h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;margin-bottom:0.4rem}
+.nl-sb p{font-size:0.77rem;color:rgba(255,255,255,0.5);margin-bottom:0.7rem;line-height:1.6}
+.nl-input{width:100%;padding:0.5rem 0.7rem;border:none;font-family:'DM Sans',sans-serif;font-size:0.82rem;margin-bottom:0.4rem;outline:none;border-radius:2px}
+.nl-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:0.52rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;border-radius:2px}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}.type-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr 1fr}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Sci<span>Curator</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#health">Health</a></li>
+    <li><a href="index.html#micro">Microbiology</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#newsletter">Subscribe</a></li>
+  </ul>
+</nav>
+
+<div class="post-hero">
+  <div class="post-cat">Health & Medicine · Disease Guide</div>
+  <h1>Understanding Diabetes Mellitus: Types, Causes, Symptoms & Science-Based Management</h1>
+  <div class="post-meta">
+    <span>By Murali Krishnan M</span><span class="meta-dot"></span>
+    <span>June 2025</span><span class="meta-dot"></span>
+    <span>12 min read</span><span class="meta-dot"></span>
+    <span>Health & Medicine</span>
+  </div>
+</div>
+
+<div class="layout">
+<article>
+
+  <p class="intro-text">Diabetes mellitus affects over 537 million adults worldwide and is the 9th leading cause of death globally. India alone has 101 million diabetics — the highest in the world. Yet much of what the public understands about diabetes is incomplete or incorrect. This guide explains the full science.</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="stat-num">101M</span><span class="stat-label">Diabetics in India — world's highest</span></div>
+    <div class="stat-box"><span class="stat-num">537M</span><span class="stat-label">Adults with diabetes worldwide (IDF 2021)</span></div>
+    <div class="stat-box"><span class="stat-num">1 in 2</span><span class="stat-label">Diabetics worldwide are undiagnosed</span></div>
+  </div>
+
+  <h2 id="what">What is Diabetes Mellitus?</h2>
+  <p>Diabetes mellitus is a group of metabolic diseases characterised by chronic <strong>hyperglycaemia</strong> (high blood glucose) resulting from defects in insulin secretion, insulin action, or both. The name comes from Greek (<em>diabetes</em> = to siphon) and Latin (<em>mellitus</em> = honey-sweet), reflecting the sweet urine observed in ancient times.</p>
+  <p>Insulin, produced by beta cells of the pancreatic islets of Langerhans, is the key hormone that allows glucose to enter cells for energy. When insulin signalling fails — through autoimmune destruction of beta cells, insulin resistance, or insufficient secretion — glucose accumulates in the blood, causing widespread damage to blood vessels, nerves, and organs over time.</p>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Diagram_showing_how_diabetes_mellitus_works_CRUK_371.svg/640px-Diagram_showing_how_diabetes_mellitus_works_CRUK_371.svg.png" alt="Diagram showing how diabetes mellitus affects insulin and blood glucose" onerror="this.parentElement.style.background='#FEF0EE';this.parentElement.style.height='180px';this.style.display='none'">
+    <div class="img-caption">How diabetes mellitus disrupts insulin-glucose signalling in the body. Image: Wikimedia Commons / Cancer Research UK</div>
+  </div>
+
+  <h2 id="types">Types of Diabetes</h2>
+  <div class="type-grid">
+    <div class="type-card t1">
+      <h4>🔴 Type 1 Diabetes</h4>
+      <p>Autoimmune destruction of pancreatic beta cells. Absolute insulin deficiency. Typically onset in childhood/young adults. Requires lifelong insulin therapy. ~5–10% of all cases.</p>
+    </div>
+    <div class="type-card t2">
+      <h4>🟡 Type 2 Diabetes</h4>
+      <p>Insulin resistance + progressive beta cell dysfunction. Strongly linked to obesity and sedentary lifestyle. Most common form — ~90–95% of all cases. Often preventable.</p>
+    </div>
+    <div class="type-card tg">
+      <h4>🟢 Gestational Diabetes</h4>
+      <p>Develops during pregnancy due to placental hormones causing insulin resistance. Resolves after delivery but increases lifetime risk of Type 2 diabetes by 50%.</p>
+    </div>
+  </div>
+
+  <h2 id="causes">Causes & Risk Factors</h2>
+
+  <h3>Type 1 Diabetes</h3>
+  <ul>
+    <li><strong>Autoimmune mechanism:</strong> T-lymphocytes attack and destroy insulin-producing beta cells in the pancreatic islets</li>
+    <li><strong>Genetic factors:</strong> HLA-DR3 and HLA-DR4 alleles confer significant risk — ~50% heritability</li>
+    <li><strong>Environmental triggers:</strong> Viral infections (Coxsackie B virus, rotavirus), early cow's milk exposure, and gut microbiome dysbiosis may trigger autoimmunity in genetically susceptible individuals</li>
+    <li><strong>Autoantibodies:</strong> Anti-GAD, anti-islet cell antibodies (ICA), and anti-insulin antibodies (IAA) are detectable months to years before clinical onset</li>
+  </ul>
+
+  <h3>Type 2 Diabetes</h3>
+  <ul>
+    <li><strong>Insulin resistance:</strong> Peripheral tissues (muscle, liver, adipose) fail to respond to insulin — driven by chronic inflammation, lipotoxicity, and ectopic fat deposition</li>
+    <li><strong>Beta cell failure:</strong> Years of compensatory overproduction lead to exhaustion and progressive beta cell loss</li>
+    <li><strong>Obesity:</strong> Visceral adiposity generates pro-inflammatory cytokines (TNF-α, IL-6) that directly impair insulin signalling</li>
+    <li><strong>Physical inactivity:</strong> Muscle — the body's largest glucose sink — becomes less responsive without regular contraction</li>
+    <li><strong>Genetics:</strong> Over 400 gene variants have been associated with T2DM risk. South Asians have uniquely high genetic susceptibility at lower BMI thresholds</li>
+    <li><strong>Age, family history, gestational diabetes history, PCOS</strong> are additional independent risk factors</li>
+  </ul>
+
+  <div class="highlight">
+    <p><strong>India-Specific:</strong> South Asians develop Type 2 diabetes at lower BMI (23 kg/m²) compared to Western populations (30 kg/m²). This is due to higher visceral fat percentage at any given weight — sometimes called "thin-fat" phenotype. Indians also develop diabetes 10 years earlier on average than European populations.</p>
+  </div>
+
+  <h2 id="symptoms">Symptoms & Diagnosis</h2>
+
+  <h3>Classic Symptoms (the "3 Polys")</h3>
+  <ul>
+    <li><strong>Polyuria</strong> — excessive urination (osmotic diuresis as glucose spills into urine)</li>
+    <li><strong>Polydipsia</strong> — excessive thirst (compensating for fluid loss)</li>
+    <li><strong>Polyphagia</strong> — excessive hunger (cells starved of glucose despite high blood sugar)</li>
+    <li>Unexplained weight loss (especially Type 1 — body breaks down fat and muscle for energy)</li>
+    <li>Fatigue, blurred vision, slow-healing wounds, recurrent infections (fungal, urinary tract)</li>
+    <li><strong>Type 2 is often asymptomatic for years</strong> — diagnosed incidentally on routine blood tests</li>
+  </ul>
+
+  <h3>Diagnostic Criteria (WHO/ADA)</h3>
+  <ul>
+    <li><strong>Fasting plasma glucose ≥ 126 mg/dL</strong> (after 8 hours of fasting)</li>
+    <li><strong>2-hour glucose ≥ 200 mg/dL</strong> during a 75g oral glucose tolerance test (OGTT)</li>
+    <li><strong>HbA1c ≥ 6.5%</strong> — reflects average blood glucose over the past 2–3 months</li>
+    <li><strong>Random glucose ≥ 200 mg/dL</strong> with classic symptoms</li>
+    <li><strong>Pre-diabetes:</strong> Fasting glucose 100–125 mg/dL or HbA1c 5.7–6.4% — highly reversible with lifestyle changes</li>
+  </ul>
+
+  <div class="article-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Glucose_Tolerance_Test.png/640px-Glucose_Tolerance_Test.png" alt="Oral glucose tolerance test graph showing normal vs diabetic vs impaired glucose tolerance" onerror="this.parentElement.style.background='#EAF4F2';this.parentElement.style.height='160px';this.style.display='none'">
+    <div class="img-caption">Oral glucose tolerance test (OGTT) results comparing normal, impaired (pre-diabetic), and diabetic glucose responses. Image: Wikimedia Commons</div>
+  </div>
+
+  <h2 id="complications">Complications of Uncontrolled Diabetes</h2>
+  <p>Chronic hyperglycaemia damages blood vessels and nerves throughout the body through multiple mechanisms — advanced glycation end products (AGEs), oxidative stress, and polyol pathway activation:</p>
+
+  <h3>Microvascular (Small Vessel) Complications</h3>
+  <ul>
+    <li><strong>Diabetic retinopathy:</strong> Leading cause of new blindness in working-age adults. Hyperglycaemia damages retinal capillaries, causing microaneurysms, haemorrhages, and neovascularisation</li>
+    <li><strong>Diabetic nephropathy:</strong> Leading cause of chronic kidney disease worldwide. Glomerular basement membrane thickening, mesangial expansion → proteinuria → progressive kidney failure</li>
+    <li><strong>Diabetic neuropathy:</strong> Peripheral nerve damage causing numbness, tingling, and pain — especially in feet. Can lead to painless wounds, Charcot foot, and amputation</li>
+  </ul>
+
+  <h3>Macrovascular (Large Vessel) Complications</h3>
+  <ul>
+    <li><strong>Cardiovascular disease:</strong> 2–4× higher risk of heart attack and stroke. The leading cause of death in Type 2 diabetes</li>
+    <li><strong>Peripheral artery disease:</strong> Reduced blood flow to limbs → non-healing wounds → amputation. India has a very high rate of diabetes-related lower limb amputation</li>
+  </ul>
+
+  <div class="warning-box">
+    <p><strong>⚠️ Diabetic Emergencies:</strong> <strong>Diabetic Ketoacidosis (DKA)</strong> — mainly in T1DM — is a life-threatening emergency caused by absolute insulin deficiency leading to ketone accumulation and acidosis. Symptoms: fruity breath, vomiting, rapid breathing, altered consciousness. Requires immediate hospitalisation. <strong>Hyperosmolar Hyperglycaemic State (HHS)</strong> occurs in T2DM with extreme hyperglycaemia without ketosis.</p>
+  </div>
+
+  <h2 id="treatment">Science-Based Treatment</h2>
+
+  <h3>Type 1 Diabetes</h3>
+  <ul>
+    <li><strong>Insulin therapy:</strong> Lifelong and non-negotiable. Multiple daily injections or continuous subcutaneous insulin infusion (insulin pump)</li>
+    <li><strong>Basal-bolus regimen:</strong> Long-acting insulin (glargine, detemir) for background needs + rapid-acting insulin (lispro, aspart) at meals</li>
+    <li><strong>Continuous glucose monitoring (CGM):</strong> Real-time glucose tracking — transforms diabetes management and reduces hypoglycaemia risk</li>
+    <li><strong>Closed-loop systems ("artificial pancreas"):</strong> CGM linked to insulin pump for automated dosing — now commercially available</li>
+  </ul>
+
+  <h3>Type 2 Diabetes</h3>
+  <ul>
+    <li><strong>Lifestyle modification:</strong> The foundation. Weight loss of 5–10% body weight can normalise blood glucose in early T2DM. 150 min/week moderate exercise is as effective as metformin for prevention</li>
+    <li><strong>Metformin:</strong> First-line drug. Reduces hepatic glucose production, improves insulin sensitivity. Inexpensive, safe, weight-neutral</li>
+    <li><strong>SGLT2 inhibitors (dapagliflozin, empagliflozin):</strong> Promote urinary glucose excretion. Have additional cardiovascular and kidney-protective benefits — now recommended for patients with heart failure or CKD</li>
+    <li><strong>GLP-1 receptor agonists (semaglutide, liraglutide):</strong> Stimulate insulin secretion, reduce appetite, promote weight loss. Semaglutide also significantly reduces cardiovascular events (SUSTAIN trials)</li>
+    <li><strong>DPP-4 inhibitors, sulfonylureas, insulin:</strong> Additional options based on individual patient profile</li>
+  </ul>
+
+  <h2 id="prevention">Prevention</h2>
+  <ul>
+    <li>Type 1 cannot currently be prevented (though research into immunotherapy is ongoing)</li>
+    <li>Type 2 is largely preventable — the Diabetes Prevention Programme (DPP) trial showed lifestyle intervention reduced progression from pre-diabetes to diabetes by <strong>58%</strong></li>
+    <li>Maintain healthy body weight (BMI 18.5–22.9 for South Asians)</li>
+    <li>150 minutes of moderate aerobic activity per week minimum</li>
+    <li>Reduce refined carbohydrate and sugar intake — prioritise whole grains, legumes, vegetables</li>
+    <li>Annual fasting glucose or HbA1c screening for adults over 35, or earlier if risk factors present</li>
+    <li>Breastfeeding reduces childhood risk of Type 1 diabetes</li>
+  </ul>
+
+  <div class="takeaway">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>India has 101 million diabetics — the world's highest — driven by genetics and lifestyle</li>
+      <li>Type 1 is autoimmune; Type 2 is insulin resistance + beta cell failure — very different diseases</li>
+      <li>South Asians develop T2DM at lower BMI than Western populations — screening should start earlier</li>
+      <li>HbA1c ≥ 6.5% or fasting glucose ≥ 126 mg/dL confirms diagnosis</li>
+      <li>Uncontrolled diabetes destroys kidneys, eyes, nerves, and heart over time</li>
+      <li>SGLT2 inhibitors and GLP-1 agonists are game-changing drugs with cardiovascular benefits</li>
+      <li>Lifestyle intervention reduces Type 2 progression from pre-diabetes by 58%</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div>
+      <div class="author-name">Murali Krishnan M</div>
+      <div class="author-bio">Scientific Curator with 5+ years in EMBASE indexing and biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education, Coimbatore.</div>
+    </div>
+  </div>
+</article>
+
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#what">What is Diabetes?</a></li>
+      <li><a href="#types">Types of Diabetes</a></li>
+      <li><a href="#causes">Causes & Risk Factors</a></li>
+      <li><a href="#symptoms">Symptoms & Diagnosis</a></li>
+      <li><a href="#complications">Complications</a></li>
+      <li><a href="#treatment">Treatment</a></li>
+      <li><a href="#prevention">Prevention</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item">
+      <span class="rel-icon">🔴</span>
+      <div><div class="rel-cat">Health</div><a href="dermatitis-guide.html" class="rel-title">Understanding Dermatitis: Types & Treatments</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">🌿</span>
+      <div><div class="rel-cat">Health</div><a href="lifestyle-health.html" class="rel-title">Lifestyle & Health: The Science of Healthy Living</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">💊</span>
+      <div><div class="rel-cat">Drug Safety</div><a href="pharmacovigilance-data-science.html" class="rel-title">Pharmacovigilance & Data Science</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">👶</span>
+      <div><div class="rel-cat">Health</div><a href="child-development.html" class="rel-title">Child Development: Milestones from Birth to 5</a></div>
+    </div>
+  </div>
+  <div class="nl-sb">
+    <h4>Weekly Science Updates</h4>
+    <p>New articles across all 12 sections — free every week.</p>
+    <input class="nl-input" type="email" placeholder="your@email.com">
+    <button class="nl-btn">Subscribe Free</button>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p>
+</footer>
+</body>
+</html>
