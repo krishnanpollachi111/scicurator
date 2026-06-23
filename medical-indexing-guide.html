@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Indexing Explained: A Complete Student Guide | SciCurator</title>
+<meta name="description" content="What is medical indexing? A complete, easy-to-understand guide for students covering EMBASE, PubMed, MeSH, EMTREE, controlled vocabulary, and careers in biomedical data curation.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F5F6F8;--white:#fff;--ink:#1E2028;--ink2:#3C3F4A;
+  --muted:#6B6E7A;--border:#D4D7E0;--teal:#357A6E;--teal-lt:#EAF4F2;
+  --navy:#1E2C3A;--gold:#B8963A;--c-db:#703030
+}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none}
+.nav-links a:hover{color:#fff}
+.post-hero{background:linear-gradient(135deg,#1E2C3A 0%,#4a1a1a 100%);padding:55px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-db);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;max-width:760px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.5);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 284px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.4rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin:2.2rem 0 0.8rem;border-left:3px solid var(--c-db);padding-left:0.85rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin:1.5rem 0 0.5rem}
+article p{color:#374151;margin-bottom:1.1rem;font-size:0.97rem;line-height:1.82}
+article ul,article ol{margin:0.6rem 0 1.2rem 1.5rem}
+article li{color:#374151;font-size:0.97rem;margin-bottom:0.55rem;line-height:1.7}
+.intro-text{font-family:'Source Serif 4',serif;font-size:1.06rem!important;color:var(--navy)!important;border-left:3px solid var(--teal);padding-left:1.1rem;margin-bottom:1.6rem!important;font-style:italic}
+.svg-wrap{margin:1.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--paper)}
+.svg-caption{font-size:0.76rem;color:var(--muted);text-align:center;padding:0.55rem 1rem;background:var(--paper);font-style:italic;border-top:1px solid var(--border)}
+.highlight{background:var(--teal-lt);border:1px solid #b8ddd9;border-radius:4px;padding:1.1rem 1.4rem;margin:1.3rem 0}
+.highlight p{margin:0;color:var(--navy)!important;font-size:0.9rem!important}
+.highlight strong{color:var(--teal)}
+.example-box{background:#F3EEF9;border:1px solid #c8b8e8;border-radius:4px;padding:1.1rem 1.4rem;margin:1.2rem 0}
+.example-box p{margin:0;color:#4A2080!important;font-size:0.9rem!important}
+.example-box strong{color:#4A2080}
+.step-list{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.55rem}
+.step-list li{display:flex;gap:0.8rem;align-items:flex-start;padding:0.7rem 1rem;background:#EAF0F6;border-radius:4px;border:1px solid #C8D8EC;font-size:0.93rem;color:var(--ink2);line-height:1.65}
+.step-num{background:var(--c-db);color:#fff;font-weight:700;font-size:0.76rem;padding:0.14rem 0.52rem;border-radius:2px;flex-shrink:0;align-self:flex-start;margin-top:0.12rem}
+.step-list li strong{color:var(--c-db)}
+.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.9rem;margin:1rem 0}
+.career-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.career-card h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--navy);margin-bottom:0.35rem}
+.career-card p{margin:0;font-size:0.83rem;color:var(--muted);line-height:1.55}
+.takeaway{background:var(--navy);color:#fff;border-radius:6px;padding:1.5rem;margin:1.8rem 0}
+.takeaway h3{color:var(--gold);font-family:'Playfair Display',serif;margin:0 0 0.8rem;font-size:1.05rem}
+.takeaway li{color:rgba(255,255,255,0.82);margin-bottom:0.4rem;font-size:0.9rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:var(--paper);border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:52px;height:52px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:var(--navy);margin-bottom:0.15rem;font-size:0.9rem}
+.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.93rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.4rem;border-bottom:2px solid var(--c-db)}
+.toc-list{list-style:none}
+.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--teal);text-decoration:none}
+.toc-list a:hover{text-decoration:underline}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}
+.related-item:last-child{border-bottom:none;padding-bottom:0}
+.rel-icon{font-size:1.5rem;flex-shrink:0}
+.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.1rem}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}
+.rel-title:hover{color:var(--teal)}
+.nl-sb{background:var(--navy);padding:1.05rem;border-radius:4px}
+.nl-sb h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;margin-bottom:0.4rem}
+.nl-sb p{font-size:0.77rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;line-height:1.6}
+.nl-input{width:100%;padding:0.5rem 0.7rem;border:none;font-family:'DM Sans',sans-serif;font-size:0.82rem;margin-bottom:0.4rem;outline:none;border-radius:2px}
+.nl-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:0.52rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;border-radius:2px}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}.career-grid{grid-template-columns:1fr}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Sci<span>Curator</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#db">Databases</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#micro">Microbiology</a></li>
+    <li><a href="index.html#newsletter">Subscribe</a></li>
+  </ul>
+</nav>
+
+<div class="post-hero">
+  <div class="post-cat">Scientific Databases & Indexing</div>
+  <h1>Medical Indexing Explained: Everything a Student Needs to Know</h1>
+  <div class="post-meta">
+    <span>By Murali Krishnan M</span><span class="meta-dot"></span>
+    <span>June 2025</span><span class="meta-dot"></span>
+    <span>12 min read</span><span class="meta-dot"></span>
+    <span>Student Friendly</span>
+  </div>
+</div>
+
+<div class="layout">
+<article>
+
+  <p class="intro-text">Every time a doctor searches for a drug's side effects, or a researcher finds studies on a rare disease within seconds — medical indexing made that possible. This article explains exactly what medical indexing is, how it works, and why it matters — in plain language, with no jargon.</p>
+
+  <!-- ILLUSTRATION 1: The Big Picture -->
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>The medical indexing pipeline from journal articles to searchable database</title>
+
+      <!-- background panels -->
+      <rect x="20" y="20" width="190" height="280" rx="10" fill="#FEF5E7" stroke="#D4A84A" stroke-width="1"/>
+      <rect x="245" y="20" width="190" height="280" rx="10" fill="#EAF4F2" stroke="#357A6E" stroke-width="1.2"/>
+      <rect x="470" y="20" width="190" height="280" rx="10" fill="#EAF0F6" stroke="#2A5080" stroke-width="1"/>
+
+      <!-- Panel 1: Research -->
+      <text x="115" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#8B5A00">Research World</text>
+      <text x="115" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#A07020">Thousands of papers published daily</text>
+
+      <!-- journal stack illustration -->
+      <rect x="50" y="88" width="130" height="16" rx="3" fill="#D4A84A" opacity="0.6"/>
+      <rect x="50" y="108" width="130" height="16" rx="3" fill="#D4A84A" opacity="0.5"/>
+      <rect x="50" y="128" width="130" height="16" rx="3" fill="#D4A84A" opacity="0.4"/>
+      <rect x="50" y="148" width="130" height="16" rx="3" fill="#D4A84A" opacity="0.3"/>
+      <rect x="50" y="168" width="130" height="16" rx="3" fill="#D4A84A" opacity="0.2"/>
+      <text x="115" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5A3A00">Journal of Pharmacology</text>
+      <text x="115" y="120" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5A3A00">The Lancet</text>
+      <text x="115" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5A3A00">NEJM</text>
+      <text x="115" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5A3A00">BMJ</text>
+      <text x="115" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5A3A00">+ millions more...</text>
+
+      <text x="115" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8B5A00">Problem: impossible</text>
+      <text x="115" y="236" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#8B5A00">to search manually</text>
+      <text x="115" y="265" text-anchor="middle" font-family="Georgia,serif" font-size="22">📚</text>
+
+      <!-- Arrow 1 -->
+      <path d="M212 160 L243 160" fill="none" stroke="#357A6E" stroke-width="2" marker-end="url(#arr1)"/>
+      <text x="227" y="152" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#357A6E">index</text>
+      <defs><marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#357A6E" stroke-width="1.5"/></marker></defs>
+
+      <!-- Panel 2: Curator -->
+      <text x="340" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#1A5A4E">Medical Indexing</text>
+      <text x="340" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#2A6A5E">Curators read & tag each paper</text>
+
+      <!-- curator figure -->
+      <circle cx="340" cy="115" r="22" fill="#357A6E" opacity="0.15" stroke="#357A6E" stroke-width="1.5"/>
+      <text x="340" y="122" text-anchor="middle" font-size="26">🧑‍💻</text>
+
+      <!-- tag pills -->
+      <rect x="265" y="152" width="70" height="18" rx="9" fill="#357A6E" opacity="0.8"/>
+      <text x="300" y="165" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Drug name</text>
+      <rect x="345" y="152" width="70" height="18" rx="9" fill="#1A7A6E" opacity="0.8"/>
+      <text x="380" y="165" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Disease</text>
+      <rect x="265" y="178" width="80" height="18" rx="9" fill="#4A9A8E" opacity="0.8"/>
+      <text x="305" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Study type</text>
+      <rect x="355" y="178" width="60" height="18" rx="9" fill="#2A8A7E" opacity="0.8"/>
+      <text x="385" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Author</text>
+      <rect x="265" y="204" width="90" height="18" rx="9" fill="#357A6E" opacity="0.6"/>
+      <text x="310" y="217" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Patient group</text>
+      <rect x="365" y="204" width="70" height="18" rx="9" fill="#1A7A6E" opacity="0.6"/>
+      <text x="400" y="217" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Outcomes</text>
+
+      <text x="340" y="255" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A4E">Each paper gets structured</text>
+      <text x="340" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A4E">metadata tags</text>
+
+      <!-- Arrow 2 -->
+      <path d="M437 160 L468 160" fill="none" stroke="#2A5080" stroke-width="2" marker-end="url(#arr2)"/>
+      <text x="452" y="152" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#2A5080">store</text>
+      <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#2A5080" stroke-width="1.5"/></marker></defs>
+
+      <!-- Panel 3: Database -->
+      <text x="565" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#1A3060">Searchable Database</text>
+      <text x="565" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#2A4070">Researchers find results instantly</text>
+
+      <!-- search bar -->
+      <rect x="490" y="85" width="150" height="26" rx="5" fill="#fff" stroke="#2A5080" stroke-width="1.2"/>
+      <text x="500" y="102" font-family="Georgia,serif" font-size="10" fill="#888">🔍 metformin diabetes</text>
+
+      <!-- results list -->
+      <rect x="490" y="120" width="150" height="14" rx="2" fill="#2A5080" opacity="0.12"/>
+      <rect x="490" y="138" width="150" height="14" rx="2" fill="#2A5080" opacity="0.08"/>
+      <rect x="490" y="156" width="150" height="14" rx="2" fill="#2A5080" opacity="0.06"/>
+      <rect x="490" y="174" width="150" height="14" rx="2" fill="#2A5080" opacity="0.05"/>
+      <text x="500" y="131" font-family="Georgia,serif" font-size="10" fill="#1A3060">↪ 12,847 results found</text>
+      <text x="500" y="149" font-family="Georgia,serif" font-size="10" fill="#1A3060">↪ Filter by year: 2024</text>
+      <text x="500" y="167" font-family="Georgia,serif" font-size="10" fill="#1A3060">↪ RCTs only: 340</text>
+      <text x="500" y="185" font-family="Georgia,serif" font-size="10" fill="#1A3060">↪ Sort by relevance</text>
+
+      <text x="565" y="225" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">EMBASE: 45M records</text>
+      <text x="565" y="242" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">PubMed: 36M records</text>
+      <text x="565" y="265" text-anchor="middle" font-family="Georgia,serif" font-size="22">🗄️</text>
+    </svg>
+    <div class="svg-caption">How medical indexing works: research papers → curator tagging → searchable database</div>
+  </div>
+
+  <h2 id="what">What is Medical Indexing?</h2>
+  <p>Imagine a library with 45 million books — but no catalogue, no labels, no organisation system. Finding a specific book would be nearly impossible. This is exactly the problem that existed with biomedical research before medical indexing was developed.</p>
+  <p>Medical indexing is the systematic process of reading scientific and medical publications and organising them with structured labels (called tags or index terms) so that researchers, doctors, and pharmacologists can find exactly what they need in seconds using a database search.</p>
+  <p>A <strong>medical indexer</strong> (also called a scientific curator) reads every article, extracts key information — the diseases studied, drugs used, patient populations, study design, outcomes — and assigns standardised vocabulary terms to each one. These tagged records are then stored in searchable databases like EMBASE, PubMed, or Cochrane.</p>
+
+  <div class="highlight">
+    <p><strong>Simple analogy:</strong> Think of medical indexing like tagging photos on your phone. When you tag a photo with "beach, 2024, family," you can search and find it instantly later. Medical indexers do the same thing — but with scientific articles instead of photos, and with thousands of carefully standardised tags instead of casual words.</p>
+  </div>
+
+  <!-- ILLUSTRATION 2: The Two Big Databases -->
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 680 260" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Comparison of EMBASE and PubMed biomedical databases</title>
+
+      <!-- EMBASE side -->
+      <rect x="30" y="30" width="290" height="200" rx="10" fill="#FDEDEC" stroke="#9E3530" stroke-width="1.5"/>
+      <rect x="30" y="30" width="290" height="46" rx="10" fill="#9E3530"/>
+      <rect x="30" y="56" width="290" height="20" rx="0" fill="#9E3530"/>
+      <text x="175" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="700" fill="#fff">EMBASE</text>
+
+      <text x="60" y="100" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Publisher: Elsevier</text>
+      <text x="60" y="120" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Records: 45+ million articles</text>
+      <text x="60" y="140" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Coverage: 8,500+ journals, 90+ countries</text>
+      <text x="60" y="160" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Strength: Pharmacology &amp; drug safety</text>
+      <text x="60" y="180" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Vocabulary: EMTREE (controlled)</text>
+      <text x="60" y="200" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Data back to: 1947</text>
+      <text x="60" y="218" font-family="Georgia,serif" font-size="12" fill="#7A2020">● Access: Subscription (paid)</text>
+
+      <!-- PubMed side -->
+      <rect x="360" y="30" width="290" height="200" rx="10" fill="#EAF0F6" stroke="#2A5080" stroke-width="1.5"/>
+      <rect x="360" y="30" width="290" height="46" rx="10" fill="#2A5080"/>
+      <rect x="360" y="56" width="290" height="20" rx="0" fill="#2A5080"/>
+      <text x="505" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="700" fill="#fff">PubMed / MEDLINE</text>
+
+      <text x="390" y="100" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Publisher: NLM / NIH (USA)</text>
+      <text x="390" y="120" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Records: 36+ million articles</text>
+      <text x="390" y="140" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Coverage: 5,200+ journals, worldwide</text>
+      <text x="390" y="160" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Strength: Clinical medicine &amp; research</text>
+      <text x="390" y="180" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Vocabulary: MeSH (controlled)</text>
+      <text x="390" y="200" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Data back to: 1946</text>
+      <text x="390" y="218" font-family="Georgia,serif" font-size="12" fill="#1A3060">● Access: Free to public</text>
+    </svg>
+    <div class="svg-caption">The two most important biomedical databases: EMBASE (paid, pharmacology-focused) and PubMed/MEDLINE (free, clinical medicine)</div>
+  </div>
+
+  <h2 id="why">Why is Medical Indexing So Important?</h2>
+  <p>Over 2 million biomedical research articles are published every year. Without indexing, finding relevant research would be like searching for a specific grain of sand on a beach. Medical indexing solves this in several critical ways:</p>
+  <ul>
+    <li><strong>Clinical decisions:</strong> A doctor treating a rare drug reaction needs to find all published case reports within minutes — not days. Indexing makes this possible.</li>
+    <li><strong>Drug safety:</strong> Pharmacovigilance teams scan databases for adverse event signals. Accurate indexing ensures nothing is missed.</li>
+    <li><strong>Systematic reviews:</strong> Evidence-based medicine depends on systematic searches of indexed databases to find all relevant studies on a topic.</li>
+    <li><strong>Regulatory submissions:</strong> Drug companies submit literature searches to agencies like FDA and EMA — these must be comprehensive and accurate, which requires good indexing.</li>
+    <li><strong>Research discovery:</strong> Scientists use indexed databases to find what has already been studied before starting new experiments — avoiding duplication.</li>
+  </ul>
+
+  <!-- ILLUSTRATION 3: Controlled Vocabulary -->
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 680 310" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>How controlled vocabulary solves the synonym problem in medical searching</title>
+
+      <text x="340" y="38" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1E2028">The Synonym Problem — Why Controlled Vocabulary Matters</text>
+
+      <!-- Left: Problem -->
+      <rect x="20" y="55" width="295" height="235" rx="8" fill="#FEF5F5" stroke="#C0392B" stroke-width="1"/>
+      <text x="167" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#C0392B">❌ Without Controlled Vocabulary</text>
+      <text x="167" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#888">A researcher searches: "heart attack"</text>
+
+      <rect x="40" y="108" width="255" height="22" rx="4" fill="#C0392B" opacity="0.12"/>
+      <text x="167" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#9E2020">Misses articles using "myocardial infarction"</text>
+      <rect x="40" y="134" width="255" height="22" rx="4" fill="#C0392B" opacity="0.10"/>
+      <text x="167" y="149" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#9E2020">Misses articles using "MI"</text>
+      <rect x="40" y="160" width="255" height="22" rx="4" fill="#C0392B" opacity="0.08"/>
+      <text x="167" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#9E2020">Misses articles using "cardiac infarct"</text>
+      <rect x="40" y="186" width="255" height="22" rx="4" fill="#C0392B" opacity="0.06"/>
+      <text x="167" y="201" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#9E2020">Misses articles using "AMI"</text>
+      <rect x="40" y="212" width="255" height="22" rx="4" fill="#C0392B" opacity="0.05"/>
+      <text x="167" y="227" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#9E2020">Misses articles in other languages</text>
+
+      <text x="167" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#C0392B">Result: Incomplete, unreliable search</text>
+      <text x="167" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#C0392B">Critical evidence gets missed</text>
+
+      <!-- Right: Solution -->
+      <rect x="365" y="55" width="295" height="235" rx="8" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.2"/>
+      <text x="512" y="78" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#1E8449">✅ With Controlled Vocabulary</text>
+      <text x="512" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#888">Indexer maps ALL terms → one standard term</text>
+
+      <!-- arrows converging -->
+      <text x="385" y="125" font-family="Georgia,serif" font-size="11" fill="#2E7D32">"heart attack"</text>
+      <text x="385" y="148" font-family="Georgia,serif" font-size="11" fill="#2E7D32">"myocardial infarction"</text>
+      <text x="385" y="171" font-family="Georgia,serif" font-size="11" fill="#2E7D32">"MI"</text>
+      <text x="385" y="194" font-family="Georgia,serif" font-size="11" fill="#2E7D32">"cardiac infarct"</text>
+      <text x="385" y="217" font-family="Georgia,serif" font-size="11" fill="#2E7D32">"AMI"</text>
+
+      <path d="M498 118 L560 165" fill="none" stroke="#1E8449" stroke-width="1" opacity="0.5"/>
+      <path d="M505 142 L560 165" fill="none" stroke="#1E8449" stroke-width="1" opacity="0.5"/>
+      <path d="M430 165 L560 165" fill="none" stroke="#1E8449" stroke-width="1.5" opacity="0.7"/>
+      <path d="M480 188 L560 165" fill="none" stroke="#1E8449" stroke-width="1" opacity="0.5"/>
+      <path d="M490 211 L560 165" fill="none" stroke="#1E8449" stroke-width="1" opacity="0.5"/>
+
+      <rect x="555" y="148" width="90" height="34" rx="6" fill="#1E8449"/>
+      <text x="600" y="161" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#fff">MeSH / EMTREE:</text>
+      <text x="600" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">Myocardial Infarction</text>
+
+      <text x="512" y="255" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#1E8449">Result: Complete, reliable search</text>
+      <text x="512" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1E8449">Every relevant article is found</text>
+    </svg>
+    <div class="svg-caption">Controlled vocabulary solves the synonym problem — all terms for the same concept map to one standard term</div>
+  </div>
+
+  <h2 id="vocabulary">Controlled Vocabulary: MeSH and EMTREE</h2>
+  <p>The most important concept in medical indexing is <strong>controlled vocabulary</strong> — a standardised list of approved terms used to tag articles consistently. There are two major controlled vocabularies in biomedical indexing:</p>
+
+  <h3>MeSH — Medical Subject Headings</h3>
+  <ul>
+    <li>Developed and maintained by the US National Library of Medicine (NLM)</li>
+    <li>Used in PubMed/MEDLINE and many other databases</li>
+    <li>Contains approximately 30,000 descriptors organised in a hierarchical tree structure</li>
+    <li>Updated annually — new terms added as medical knowledge evolves</li>
+    <li>Example: Whether an article says "high blood pressure," "hypertension," or "elevated BP," the MeSH term assigned is always "Hypertension"</li>
+  </ul>
+
+  <h3>EMTREE — EMBASE Tree</h3>
+  <ul>
+    <li>EMBASE's own controlled vocabulary — more comprehensive than MeSH for drugs</li>
+    <li>Contains over 90,000 terms — significantly larger than MeSH</li>
+    <li>Especially strong in pharmacology: every drug has its preferred term, synonyms, trade names, and drug class all mapped to one standard term</li>
+    <li>Hierarchically organised — terms have broader and narrower terms above and below them</li>
+    <li>Example: "Paracetamol," "Acetaminophen," and "Tylenol" are all mapped to the EMTREE preferred term "Paracetamol"</li>
+  </ul>
+
+  <div class="example-box">
+    <p><strong>Real example:</strong> A researcher searches EMBASE for studies on "metformin in type 2 diabetes." Because of EMTREE, the search also retrieves articles that used terms like "dimethylbiguanide," "Glucophage," or "biguanide" — all brand names or synonyms for metformin — without the researcher having to search each one separately.</p>
+  </div>
+
+  <!-- ILLUSTRATION 4: The Indexing Workflow -->
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 680 200" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Step-by-step workflow of a medical indexer processing one article</title>
+
+      <text x="340" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1E2028">How a Medical Indexer Processes One Article</text>
+      <defs><marker id="wa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#357A6E" stroke-width="1.5"/></marker></defs>
+
+      <!-- Step boxes -->
+      <rect x="20" y="45" width="108" height="120" rx="6" fill="#FEF5E7" stroke="#D4A84A" stroke-width="1.2"/>
+      <text x="74" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#8B5A00">1. Receive</text>
+      <text x="74" y="88" text-anchor="middle" font-size="20">📄</text>
+      <text x="74" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Article assigned</text>
+      <text x="74" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">from journal</text>
+      <text x="74" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">queue</text>
+
+      <path d="M130 105 L148 105" fill="none" stroke="#357A6E" stroke-width="1.8" marker-end="url(#wa)"/>
+
+      <rect x="150" y="45" width="108" height="120" rx="6" fill="#EAF4F2" stroke="#357A6E" stroke-width="1.2"/>
+      <text x="204" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A5A4E">2. Read</text>
+      <text x="204" y="88" text-anchor="middle" font-size="20">👁️</text>
+      <text x="204" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A4E">Full article read</text>
+      <text x="204" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A4E">(not just abstract)</text>
+      <text x="204" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A4E">Key data noted</text>
+
+      <path d="M260 105 L278 105" fill="none" stroke="#357A6E" stroke-width="1.8" marker-end="url(#wa)"/>
+
+      <rect x="280" y="45" width="108" height="120" rx="6" fill="#EAF0F6" stroke="#2A5080" stroke-width="1.2"/>
+      <text x="334" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A3060">3. Map Terms</text>
+      <text x="334" y="88" text-anchor="middle" font-size="20">🗂️</text>
+      <text x="334" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">Assign EMTREE</text>
+      <text x="334" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">or MeSH terms</text>
+      <text x="334" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">to each concept</text>
+
+      <path d="M390 105 L408 105" fill="none" stroke="#357A6E" stroke-width="1.8" marker-end="url(#wa)"/>
+
+      <rect x="410" y="45" width="108" height="120" rx="6" fill="#F3EEF9" stroke="#6B3FA0" stroke-width="1.2"/>
+      <text x="464" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#4A2080">4. Enter Data</text>
+      <text x="464" y="88" text-anchor="middle" font-size="20">⌨️</text>
+      <text x="464" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A2080">Input into</text>
+      <text x="464" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A2080">indexing tool</text>
+      <text x="464" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A2080">all fields</text>
+
+      <path d="M520 105 L538 105" fill="none" stroke="#357A6E" stroke-width="1.8" marker-end="url(#wa)"/>
+
+      <rect x="540" y="45" width="120" height="120" rx="6" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.2"/>
+      <text x="600" y="68" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A5A28">5. QC &amp; Submit</text>
+      <text x="600" y="88" text-anchor="middle" font-size="20">✅</text>
+      <text x="600" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Senior curator</text>
+      <text x="600" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">reviews record</text>
+      <text x="600" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">→ goes live</text>
+
+      <text x="340" y="185" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">Each curator processes multiple articles per day — speed and accuracy must both be high</text>
+    </svg>
+    <div class="svg-caption">The 5-step workflow a medical indexer follows for every single article they process</div>
+  </div>
+
+  <h2 id="process">How Medical Indexing Works — Step by Step</h2>
+  <p>Here is exactly what happens when a medical indexer (like me) processes a single article:</p>
+
+  <ol class="step-list">
+    <li><span class="step-num">1</span><div><strong>Article received</strong> — Papers are assigned from a queue of newly published journals. Indexers typically work through journals in a systematic order.</div></li>
+    <li><span class="step-num">2</span><div><strong>Full article read</strong> — Not just the abstract. The entire article is read to identify all diseases, drugs, patient populations, study designs, and outcomes mentioned. Even information in tables and supplementary material is captured.</div></li>
+    <li><span class="step-num">3</span><div><strong>Concept identification</strong> — The indexer identifies all indexable concepts: drug names (generic and brand), diseases, procedures, organisms, body parts, demographic details (age, sex, country), and study characteristics.</div></li>
+    <li><span class="step-num">4</span><div><strong>Term mapping</strong> — Each concept is mapped to the appropriate EMTREE or MeSH preferred term. A drug called "Tylenol" in the article is mapped to the EMTREE term "Paracetamol." A "randomised controlled trial" is mapped to its specific study type term.</div></li>
+    <li><span class="step-num">5</span><div><strong>Data entry</strong> — All terms and additional metadata (author, journal, publication date, language, DOI) are entered into the specialised indexing software.</div></li>
+    <li><span class="step-num">6</span><div><strong>Quality control</strong> — A sample of indexed records is reviewed by senior curators to check accuracy, completeness, and consistency with indexing guidelines.</div></li>
+    <li><span class="step-num">7</span><div><strong>Record goes live</strong> — The indexed record enters the database and becomes searchable by millions of researchers worldwide, usually within days of the original publication.</div></li>
+  </ol>
+
+  <!-- ILLUSTRATION 5: What Gets Tagged -->
+  <div class="svg-wrap">
+    <svg width="100%" viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Information extracted and tagged from a biomedical article during medical indexing</title>
+
+      <text x="340" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1E2028">What Information Gets Tagged in One Article</text>
+
+      <!-- Article mock -->
+      <rect x="20" y="50" width="240" height="210" rx="6" fill="#fff" stroke="#D4D7E0" stroke-width="1"/>
+      <rect x="20" y="50" width="240" height="30" rx="6" fill="#1E2C3A"/>
+      <rect x="20" y="70" width="240" height="10" rx="0" fill="#1E2C3A"/>
+      <text x="140" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#fff">Journal Article</text>
+      <text x="30" y="100" font-family="Georgia,serif" font-size="9" fill="#374151">Effect of Metformin on HbA1c in Elderly</text>
+      <text x="30" y="114" font-family="Georgia,serif" font-size="9" fill="#374151">Type 2 Diabetes Patients in India</text>
+      <text x="30" y="130" font-family="Georgia,serif" font-size="9" fill="#888">Sharma R, Krishnan M — AIIMS Delhi 2024</text>
+      <line x1="30" y1="138" x2="245" y2="138" stroke="#E5E7EB" stroke-width="0.5"/>
+      <text x="30" y="152" font-family="Georgia,serif" font-size="8.5" fill="#374151">A randomised controlled trial of 280 patients</text>
+      <text x="30" y="166" font-family="Georgia,serif" font-size="8.5" fill="#374151">aged 65+ with type 2 diabetes mellitus</text>
+      <text x="30" y="180" font-family="Georgia,serif" font-size="8.5" fill="#374151">receiving metformin 500mg twice daily...</text>
+      <text x="30" y="200" font-family="Georgia,serif" font-size="8.5" fill="#374151">Primary outcome: HbA1c reduction at 12</text>
+      <text x="30" y="214" font-family="Georgia,serif" font-size="8.5" fill="#374151">weeks. Adverse events: nausea (12%),</text>
+      <text x="30" y="228" font-family="Georgia,serif" font-size="8.5" fill="#374151">diarrhoea (8%). No serious events.</text>
+      <text x="30" y="248" font-family="Georgia,serif" font-size="8.5" fill="#374151">Conclusion: Metformin significantly reduced</text>
+
+      <!-- Tags extracted -->
+      <text x="290" y="55" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1E2028">Tags Extracted:</text>
+
+      <rect x="285" y="63" width="110" height="20" rx="10" fill="#9E3530"/>
+      <text x="340" y="77" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">💊 Drug: Metformin</text>
+
+      <rect x="405" y="63" width="130" height="20" rx="10" fill="#B7770D"/>
+      <text x="470" y="77" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">🩸 Disease: T2DM</text>
+
+      <rect x="545" y="63" width="115" height="20" rx="10" fill="#1E8449"/>
+      <text x="602" y="77" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">📋 Study: RCT</text>
+
+      <rect x="285" y="92" width="135" height="20" rx="10" fill="#2A5080"/>
+      <text x="352" y="106" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">👴 Age: Elderly (65+)</text>
+
+      <rect x="430" y="92" width="110" height="20" rx="10" fill="#4A2080"/>
+      <text x="485" y="106" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">🌍 Country: India</text>
+
+      <rect x="550" y="92" width="110" height="20" rx="10" fill="#1A7A6E"/>
+      <text x="605" y="106" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">📊 Outcome: HbA1c</text>
+
+      <rect x="285" y="121" width="140" height="20" rx="10" fill="#703030"/>
+      <text x="355" y="135" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">⚠️ Adverse: Nausea, Diarrhoea</text>
+
+      <rect x="435" y="121" width="100" height="20" rx="10" fill="#2E7D32"/>
+      <text x="485" y="135" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">👥 N: 280 patients</text>
+
+      <rect x="545" y="121" width="115" height="20" rx="10" fill="#8B5A00"/>
+      <text x="602" y="135" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">🏥 Setting: Hospital</text>
+
+      <rect x="285" y="150" width="115" height="20" rx="10" fill="#1A5A4E"/>
+      <text x="342" y="164" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">📅 Duration: 12 weeks</text>
+
+      <rect x="410" y="150" width="120" height="20" rx="10" fill="#5A2080"/>
+      <text x="470" y="164" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">💉 Dose: 500mg BD</text>
+
+      <rect x="540" y="150" width="120" height="20" rx="10" fill="#2A4070"/>
+      <text x="600" y="164" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#fff">📰 Journal: 2024</text>
+
+      <text x="285" y="195" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">One 8-page article → 20+ structured data points</text>
+      <text x="285" y="212" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">All mapped to EMTREE preferred terms</text>
+      <text x="285" y="229" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">Stored in database → searchable by anyone</text>
+    </svg>
+    <div class="svg-caption">A single article can yield 20+ structured data points — all tagged by the medical indexer</div>
+  </div>
+
+  <h2 id="types">Types of Medical Databases</h2>
+  <p>Not all biomedical databases are the same. They differ in coverage, focus, and how they are indexed:</p>
+  <ul>
+    <li><strong>EMBASE:</strong> Gold standard for pharmacology and drug safety. Required for systematic reviews submitted to regulatory agencies like EMA.</li>
+    <li><strong>PubMed/MEDLINE:</strong> Free database from the US National Library of Medicine. Best for clinical medicine and general biomedical research.</li>
+    <li><strong>Cochrane Library:</strong> Specialises in systematic reviews and meta-analyses — the highest level of evidence in medicine.</li>
+    <li><strong>WHO Global Index Medicus:</strong> Covers journals from low- and middle-income countries — important for research from India, Africa, and Latin America.</li>
+    <li><strong>Scopus:</strong> Broader database covering science, technology, and social sciences — useful for citation analysis.</li>
+    <li><strong>Web of Science:</strong> Multi-disciplinary database used heavily for impact factor and citation metrics.</li>
+    <li><strong>CINAHL:</strong> Specialises in nursing and allied health literature.</li>
+  </ul>
+
+  <h2 id="career">Career in Medical Indexing</h2>
+  <p>Medical indexing is a growing career path for life science graduates in India and worldwide. Here is what you need to know:</p>
+
+  <div class="career-grid">
+    <div class="career-card">
+      <h4>🎓 Qualifications Needed</h4>
+      <p>Degree in life sciences, pharmacy, medicine, nursing, or a related field. M.Sc is preferred. Strong English reading skills and medical terminology knowledge are essential.</p>
+    </div>
+    <div class="career-card">
+      <h4>🏢 Where to Apply</h4>
+      <p>Elsevier, IQVIA, Clarivate Analytics, Wolters Kluwer, ClinicalMind, and various CROs (Contract Research Organisations) hire scientific curators in India.</p>
+    </div>
+    <div class="career-card">
+      <h4>💰 Salary Range (India)</h4>
+      <p>Entry level: ₹3–5 LPA. Experienced (3–5 years): ₹6–10 LPA. Senior curators and team leads: ₹10–18 LPA. Remote opportunities also available.</p>
+    </div>
+    <div class="career-card">
+      <h4>📈 Career Growth</h4>
+      <p>Junior Curator → Senior Curator → Team Lead → Indexing Manager → Product Specialist. Skills transfer well to regulatory affairs, pharmacovigilance, and medical writing.</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>From the author:</strong> I have been working as a scientific curator for EMBASE for over 5 years. The job requires a genuine interest in reading scientific literature, strong attention to detail, and the ability to maintain both speed and accuracy simultaneously. It is intellectually stimulating — every article teaches you something new about medicine, pharmacology, or biology.</p>
+  </div>
+
+  <div class="takeaway">
+    <h3>Key Takeaways for Students</h3>
+    <ul>
+      <li>Medical indexing organises millions of scientific papers so researchers can find them instantly</li>
+      <li>EMBASE (45M records, paid) and PubMed/MEDLINE (36M records, free) are the two most important databases</li>
+      <li>Controlled vocabulary (MeSH for PubMed, EMTREE for EMBASE) solves the synonym problem</li>
+      <li>Medical indexers read full articles and extract 20+ structured data points per paper</li>
+      <li>EMTREE has 90,000+ terms — especially comprehensive for drugs and pharmacology</li>
+      <li>Careers in medical indexing are available to life science graduates — Elsevier, IQVIA, and CROs all hire in India</li>
+      <li>Good indexing underpins drug safety monitoring, systematic reviews, and clinical decisions globally</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div>
+      <div class="author-name">Murali Krishnan M</div>
+      <div class="author-bio">Scientific Curator with 5+ years of professional experience in EMBASE indexing and biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education, Coimbatore. Founder of SciCurator.</div>
+    </div>
+  </div>
+
+</article>
+
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#what">What is Medical Indexing?</a></li>
+      <li><a href="#why">Why It Matters</a></li>
+      <li><a href="#vocabulary">MeSH & EMTREE</a></li>
+      <li><a href="#process">Step-by-Step Process</a></li>
+      <li><a href="#types">Types of Databases</a></li>
+      <li><a href="#career">Career in Indexing</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item">
+      <span class="rel-icon">📚</span>
+      <div><div class="rel-cat">EMBASE</div><a href="first-post.html" class="rel-title">What is EMBASE? A Scientist's Inside View</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">🗂️</span>
+      <div><div class="rel-cat">Indexing</div><a href="mesh-mapping-guide.html" class="rel-title">MeSH Mapping: A Practical Guide</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">🎓</span>
+      <div><div class="rel-cat">Career</div><a href="scientific-curation-career.html" class="rel-title">Breaking Into Scientific Curation</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">💊</span>
+      <div><div class="rel-cat">Drug Safety</div><a href="pharmacovigilance-data-science.html" class="rel-title">Pharmacovigilance & Data Science</a></div>
+    </div>
+  </div>
+  <div class="nl-sb">
+    <h4>Weekly Science Updates</h4>
+    <p>New articles across all 12 sections — free every week. No spam.</p>
+    <input class="nl-input" type="email" placeholder="your@email.com">
+    <button class="nl-btn">Subscribe Free</button>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p>
+</footer>
+</body>
+</html>
