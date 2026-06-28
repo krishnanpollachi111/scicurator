@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Coding Explained: ICD-10, CPT, HCPCS & Career Guide | SciCurator</title>
+<meta name="description" content="A complete guide to medical coding — what it is, how ICD-10, CPT and HCPCS codes work, how to read them, and how to build a medical coding career in India. With illustrated examples.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F5F6F8;--white:#fff;--ink:#1E2028;--ink2:#3C3F4A;
+  --muted:#6B6E7A;--border:#D4D7E0;--teal:#357A6E;--teal-lt:#EAF4F2;
+  --navy:#1E2C3A;--gold:#B8963A;--c-db:#703030;
+  --c-icd:#1A5276;--c-cpt:#1E8449;--c-hcpcs:#7D3C98;--c-drg:#B7770D
+}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;text-decoration:none;font-weight:700}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);font-size:0.82rem;text-decoration:none}
+.nav-links a:hover{color:#fff}
+.post-hero{background:linear-gradient(135deg,#1E2C3A 0%,#1A2C4A 60%,#2A1A3A 100%);padding:55px 5%;color:#fff;text-align:center}
+.post-cat{display:inline-block;background:var(--c-db);color:#fff;font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2px;margin-bottom:1rem}
+.post-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;max-width:760px;margin:0 auto 1rem;font-weight:700}
+.post-meta{color:rgba(255,255,255,0.5);font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block}
+.layout{display:grid;grid-template-columns:1fr 284px;gap:2.5rem;max-width:1100px;margin:0 auto;padding:2rem 5%}
+article{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:2.4rem}
+article h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin:2.2rem 0 0.8rem;border-left:3px solid var(--c-db);padding-left:0.85rem}
+article h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin:1.5rem 0 0.5rem}
+article p{color:#374151;margin-bottom:1.1rem;font-size:0.97rem;line-height:1.82}
+article ul,article ol{margin:0.6rem 0 1.2rem 1.5rem}
+article li{color:#374151;font-size:0.97rem;margin-bottom:0.55rem;line-height:1.7}
+.intro-text{font-family:'Source Serif 4',serif;font-size:1.06rem!important;color:var(--navy)!important;border-left:3px solid var(--teal);padding-left:1.1rem;margin-bottom:1.6rem!important;font-style:italic}
+.svg-wrap{margin:1.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--paper)}
+.svg-caption{font-size:0.76rem;color:var(--muted);text-align:center;padding:0.55rem 1rem;background:var(--paper);font-style:italic;border-top:1px solid var(--border)}
+.code-example{background:#F8F9FF;border:1.5px solid #C8D8EC;border-radius:6px;padding:1.3rem 1.5rem;margin:1.3rem 0;font-family:monospace}
+.code-example .code-label{font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem;display:block}
+.code-line{display:flex;gap:0.8rem;align-items:flex-start;margin-bottom:0.5rem;font-size:0.92rem}
+.code-val{font-size:1.1rem;font-weight:700;min-width:110px;flex-shrink:0}
+.code-desc{font-family:'DM Sans',sans-serif;font-size:0.86rem;color:var(--ink2);line-height:1.5}
+.highlight{background:var(--teal-lt);border:1px solid #b8ddd9;border-radius:4px;padding:1.1rem 1.4rem;margin:1.3rem 0}
+.highlight p{margin:0;color:var(--navy)!important;font-size:0.9rem!important}
+.highlight strong{color:var(--teal)}
+.example-box{background:#F3EEF9;border:1px solid #c8b8e8;border-radius:4px;padding:1.1rem 1.4rem;margin:1.2rem 0}
+.example-box p{margin:0;color:#4A2080!important;font-size:0.9rem!important}
+.warn-box{background:#FEF5E7;border:1px solid #e8c060;border-radius:4px;padding:1.1rem 1.4rem;margin:1.2rem 0}
+.warn-box p{margin:0;color:#7A4A00!important;font-size:0.9rem!important}
+.step-list{list-style:none;margin:0.5rem 0 1.2rem;display:flex;flex-direction:column;gap:0.55rem}
+.step-list li{display:flex;gap:0.8rem;align-items:flex-start;padding:0.75rem 1rem;background:#EAF0F6;border-radius:4px;border:1px solid #C8D8EC;font-size:0.93rem;color:var(--ink2);line-height:1.65}
+.step-num{background:var(--c-icd);color:#fff;font-weight:700;font-size:0.76rem;padding:0.14rem 0.52rem;border-radius:2px;flex-shrink:0;align-self:flex-start;margin-top:0.12rem}
+.step-list li strong{color:var(--c-icd)}
+.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.9rem;margin:1rem 0}
+.career-card{background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.career-card h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--navy);margin-bottom:0.35rem}
+.career-card p{margin:0;font-size:0.83rem;color:var(--muted);line-height:1.55}
+.cert-card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:1rem 1.2rem;margin:0.6rem 0;display:flex;gap:1rem;align-items:flex-start}
+.cert-icon{font-size:1.8rem;flex-shrink:0}
+.cert-name{font-weight:600;color:var(--navy);font-size:0.92rem;margin-bottom:0.2rem}
+.cert-by{font-size:0.78rem;color:var(--muted);margin-bottom:0.2rem}
+.cert-desc{font-size:0.82rem;color:var(--ink2);line-height:1.5}
+.takeaway{background:var(--navy);color:#fff;border-radius:6px;padding:1.5rem;margin:1.8rem 0}
+.takeaway h3{color:var(--gold);font-family:'Playfair Display',serif;margin:0 0 0.8rem;font-size:1.05rem}
+.takeaway li{color:rgba(255,255,255,0.82);margin-bottom:0.4rem;font-size:0.9rem}
+.author-box{display:flex;align-items:center;gap:1rem;background:var(--paper);border-radius:4px;padding:1.1rem;margin-top:1.8rem;border:1px solid var(--border)}
+.author-avatar{width:52px;height:52px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
+.author-name{font-weight:600;color:var(--navy);margin-bottom:0.15rem;font-size:0.9rem}
+.author-bio{font-size:0.78rem;color:var(--muted)}
+.sidebar{display:flex;flex-direction:column;gap:1.3rem}
+.sb-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1rem}
+.sb-title{font-family:'Playfair Display',serif;font-size:0.93rem;font-weight:700;color:var(--ink);margin-bottom:0.8rem;padding-bottom:0.4rem;border-bottom:2px solid var(--c-db)}
+.toc-list{list-style:none}
+.toc-list li{padding:0.38rem 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.toc-list li:last-child{border-bottom:none}
+.toc-list a{color:var(--teal);text-decoration:none}
+.toc-list a:hover{text-decoration:underline}
+.related-item{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border)}
+.related-item:last-child{border-bottom:none;padding-bottom:0}
+.rel-icon{font-size:1.5rem;flex-shrink:0}
+.rel-cat{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.1rem}
+.rel-title{font-size:0.82rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:block}
+.rel-title:hover{color:var(--teal)}
+.nl-sb{background:var(--navy);padding:1.05rem;border-radius:4px}
+.nl-sb h4{font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;margin-bottom:0.4rem}
+.nl-sb p{font-size:0.77rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;line-height:1.6}
+.nl-input{width:100%;padding:0.5rem 0.7rem;border:none;font-family:'DM Sans',sans-serif;font-size:0.82rem;margin-bottom:0.4rem;outline:none;border-radius:2px}
+.nl-btn{width:100%;background:var(--teal);color:#fff;border:none;padding:0.52rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;border-radius:2px}
+footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:1.8rem 5%;font-size:0.8rem;margin-top:2rem}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:768px){.layout{grid-template-columns:1fr}.sidebar{display:none}.career-grid{grid-template-columns:1fr}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8257994205639252" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Sci<span>Curator</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#db">Databases</a></li>
+    <li><a href="index.html#career">Career</a></li>
+    <li><a href="index.html#health">Health</a></li>
+    <li><a href="index.html#newsletter">Subscribe</a></li>
+  </ul>
+</nav>
+
+<div class="post-hero">
+  <div class="post-cat">Scientific Databases & Indexing</div>
+  <h1>Medical Coding Explained: ICD-10, CPT, HCPCS & How to Build a Career</h1>
+  <div class="post-meta">
+    <span>By Murali Krishnan M</span><span class="meta-dot"></span>
+    <span>June 2025</span><span class="meta-dot"></span>
+    <span>14 min read</span><span class="meta-dot"></span>
+    <span>Beginner Friendly</span>
+  </div>
+</div>
+
+<div class="layout">
+<article>
+
+  <p class="intro-text">Every hospital visit, every prescription, every surgery — generates a medical code. These codes are the invisible language that connects doctors, hospitals, insurance companies, and governments worldwide. Understanding medical coding is essential for any student entering healthcare, health informatics, or biomedical data management.</p>
+
+  <!-- SVG 1: What is Medical Coding Big Picture -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#357A6E" stroke-width="1.5"/></marker>
+      </defs>
+      <!-- Title -->
+      <text x="340" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1E2028">What Happens When You Visit a Doctor</text>
+
+      <!-- Step 1: Patient -->
+      <rect x="20" y="50" width="120" height="220" rx="8" fill="#FEF5E7" stroke="#D4A84A" stroke-width="1.2"/>
+      <text x="80" y="80" text-anchor="middle" font-size="28">🤒</text>
+      <text x="80" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#8B5A00">Patient Visits</text>
+      <text x="80" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Doctor examines</text>
+      <text x="80" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Diagnoses: Type 2</text>
+      <text x="80" y="154" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Diabetes</text>
+      <text x="80" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Prescribes:</text>
+      <text x="80" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Metformin 500mg</text>
+      <text x="80" y="211" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Orders: Blood</text>
+      <text x="80" y="227" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">glucose test</text>
+
+      <!-- Arrow -->
+      <path d="M142 160 L168 160" fill="none" stroke="#357A6E" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Step 2: Coder -->
+      <rect x="170" y="50" width="140" height="220" rx="8" fill="#EAF4F2" stroke="#357A6E" stroke-width="1.2"/>
+      <text x="240" y="80" text-anchor="middle" font-size="28">🧑‍💻</text>
+      <text x="240" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#1A5A4E">Medical Coder</text>
+      <text x="240" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A4E">Reads doctor's notes</text>
+      <text x="240" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#2A6A5E">Diagnosis →</text>
+      <rect x="185" y="148" width="110" height="18" rx="4" fill="#1A5276"/>
+      <text x="240" y="161" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#fff">ICD-10: E11.9</text>
+      <text x="240" y="182" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#2A6A5E">Procedure →</text>
+      <rect x="185" y="190" width="110" height="18" rx="4" fill="#1E8449"/>
+      <text x="240" y="203" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#fff">CPT: 82947</text>
+      <text x="240" y="224" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#2A6A5E">Drug →</text>
+      <rect x="185" y="230" width="110" height="18" rx="4" fill="#7D3C98"/>
+      <text x="240" y="243" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#fff">HCPCS: A0021</text>
+
+      <!-- Arrow -->
+      <path d="M312 160 L338 160" fill="none" stroke="#357A6E" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Step 3: Claim -->
+      <rect x="340" y="50" width="130" height="220" rx="8" fill="#EAF0F6" stroke="#2A5080" stroke-width="1.2"/>
+      <text x="405" y="80" text-anchor="middle" font-size="28">📋</text>
+      <text x="405" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#1A3060">Insurance Claim</text>
+      <text x="405" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">Hospital sends</text>
+      <text x="405" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">coded claim to</text>
+      <text x="405" y="154" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">insurance payer</text>
+      <text x="405" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">Payer checks:</text>
+      <text x="405" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">Is code valid?</text>
+      <text x="405" y="212" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">Is it covered?</text>
+      <text x="405" y="228" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A3060">How much to pay?</text>
+
+      <!-- Arrow -->
+      <path d="M472 160 L498 160" fill="none" stroke="#357A6E" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Step 4: Payment -->
+      <rect x="500" y="50" width="160" height="220" rx="8" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.2"/>
+      <text x="580" y="80" text-anchor="middle" font-size="28">💰</text>
+      <text x="580" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#1A5A28">Reimbursement</text>
+      <text x="580" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Insurance pays</text>
+      <text x="580" y="138" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">hospital/doctor</text>
+      <text x="580" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Wrong code =</text>
+      <text x="580" y="176" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Claim denied</text>
+      <text x="580" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Right code =</text>
+      <text x="580" y="212" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1E8449">✅ Payment approved</text>
+      <text x="580" y="235" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Also used for</text>
+      <text x="580" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">statistics & research</text>
+
+      <text x="340" y="292" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">Medical coding converts clinical care into standardised codes — enabling billing, research, and health statistics globally</text>
+    </svg>
+    <div class="svg-caption">The complete medical coding workflow: from patient visit to insurance reimbursement</div>
+  </div>
+
+  <h2 id="what">What is Medical Coding?</h2>
+  <p>Medical coding is the process of converting healthcare diagnoses, procedures, medical services, and equipment into universal alphanumeric codes. These codes come from classification systems like ICD-10, CPT, and HCPCS.</p>
+  <p>Think of it this way — a doctor writes in natural language: <em>"Patient has Type 2 diabetes without complications. Blood glucose test ordered. Metformin prescribed."</em> A medical coder reads this and translates it into:</p>
+
+  <div class="code-example">
+    <span class="code-label" style="color:var(--c-icd)">Diagnosis Code (ICD-10)</span>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">E11.9</span><span class="code-desc">Type 2 diabetes mellitus without complications</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">82947</span><span class="code-desc">Glucose; quantitative, blood (except reagent strip)</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-hcpcs)">S0091</span><span class="code-desc">Metformin HCl, 500mg (HCPCS drug code)</span></div>
+  </div>
+
+  <p>These codes are universal — a hospital in Chennai and a hospital in London use the same code E11.9 for the same diagnosis. This makes it possible to:</p>
+  <ul>
+    <li>Bill insurance companies accurately and get reimbursed</li>
+    <li>Track disease patterns across populations</li>
+    <li>Compare healthcare quality between hospitals and countries</li>
+    <li>Conduct epidemiological research using health data</li>
+    <li>Meet government reporting requirements</li>
+  </ul>
+
+  <h2 id="systems">The Three Major Code Systems</h2>
+
+  <!-- SVG 2: Three Code Systems -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1E2028">The Three Major Medical Code Systems</text>
+
+      <!-- ICD-10 -->
+      <rect x="20" y="45" width="200" height="158" rx="8" fill="#EAF0F6" stroke="#1A5276" stroke-width="1.5"/>
+      <rect x="20" y="45" width="200" height="38" rx="8" fill="#1A5276"/>
+      <rect x="20" y="70" width="200" height="13" rx="0" fill="#1A5276"/>
+      <text x="120" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#fff">ICD-10</text>
+      <text x="120" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">International Classification of</text>
+      <text x="120" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">Diseases, 10th Revision</text>
+      <text x="120" y="134" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">▸ Used for: Diagnoses</text>
+      <text x="120" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">▸ By: WHO (Geneva)</text>
+      <text x="120" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">▸ Codes: ~72,000</text>
+      <text x="120" y="186" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">▸ Example: J18.9 (Pneumonia)</text>
+
+      <!-- CPT -->
+      <rect x="240" y="45" width="200" height="158" rx="8" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.5"/>
+      <rect x="240" y="45" width="200" height="38" rx="8" fill="#1E8449"/>
+      <rect x="240" y="70" width="200" height="13" rx="0" fill="#1E8449"/>
+      <text x="340" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#fff">CPT</text>
+      <text x="340" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">Current Procedural</text>
+      <text x="340" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">Terminology</text>
+      <text x="340" y="134" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">▸ Used for: Procedures</text>
+      <text x="340" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">▸ By: AMA (USA)</text>
+      <text x="340" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">▸ Codes: ~10,000</text>
+      <text x="340" y="186" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A5A28">▸ Example: 99213 (Office visit)</text>
+
+      <!-- HCPCS -->
+      <rect x="460" y="45" width="200" height="158" rx="8" fill="#F3EEF9" stroke="#7D3C98" stroke-width="1.5"/>
+      <rect x="460" y="45" width="200" height="38" rx="8" fill="#7D3C98"/>
+      <rect x="460" y="70" width="200" height="13" rx="0" fill="#7D3C98"/>
+      <text x="560" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#fff">HCPCS</text>
+      <text x="560" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">Healthcare Common</text>
+      <text x="560" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">Procedure Coding System</text>
+      <text x="560" y="134" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">▸ Used for: Equipment/Drugs</text>
+      <text x="560" y="150" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">▸ By: CMS (USA)</text>
+      <text x="560" y="166" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">▸ Codes: ~7,000+</text>
+      <text x="560" y="186" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4A2080">▸ Example: E0601 (CPAP device)</text>
+    </svg>
+    <div class="svg-caption">The three major medical code systems — ICD-10 for diagnoses, CPT for procedures, HCPCS for equipment and drugs</div>
+  </div>
+
+  <h2 id="icd10">ICD-10: International Classification of Diseases</h2>
+  <p>ICD-10 is the foundation of medical coding worldwide. Developed by the World Health Organisation (WHO) and used in over 100 countries, it is the standard system for recording and reporting diseases, injuries, and causes of death.</p>
+
+  <h3>Structure of an ICD-10 Code</h3>
+  <p>Every ICD-10 code follows a specific format. Understanding it helps you decode any code instantly:</p>
+
+  <!-- SVG 3: ICD-10 Code Anatomy -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 260" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1E2028">Anatomy of an ICD-10 Code: E11.65</text>
+      <text x="340" y="46" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#6B6E7A">Type 2 diabetes mellitus with hyperglycaemia</text>
+
+      <!-- The code displayed large -->
+      <text x="340" y="105" text-anchor="middle" font-family="monospace" font-size="52" font-weight="700" fill="#1E2028" letter-spacing="8">E11.65</text>
+
+      <!-- Bracket labels below -->
+      <!-- E bracket -->
+      <line x1="198" y1="115" x2="198" y2="135" stroke="#1A5276" stroke-width="1.5"/>
+      <line x1="198" y1="135" x2="245" y2="135" stroke="#1A5276" stroke-width="1.5"/>
+      <line x1="245" y1="115" x2="245" y2="135" stroke="#1A5276" stroke-width="1.5"/>
+      <text x="222" y="155" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1A5276">Category</text>
+      <text x="222" y="170" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5276">(Letter A–Z)</text>
+      <text x="222" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5276">E = Endocrine</text>
+      <text x="222" y="198" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5276">diseases</text>
+
+      <!-- 11 bracket -->
+      <line x1="248" y1="115" x2="248" y2="140" stroke="#1E8449" stroke-width="1.5"/>
+      <line x1="248" y1="140" x2="340" y2="140" stroke="#1E8449" stroke-width="1.5"/>
+      <line x1="340" y1="115" x2="340" y2="140" stroke="#1E8449" stroke-width="1.5"/>
+      <text x="294" y="158" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#1E8449">Etiology/Block</text>
+      <text x="294" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1E8449">(2 numbers)</text>
+      <text x="294" y="187" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1E8449">11 = Type 2</text>
+      <text x="294" y="201" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1E8449">Diabetes</text>
+
+      <!-- dot -->
+      <text x="370" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#888">·</text>
+      <line x1="370" y1="118" x2="370" y2="145" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="370" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#888">separator</text>
+
+      <!-- 65 bracket -->
+      <line x1="385" y1="115" x2="385" y2="145" stroke="#7D3C98" stroke-width="1.5"/>
+      <line x1="385" y1="145" x2="480" y2="145" stroke="#7D3C98" stroke-width="1.5"/>
+      <line x1="480" y1="115" x2="480" y2="145" stroke="#7D3C98" stroke-width="1.5"/>
+      <text x="432" y="162" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#7D3C98">Specificity</text>
+      <text x="432" y="177" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#7D3C98">(after decimal)</text>
+      <text x="432" y="191" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#7D3C98">65 = with</text>
+      <text x="432" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#7D3C98">hyperglycaemia</text>
+
+      <!-- Format rule -->
+      <rect x="80" y="226" width="520" height="24" rx="4" fill="#EAF0F6"/>
+      <text x="340" y="242" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3060">Format: [Letter][2 numbers].[up to 4 more characters] — Codes range from 3 to 7 characters total</text>
+    </svg>
+    <div class="svg-caption">How to read an ICD-10 code — every character has a specific meaning</div>
+  </div>
+
+  <h3>ICD-10 Code Examples — Decoded</h3>
+  <div class="code-example">
+    <span class="code-label" style="color:var(--c-icd)">Common ICD-10 Codes with Meaning</span>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">J18.9</span><span class="code-desc">Pneumonia, unspecified organism — J=Respiratory, 18=Pneumonia, 9=unspecified</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">I21.0</span><span class="code-desc">ST elevation myocardial infarction (heart attack) — anterior wall</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">E11.9</span><span class="code-desc">Type 2 diabetes mellitus — without complications</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">C34.10</span><span class="code-desc">Malignant neoplasm (cancer) of upper lobe bronchus or lung, unspecified</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">F32.1</span><span class="code-desc">Major depressive disorder, single episode, moderate</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-icd)">S52.501A</span><span class="code-desc">Unspecified fracture of radius — initial encounter — (7 characters, maximum specificity)</span></div>
+  </div>
+
+  <h3>ICD-10 Chapter Structure</h3>
+  <p>ICD-10 is organised into 22 chapters. The first letter of each code tells you the chapter:</p>
+  <ul>
+    <li><strong>A, B</strong> — Infectious and parasitic diseases (A00–B99)</li>
+    <li><strong>C, D</strong> — Neoplasms / blood diseases (C00–D89)</li>
+    <li><strong>E</strong> — Endocrine, nutritional and metabolic diseases (E00–E89)</li>
+    <li><strong>F</strong> — Mental, behavioural and neurodevelopmental disorders</li>
+    <li><strong>G</strong> — Nervous system diseases</li>
+    <li><strong>I</strong> — Circulatory system diseases (heart, blood vessels)</li>
+    <li><strong>J</strong> — Respiratory system diseases</li>
+    <li><strong>K</strong> — Digestive system diseases</li>
+    <li><strong>M</strong> — Musculoskeletal diseases</li>
+    <li><strong>O</strong> — Pregnancy, childbirth, puerperium</li>
+    <li><strong>S, T</strong> — Injuries, poisoning, external causes</li>
+    <li><strong>U</strong> — Emergency codes (U07.1 = COVID-19)</li>
+    <li><strong>Z</strong> — Factors influencing health status (Z23 = Immunisation)</li>
+  </ul>
+
+  <div class="example-box">
+    <p><strong>India Note:</strong> India uses ICD-10 for all hospital records and death certificates. The Ministry of Health adopted ICD-10 in 2004. Transition to ICD-11 (the latest revision, released by WHO in 2022) is underway — ICD-11 has over 55,000 unique codes and is designed to be digital-first.</p>
+  </div>
+
+  <h2 id="cpt">CPT Codes: Current Procedural Terminology</h2>
+  <p>While ICD-10 codes tell you <em>what is wrong with the patient</em>, CPT codes tell you <em>what was done for the patient</em>. CPT codes are developed and maintained by the American Medical Association (AMA) and are the primary coding system for medical procedures and services in the United States — and are also used globally for reference.</p>
+
+  <h3>Structure of CPT Codes</h3>
+  <p>CPT codes are always <strong>5-digit numeric codes</strong> (sometimes with a modifier), organised into three categories:</p>
+
+  <!-- SVG 4: CPT Structure -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 230" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1E2028">CPT Code Categories & Sections</text>
+
+      <!-- Category I -->
+      <rect x="20" y="45" width="195" height="170" rx="7" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.3"/>
+      <rect x="20" y="45" width="195" height="35" rx="7" fill="#1E8449"/>
+      <rect x="20" y="68" width="195" height="12" rx="0" fill="#1E8449"/>
+      <text x="117" y="67" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Category I</text>
+      <text x="117" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Most commonly used</text>
+      <text x="117" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#1A5A28">6 main sections:</text>
+      <text x="30" y="132" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• E&M (99202–99499): Office visits</text>
+      <text x="30" y="148" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• Anaesthesia (00100–01999)</text>
+      <text x="30" y="164" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• Surgery (10004–69990)</text>
+      <text x="30" y="180" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• Radiology (70010–79999)</text>
+      <text x="30" y="196" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• Pathology (80047–89398)</text>
+      <text x="30" y="212" font-family="Georgia,serif" font-size="9.5" fill="#1A5A28">• Medicine (90281–99199)</text>
+
+      <!-- Category II -->
+      <rect x="240" y="45" width="195" height="170" rx="7" fill="#FEF5E7" stroke="#D4A84A" stroke-width="1.3"/>
+      <rect x="240" y="45" width="195" height="35" rx="7" fill="#D4A84A"/>
+      <rect x="240" y="68" width="195" height="12" rx="0" fill="#D4A84A"/>
+      <text x="337" y="67" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Category II</text>
+      <text x="337" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Performance tracking</text>
+      <text x="337" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8B5A00">codes (4 digits + F)</text>
+      <text x="250" y="135" font-family="Georgia,serif" font-size="9.5" fill="#8B5A00">• Used for quality measurement</text>
+      <text x="250" y="151" font-family="Georgia,serif" font-size="9.5" fill="#8B5A00">• Not used for billing</text>
+      <text x="250" y="167" font-family="Georgia,serif" font-size="9.5" fill="#8B5A00">• Example: 1000F (blood pressure</text>
+      <text x="250" y="183" font-family="Georgia,serif" font-size="9.5" fill="#8B5A00">  recorded)</text>
+      <text x="250" y="200" font-family="Georgia,serif" font-size="9.5" fill="#8B5A00">• Supplemental tracking only</text>
+
+      <!-- Category III -->
+      <rect x="460" y="45" width="195" height="170" rx="7" fill="#F3EEF9" stroke="#7D3C98" stroke-width="1.3"/>
+      <rect x="460" y="45" width="195" height="35" rx="7" fill="#7D3C98"/>
+      <rect x="460" y="68" width="195" height="12" rx="0" fill="#7D3C98"/>
+      <text x="557" y="67" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Category III</text>
+      <text x="557" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A2080">Emerging technology</text>
+      <text x="557" y="114" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#4A2080">codes (4 digits + T)</text>
+      <text x="470" y="135" font-family="Georgia,serif" font-size="9.5" fill="#4A2080">• New/experimental procedures</text>
+      <text x="470" y="151" font-family="Georgia,serif" font-size="9.5" fill="#4A2080">• Collect data for future approval</text>
+      <text x="470" y="167" font-family="Georgia,serif" font-size="9.5" fill="#4A2080">• May become Category I later</text>
+      <text x="470" y="183" font-family="Georgia,serif" font-size="9.5" fill="#4A2080">• Example: telemedicine codes</text>
+      <text x="470" y="200" font-family="Georgia,serif" font-size="9.5" fill="#4A2080">• Added as medicine advances</text>
+    </svg>
+    <div class="svg-caption">CPT code categories — Category I is used for all standard billing; Category II and III are supplemental</div>
+  </div>
+
+  <h3>CPT Code Examples</h3>
+  <div class="code-example">
+    <span class="code-label" style="color:var(--c-cpt)">Common CPT Codes Explained</span>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">99213</span><span class="code-desc">Office/outpatient visit, established patient, moderate complexity — the most billed code in medicine</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">93000</span><span class="code-desc">Electrocardiogram (ECG) — routine with interpretation and report</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">82947</span><span class="code-desc">Glucose; quantitative blood test</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">27447</span><span class="code-desc">Total knee replacement (arthroplasty)</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">71046</span><span class="code-desc">Chest X-ray, 2 views — radiological examination</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-cpt)">00840</span><span class="code-desc">Anaesthesia for abdominal procedures — intraperitoneal</span></div>
+  </div>
+
+  <h3>CPT Modifiers</h3>
+  <p>Modifiers are two-digit codes added to CPT codes to provide additional information without changing the code itself:</p>
+  <ul>
+    <li><strong>-25:</strong> Significant, separately identifiable E&M service on the same day as a procedure</li>
+    <li><strong>-50:</strong> Bilateral procedure (both sides performed)</li>
+    <li><strong>-51:</strong> Multiple procedures performed on the same day</li>
+    <li><strong>-59:</strong> Distinct procedural service — not bundled with another</li>
+    <li><strong>-RT / -LT:</strong> Right side / Left side</li>
+  </ul>
+
+  <div class="example-box">
+    <p><strong>Example:</strong> If a surgeon replaces both knee joints in one operation, the code would be written as <strong>27447-50</strong> — the -50 modifier tells the insurer it was a bilateral procedure and adjusts payment accordingly. Without the modifier, the claim would be processed incorrectly.</p>
+  </div>
+
+  <h2 id="hcpcs">HCPCS Codes: Drugs, Equipment & Supplies</h2>
+  <p>HCPCS (pronounced "hick-picks") Level II codes cover items that CPT does not — primarily drugs, medical equipment, and supplies. They are maintained by the Centers for Medicare & Medicaid Services (CMS) in the USA.</p>
+  <ul>
+    <li><strong>Format:</strong> One letter (A–V) followed by 4 numbers — e.g., A4570, E0601, J0696</li>
+    <li><strong>A codes:</strong> Medical and surgical supplies</li>
+    <li><strong>E codes:</strong> Durable medical equipment (wheelchairs, CPAP machines, crutches)</li>
+    <li><strong>J codes:</strong> Injectable drugs (J0696 = ceftriaxone injection)</li>
+    <li><strong>L codes:</strong> Orthotics and prosthetics</li>
+    <li><strong>Q codes:</strong> Temporary codes for drugs and biologics</li>
+    <li><strong>G codes:</strong> Procedures and professional services (mainly for government programmes)</li>
+  </ul>
+
+  <div class="code-example">
+    <span class="code-label" style="color:var(--c-hcpcs)">HCPCS Code Examples</span>
+    <div class="code-line"><span class="code-val" style="color:var(--c-hcpcs)">J0696</span><span class="code-desc">Injection, ceftriaxone sodium, per 250mg (antibiotic)</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-hcpcs)">E0601</span><span class="code-desc">Continuous positive airway pressure (CPAP) device</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-hcpcs)">A4570</span><span class="code-desc">Splint supply</span></div>
+    <div class="code-line"><span class="code-val" style="color:var(--c-hcpcs)">L5100</span><span class="code-desc">Below knee, moulded socket, shin, SACH foot</span></div>
+  </div>
+
+  <h2 id="drg">DRG: Diagnosis Related Groups</h2>
+  <p>DRGs are a hospital payment system that groups patients with similar diagnoses and procedures together for reimbursement purposes. Instead of paying for each individual service, insurers pay one fixed amount per DRG.</p>
+  <ul>
+    <li>Each DRG has a <strong>base payment rate</strong> — the standard amount an insurer pays for that group of conditions</li>
+    <li>Hospitals that treat patients for less than the DRG rate <strong>keep the difference</strong> — incentivising efficiency</li>
+    <li>Hospitals that exceed the DRG rate <strong>absorb the loss</strong> unless the case qualifies as an outlier</li>
+    <li>DRG-based payment is used by Medicare in the USA and increasingly adopted by government health systems worldwide including parts of India's PMJAY scheme</li>
+  </ul>
+
+  <!-- SVG 5: How Coding Errors Cause Problems -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 680 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1E2028">What Happens When Medical Codes Are Wrong</text>
+
+      <!-- Undercoding -->
+      <rect x="20" y="42" width="195" height="162" rx="7" fill="#FEF5E7" stroke="#D4A84A" stroke-width="1.3"/>
+      <rect x="20" y="42" width="195" height="34" rx="7" fill="#D4A84A"/>
+      <rect x="20" y="64" width="195" height="12" rx="0" fill="#D4A84A"/>
+      <text x="117" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Undercoding</text>
+      <text x="30" y="96" font-family="Georgia,serif" font-size="10" fill="#8B5A00">Using a less specific code than</text>
+      <text x="30" y="112" font-family="Georgia,serif" font-size="10" fill="#8B5A00">what the documentation supports</text>
+      <text x="30" y="132" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Hospital gets paid less</text>
+      <text x="30" y="150" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Revenue loss</text>
+      <text x="30" y="168" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Inaccurate health statistics</text>
+      <text x="30" y="186" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Audit red flag</text>
+
+      <!-- Upcoding -->
+      <rect x="240" y="42" width="195" height="162" rx="7" fill="#FDEDEC" stroke="#C0392B" stroke-width="1.3"/>
+      <rect x="240" y="42" width="195" height="34" rx="7" fill="#C0392B"/>
+      <rect x="240" y="64" width="195" height="12" rx="0" fill="#C0392B"/>
+      <text x="337" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Upcoding (Fraud)</text>
+      <text x="250" y="96" font-family="Georgia,serif" font-size="10" fill="#7A2020">Billing a higher-level code than</text>
+      <text x="250" y="112" font-family="Georgia,serif" font-size="10" fill="#7A2020">what was actually provided</text>
+      <text x="250" y="132" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Healthcare fraud — illegal</text>
+      <text x="250" y="150" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Heavy fines + prosecution</text>
+      <text x="250" y="168" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Loss of licence</text>
+      <text x="250" y="186" font-family="Georgia,serif" font-size="10" fill="#C0392B">❌ Criminal charges possible</text>
+
+      <!-- Correct Coding -->
+      <rect x="460" y="42" width="195" height="162" rx="7" fill="#EAFAF1" stroke="#1E8449" stroke-width="1.5"/>
+      <rect x="460" y="42" width="195" height="34" rx="7" fill="#1E8449"/>
+      <rect x="460" y="64" width="195" height="12" rx="0" fill="#1E8449"/>
+      <text x="557" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-weight="700" fill="#fff">Accurate Coding ✅</text>
+      <text x="470" y="96" font-family="Georgia,serif" font-size="10" fill="#1A5A28">Code exactly matches what</text>
+      <text x="470" y="112" font-family="Georgia,serif" font-size="10" fill="#1A5A28">documentation supports</text>
+      <text x="470" y="132" font-family="Georgia,serif" font-size="10" fill="#1E8449">✅ Correct reimbursement</text>
+      <text x="470" y="150" font-family="Georgia,serif" font-size="10" fill="#1E8449">✅ Clean claim — no denial</text>
+      <text x="470" y="168" font-family="Georgia,serif" font-size="10" fill="#1E8449">✅ Accurate health data</text>
+      <text x="470" y="186" font-family="Georgia,serif" font-size="10" fill="#1E8449">✅ Audit ready</text>
+    </svg>
+    <div class="svg-caption">Medical coding errors have serious consequences — accuracy is a legal and financial obligation</div>
+  </div>
+
+  <h2 id="process">How Medical Coders Work — Step by Step</h2>
+  <ol class="step-list">
+    <li><span class="step-num">1</span><div><strong>Review the medical record</strong> — Read the physician's notes, operative reports, lab results, and discharge summaries. The coder works from documentation — never assumptions.</div></li>
+    <li><span class="step-num">2</span><div><strong>Identify the principal diagnosis</strong> — The main condition that brought the patient to the hospital. This drives the primary ICD-10 code.</div></li>
+    <li><span class="step-num">3</span><div><strong>Identify secondary diagnoses</strong> — Co-morbidities and complications that affect care or length of stay are also coded.</div></li>
+    <li><span class="step-num">4</span><div><strong>Identify all procedures</strong> — Every procedure performed during the encounter — surgery, lab tests, imaging, drug administration — gets a CPT or HCPCS code.</div></li>
+    <li><span class="step-num">5</span><div><strong>Assign codes using coding books or software</strong> — ICD-10-CM (Clinical Modification), CPT codebooks, and HCPCS manuals are referenced. Encoder software is widely used.</div></li>
+    <li><span class="step-num">6</span><div><strong>Apply coding guidelines</strong> — Official coding guidelines (UHDDS, AHA Coding Clinic, AMA CPT Assistant) ensure consistency. Sequencing rules determine which code goes first.</div></li>
+    <li><span class="step-num">7</span><div><strong>Submit the claim</strong> — Coded records go to the billing team who submit the claim to the insurance payer on a standardised claim form (CMS-1500 for outpatient, UB-04 for inpatient).</div></li>
+  </ol>
+
+  <h2 id="career">Career in Medical Coding</h2>
+  <p>Medical coding is one of the fastest-growing healthcare career options for life science graduates in India — with significant remote work opportunities and international scope.</p>
+
+  <div class="career-grid">
+    <div class="career-card">
+      <h4>🎓 Qualifications</h4>
+      <p>Degree in life sciences, pharmacy, nursing, or medicine. Medical terminology knowledge is essential. Certification (CPC, CCS) is highly preferred by employers.</p>
+    </div>
+    <div class="career-card">
+      <h4>💰 Salary in India</h4>
+      <p>Fresher: ₹2.5–4 LPA. Experienced (2–4 yrs): ₹4–8 LPA. Senior/Lead: ₹8–14 LPA. US-based remote work: significantly higher (USD-based).</p>
+    </div>
+    <div class="career-card">
+      <h4>🏢 Top Employers</h4>
+      <p>Omega Healthcare, GeBBS Healthcare, Cognizant, Accenture Health, Mphasis, Wipro BPS, Apollo Hospitals Group, Fortis Health Management.</p>
+    </div>
+    <div class="career-card">
+      <h4>📈 Career Growth</h4>
+      <p>Medical Coder → Senior Coder → Auditor → Coding Manager → Revenue Cycle Consultant. Lateral moves into clinical documentation improvement (CDI) and compliance.</p>
+    </div>
+  </div>
+
+  <h3>Key Certifications</h3>
+  <div class="cert-card">
+    <span class="cert-icon">🏆</span>
+    <div>
+      <div class="cert-name">CPC — Certified Professional Coder</div>
+      <div class="cert-by">American Academy of Professional Coders (AAPC)</div>
+      <div class="cert-desc">The most widely recognised medical coding certification globally. Covers ICD-10-CM, CPT, and HCPCS. Requires 150-question exam. Highly valued in India's BPO and KPO healthcare sector.</div>
+    </div>
+  </div>
+  <div class="cert-card">
+    <span class="cert-icon">🏆</span>
+    <div>
+      <div class="cert-name">CCS — Certified Coding Specialist</div>
+      <div class="cert-by">American Health Information Management Association (AHIMA)</div>
+      <div class="cert-desc">Focuses on hospital (inpatient) coding. Highly respected for facility-based coding roles. Requires strong knowledge of DRGs and inpatient coding guidelines.</div>
+    </div>
+  </div>
+  <div class="cert-card">
+    <span class="cert-icon">🏆</span>
+    <div>
+      <div class="cert-name">COC — Certified Outpatient Coder</div>
+      <div class="cert-by">AAPC</div>
+      <div class="cert-desc">Specialises in outpatient facility coding. Ideal for coders working in ambulatory surgery centres, clinic settings, and outpatient departments.</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>India Opportunity:</strong> India is one of the largest outsourcing destinations for US and UK medical coding and health information management. Companies like Omega Healthcare (Chennai), GeBBS Healthcare (Mumbai), and HCL Healthcare process millions of medical records. Many roles are now fully remote, paying competitive salaries with US healthcare exposure.</p>
+  </div>
+
+  <h2 id="indexing-vs-coding">Medical Coding vs Medical Indexing — What's the Difference?</h2>
+  <p>Students often confuse these two — they are related but distinct:</p>
+  <ul>
+    <li><strong>Medical Coding</strong> — converts clinical documentation into codes primarily for <em>billing and reimbursement</em>. Coders work within healthcare facilities or BPO companies. Output goes to insurance payers.</li>
+    <li><strong>Medical Indexing</strong> — converts scientific research articles into structured data primarily for <em>database searchability and research</em>. Indexers work for database publishers like Elsevier. Output goes into databases like EMBASE and PubMed.</li>
+    <li>Both require knowledge of medical terminology and classification systems</li>
+    <li>Both are growing career fields for life science graduates in India</li>
+    <li>Medical coders use ICD-10 and CPT; medical indexers use MeSH and EMTREE</li>
+  </ul>
+
+  <div class="takeaway">
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Medical coding converts clinical care into universal alphanumeric codes for billing, statistics, and research</li>
+      <li>ICD-10 codes diagnoses (~72,000 codes, WHO) — E11.9 = Type 2 diabetes without complications</li>
+      <li>CPT codes procedures (~10,000 codes, AMA) — 99213 = routine office visit</li>
+      <li>HCPCS codes equipment, drugs, and supplies — J0696 = ceftriaxone injection</li>
+      <li>DRGs group diagnoses for fixed-rate hospital reimbursement</li>
+      <li>Upcoding is healthcare fraud — it carries criminal charges</li>
+      <li>CPC certification (AAPC) is the most recognised coding credential globally</li>
+      <li>India is a major hub for medical coding BPO — Chennai, Bangalore, Mumbai all have large operations</li>
+      <li>Medical coding ≠ medical indexing — coding is for billing; indexing is for research databases</li>
+    </ul>
+  </div>
+
+  <div class="author-box">
+    <div class="author-avatar">MK</div>
+    <div>
+      <div class="author-name">Murali Krishnan M</div>
+      <div class="author-bio">Scientific Curator with 5+ years in EMBASE indexing and biomedical data curation. M.Sc Microbiology, Karpagam Academy of Higher Education, Coimbatore. Founder of SciCurator.</div>
+    </div>
+  </div>
+
+</article>
+
+<aside class="sidebar">
+  <div class="sb-card">
+    <div class="sb-title">In This Article</div>
+    <ul class="toc-list">
+      <li><a href="#what">What is Medical Coding?</a></li>
+      <li><a href="#systems">Three Code Systems</a></li>
+      <li><a href="#icd10">ICD-10 Codes</a></li>
+      <li><a href="#cpt">CPT Codes</a></li>
+      <li><a href="#hcpcs">HCPCS Codes</a></li>
+      <li><a href="#drg">DRG System</a></li>
+      <li><a href="#process">How Coders Work</a></li>
+      <li><a href="#career">Career Guide</a></li>
+      <li><a href="#indexing-vs-coding">Coding vs Indexing</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-title">Related Articles</div>
+    <div class="related-item">
+      <span class="rel-icon">🗃️</span>
+      <div><div class="rel-cat">Indexing</div><a href="medical-indexing-guide.html" class="rel-title">Medical Indexing Explained: Student Guide</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">📚</span>
+      <div><div class="rel-cat">EMBASE</div><a href="first-post.html" class="rel-title">What is EMBASE? A Scientist's Inside View</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">🗂️</span>
+      <div><div class="rel-cat">Indexing</div><a href="mesh-mapping-guide.html" class="rel-title">MeSH Mapping: A Practical Guide</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">🎓</span>
+      <div><div class="rel-cat">Career</div><a href="scientific-curation-career.html" class="rel-title">Breaking Into Scientific Curation</a></div>
+    </div>
+    <div class="related-item">
+      <span class="rel-icon">💊</span>
+      <div><div class="rel-cat">Drug Safety</div><a href="pharmacovigilance-data-science.html" class="rel-title">Pharmacovigilance & Data Science</a></div>
+    </div>
+  </div>
+  <div class="nl-sb">
+    <h4>Weekly Science Updates</h4>
+    <p>New articles across all 12 sections — free every week. No spam.</p>
+    <input class="nl-input" type="email" placeholder="your@email.com">
+    <button class="nl-btn">Subscribe Free</button>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p>© 2025 SciCurator · <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="mailto:Krishnanpollachi111@gmail.com">Murali Krishnan M</a> · Coimbatore, India</p>
+</footer>
+
+</body>
+</html>
